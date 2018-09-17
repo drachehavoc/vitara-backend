@@ -1,0 +1,699 @@
+[13-Sep-2018 23:24:49 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\FileNotFound: C:\terminal\live\server\applications\example in C:\terminal\live\server\system\util\Path.php:12
+Stack trace:
+#0 C:\terminal\live\server\system\Runtime.php(14): system\util\Path::join('C:\\terminal\\liv...', 'example')
+#1 C:\terminal\live\server\system\Ambue.php(15): system\Runtime->__construct()
+#2 C:\terminal\live\server\system\Ambue.php(21): system\Ambue->__construct()
+#3 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#4 {main}
+  thrown in C:\terminal\live\server\system\util\Path.php on line 12
+[13-Sep-2018 23:27:40 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\FileNotFound: C:\terminal\live\server\applications\example\routes.php in C:\terminal\live\server\system\util\Path.php:12
+Stack trace:
+#0 C:\terminal\live\server\system\Runtime.php(16): system\util\Path::join('C:\\terminal\\liv...', 'routes.php')
+#1 C:\terminal\live\server\system\Ambue.php(15): system\Runtime->__construct()
+#2 C:\terminal\live\server\system\Ambue.php(21): system\Ambue->__construct()
+#3 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#4 {main}
+  thrown in C:\terminal\live\server\system\util\Path.php on line 12
+[13-Sep-2018 23:29:30 America/Sao_Paulo] PHP Warning:  Closure::bind() expects at least 2 parameters, 1 given in C:\terminal\live\server\system\Runtime.php on line 16
+[13-Sep-2018 23:35:32 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'or' (T_LOGICAL_OR) in C:\terminal\live\server\system\util\Path.php on line 10
+[13-Sep-2018 23:42:55 America/Sao_Paulo] PHP Warning:  require_once(C:\terminal\live\server\system\Parh.php): failed to open stream: No such file or directory in C:\terminal\live\server\system\php\autoload.php on line 4
+[13-Sep-2018 23:42:55 America/Sao_Paulo] PHP Fatal error:  require_once(): Failed opening required 'C:\terminal\live\server\system\Parh.php' (include_path='.;C:\php\pear') in C:\terminal\live\server\system\php\autoload.php on line 4
+[13-Sep-2018 23:42:57 America/Sao_Paulo] PHP Warning:  require_once(C:\terminal\live\server\system\Parh.php): failed to open stream: No such file or directory in C:\terminal\live\server\system\php\autoload.php on line 4
+[13-Sep-2018 23:42:57 America/Sao_Paulo] PHP Fatal error:  require_once(): Failed opening required 'C:\terminal\live\server\system\Parh.php' (include_path='.;C:\php\pear') in C:\terminal\live\server\system\php\autoload.php on line 4
+[13-Sep-2018 23:43:06 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\terminal\live\server\system\util\Path.php on line 8
+[13-Sep-2018 23:43:06 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\FileNotFound: Array in C:\terminal\live\server\system\util\Path.php:15
+Stack trace:
+#0 C:\terminal\live\server\system\util\Path.php(20): system\util\Path::resolve(Array)
+#1 C:\terminal\live\server\system\Runtime.php(16): system\util\Path::requireFunction(NULL, NULL, 'C:\\terminal\\liv...', 'routes.php')
+#2 C:\terminal\live\server\system\Ambue.php(15): system\Runtime->__construct()
+#3 C:\terminal\live\server\system\Ambue.php(21): system\Ambue->__construct()
+#4 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\system\util\Path.php on line 15
+[13-Sep-2018 23:48:27 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Undefined constant 'system\system\Navigator' in C:\terminal\live\server\system\Runtime.php:16
+Stack trace:
+#0 C:\terminal\live\server\system\Ambue.php(15): system\Runtime->__construct()
+#1 C:\terminal\live\server\system\Ambue.php(21): system\Ambue->__construct()
+#2 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#3 {main}
+  thrown in C:\terminal\live\server\system\Runtime.php on line 16
+[13-Sep-2018 23:48:34 America/Sao_Paulo] PHP Warning:  Use of undefined constant Navigator - assumed 'Navigator' (this will throw an Error in a future version of PHP) in C:\terminal\live\server\system\Runtime.php on line 16
+[13-Sep-2018 23:48:34 America/Sao_Paulo] PHP Warning:  require_once(C:\terminal\live\server\Navigator.php): failed to open stream: No such file or directory in C:\terminal\live\server\system\php\autoload.php on line 4
+[13-Sep-2018 23:48:34 America/Sao_Paulo] PHP Fatal error:  require_once(): Failed opening required 'C:\terminal\live\server\Navigator.php' (include_path='.;C:\php\pear') in C:\terminal\live\server\system\php\autoload.php on line 4
+[13-Sep-2018 23:50:36 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method stdClass::routes() in C:\terminal\live\server\system\Ambue.php:18
+Stack trace:
+#0 C:\terminal\live\server\system\Ambue.php(23): system\Ambue->__construct()
+#1 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#2 {main}
+  thrown in C:\terminal\live\server\system\Ambue.php on line 18
+[13-Sep-2018 23:55:12 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in C:\terminal\live\server\applications\example\routes.php on line 2
+[14-Sep-2018 00:06:28 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method system\Navigator::regex() in C:\terminal\live\server\applications\example\routes.php:6
+Stack trace:
+#0 C:\terminal\live\server\system\Ambue.php(15): system\Navigator->{closure}(Object(system\Ambue))
+#1 C:\terminal\live\server\system\Ambue.php(20): system\Ambue->__construct()
+#2 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#3 {main}
+  thrown in C:\terminal\live\server\applications\example\routes.php on line 6
+[14-Sep-2018 00:13:05 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined function C:\terminal\live\server\applications\example\routes.php() in C:\terminal\live\server\system\Ambue.php:15
+Stack trace:
+#0 C:\terminal\live\server\system\Ambue.php(20): system\Ambue->__construct()
+#1 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#2 {main}
+  thrown in C:\terminal\live\server\system\Ambue.php on line 15
+[14-Sep-2018 00:20:32 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function system\Navigator::{closure}(), 0 passed in C:\terminal\live\server\system\Navigator.php on line 11 and exactly 1 expected in C:\terminal\live\server\applications\example\routes.php:1
+Stack trace:
+#0 C:\terminal\live\server\system\Navigator.php(11): system\Navigator->{closure}()
+#1 C:\terminal\live\server\system\Ambue.php(12): system\Navigator->__construct(Object(system\Ambue))
+#2 C:\terminal\live\server\system\Ambue.php(16): system\Ambue->__construct()
+#3 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#4 {main}
+  thrown in C:\terminal\live\server\applications\example\routes.php on line 1
+[14-Sep-2018 07:50:57 America/Sao_Paulo] PHP Warning:  include(teste.php): failed to open stream: No such file or directory in C:\terminal\live\server\applications\example\routes.php on line 6
+[14-Sep-2018 07:50:57 America/Sao_Paulo] PHP Warning:  include(): Failed opening 'teste.php' for inclusion (include_path='.;C:\php\pear') in C:\terminal\live\server\applications\example\routes.php on line 6
+[14-Sep-2018 07:50:57 America/Sao_Paulo] PHP Notice:  Undefined property: system\Runtime::$app in C:\terminal\live\server\system\Navigator.php on line 19
+[14-Sep-2018 07:50:57 America/Sao_Paulo] PHP Notice:  Trying to get property 'destination' of non-object in C:\terminal\live\server\system\Navigator.php on line 19
+[14-Sep-2018 07:50:57 America/Sao_Paulo] PHP Warning:  include(teste.php): failed to open stream: No such file or directory in C:\terminal\live\server\applications\example\routes.php on line 7
+[14-Sep-2018 07:50:57 America/Sao_Paulo] PHP Warning:  include(): Failed opening 'teste.php' for inclusion (include_path='.;C:\php\pear') in C:\terminal\live\server\applications\example\routes.php on line 7
+[14-Sep-2018 07:50:57 America/Sao_Paulo] PHP Notice:  Undefined property: system\Runtime::$app in C:\terminal\live\server\system\Navigator.php on line 19
+[14-Sep-2018 07:50:57 America/Sao_Paulo] PHP Notice:  Trying to get property 'destination' of non-object in C:\terminal\live\server\system\Navigator.php on line 19
+[14-Sep-2018 07:50:57 America/Sao_Paulo] PHP Warning:  include(teste.php): failed to open stream: No such file or directory in C:\terminal\live\server\applications\example\routes.php on line 8
+[14-Sep-2018 07:50:57 America/Sao_Paulo] PHP Warning:  include(): Failed opening 'teste.php' for inclusion (include_path='.;C:\php\pear') in C:\terminal\live\server\applications\example\routes.php on line 8
+[14-Sep-2018 07:50:57 America/Sao_Paulo] PHP Notice:  Undefined property: system\Runtime::$app in C:\terminal\live\server\system\Navigator.php on line 19
+[14-Sep-2018 07:50:57 America/Sao_Paulo] PHP Notice:  Trying to get property 'destination' of non-object in C:\terminal\live\server\system\Navigator.php on line 19
+[14-Sep-2018 07:51:55 America/Sao_Paulo] PHP Notice:  Undefined property: system\Runtime::$app in C:\terminal\live\server\system\Navigator.php on line 19
+[14-Sep-2018 07:51:55 America/Sao_Paulo] PHP Notice:  Trying to get property 'destination' of non-object in C:\terminal\live\server\system\Navigator.php on line 19
+[14-Sep-2018 07:51:55 America/Sao_Paulo] PHP Notice:  Undefined property: system\Runtime::$app in C:\terminal\live\server\system\Navigator.php on line 19
+[14-Sep-2018 07:51:55 America/Sao_Paulo] PHP Notice:  Trying to get property 'destination' of non-object in C:\terminal\live\server\system\Navigator.php on line 19
+[14-Sep-2018 07:51:55 America/Sao_Paulo] PHP Notice:  Undefined property: system\Runtime::$app in C:\terminal\live\server\system\Navigator.php on line 19
+[14-Sep-2018 07:51:55 America/Sao_Paulo] PHP Notice:  Trying to get property 'destination' of non-object in C:\terminal\live\server\system\Navigator.php on line 19
+[14-Sep-2018 07:52:35 America/Sao_Paulo] PHP Notice:  Undefined property: stdClass::$destination in C:\terminal\live\server\system\Navigator.php on line 19
+[14-Sep-2018 07:52:35 America/Sao_Paulo] PHP Notice:  Undefined property: stdClass::$destination in C:\terminal\live\server\system\Navigator.php on line 19
+[14-Sep-2018 07:52:35 America/Sao_Paulo] PHP Notice:  Undefined property: stdClass::$destination in C:\terminal\live\server\system\Navigator.php on line 19
+[14-Sep-2018 07:53:10 America/Sao_Paulo] PHP Notice:  Undefined property: stdClass::$destination in C:\terminal\live\server\system\Navigator.php on line 20
+[14-Sep-2018 07:53:10 America/Sao_Paulo] PHP Notice:  Undefined property: stdClass::$destination in C:\terminal\live\server\system\Navigator.php on line 20
+[14-Sep-2018 07:53:10 America/Sao_Paulo] PHP Notice:  Undefined property: stdClass::$destination in C:\terminal\live\server\system\Navigator.php on line 20
+[14-Sep-2018 07:53:34 America/Sao_Paulo] PHP Notice:  Undefined property: stdClass::$destination in C:\terminal\live\server\system\Navigator.php on line 20
+[14-Sep-2018 07:53:34 America/Sao_Paulo] PHP Notice:  Undefined property: stdClass::$destination in C:\terminal\live\server\system\Navigator.php on line 20
+[14-Sep-2018 07:53:34 America/Sao_Paulo] PHP Notice:  Undefined property: stdClass::$destination in C:\terminal\live\server\system\Navigator.php on line 20
+[14-Sep-2018 07:53:51 America/Sao_Paulo] PHP Notice:  Undefined property: stdClass::$destination in C:\terminal\live\server\system\Navigator.php on line 20
+[14-Sep-2018 07:53:51 America/Sao_Paulo] PHP Notice:  Undefined property: stdClass::$destination in C:\terminal\live\server\system\Navigator.php on line 20
+[14-Sep-2018 07:53:51 America/Sao_Paulo] PHP Notice:  Undefined property: stdClass::$destination in C:\terminal\live\server\system\Navigator.php on line 20
+[14-Sep-2018 07:54:16 America/Sao_Paulo] PHP Warning:  preg_match(): Delimiter must not be alphanumeric or backslash in C:\terminal\live\server\system\Navigator.php on line 20
+[14-Sep-2018 07:54:16 America/Sao_Paulo] PHP Warning:  preg_match(): Delimiter must not be alphanumeric or backslash in C:\terminal\live\server\system\Navigator.php on line 20
+[14-Sep-2018 07:54:16 America/Sao_Paulo] PHP Warning:  preg_match(): Delimiter must not be alphanumeric or backslash in C:\terminal\live\server\system\Navigator.php on line 20
+[14-Sep-2018 07:55:06 America/Sao_Paulo] PHP Warning:  Creating default object from empty value in C:\terminal\live\server\system\Navigator.php on line 21
+[14-Sep-2018 08:04:36 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']' in C:\terminal\live\server\system\Navigator.php on line 22
+[14-Sep-2018 08:07:34 America/Sao_Paulo] PHP Notice:  Undefined property: system\Ambue::$runtime in C:\terminal\live\server\system\Navigator.php on line 15
+[14-Sep-2018 08:07:34 America/Sao_Paulo] PHP Notice:  Trying to get property 'application' of non-object in C:\terminal\live\server\system\Navigator.php on line 15
+[14-Sep-2018 08:07:34 America/Sao_Paulo] PHP Notice:  Trying to get property 'routes' of non-object in C:\terminal\live\server\system\Navigator.php on line 15
+[14-Sep-2018 08:07:34 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\FileNotFound in C:\terminal\live\server\system\util\Path.php:15
+Stack trace:
+#0 C:\terminal\live\server\system\util\Path.php(20): system\util\Path::resolve(NULL)
+#1 C:\terminal\live\server\system\Navigator.php(15): system\util\Path::requireFunction(Object(system\Navigator), Object(system\Navigator), NULL)
+#2 C:\terminal\live\server\system\Ambue.php(12): system\Navigator->__construct(Object(system\Ambue))
+#3 C:\terminal\live\server\system\Ambue.php(16): system\Ambue->__construct()
+#4 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\system\util\Path.php on line 15
+[14-Sep-2018 08:18:45 America/Sao_Paulo] PHP Notice:  Undefined variable: ambue in C:\terminal\live\server\system\Navigator.php on line 14
+[14-Sep-2018 08:18:45 America/Sao_Paulo] PHP Notice:  Undefined variable: ambue in C:\terminal\live\server\system\Navigator.php on line 15
+[14-Sep-2018 08:18:45 America/Sao_Paulo] PHP Notice:  Trying to get property 'runtime' of non-object in C:\terminal\live\server\system\Navigator.php on line 15
+[14-Sep-2018 08:18:45 America/Sao_Paulo] PHP Notice:  Trying to get property 'application' of non-object in C:\terminal\live\server\system\Navigator.php on line 15
+[14-Sep-2018 08:18:45 America/Sao_Paulo] PHP Notice:  Trying to get property 'routes' of non-object in C:\terminal\live\server\system\Navigator.php on line 15
+[14-Sep-2018 08:18:45 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\FileNotFound in C:\terminal\live\server\system\util\Path.php:15
+Stack trace:
+#0 C:\terminal\live\server\system\util\Path.php(20): system\util\Path::resolve(NULL)
+#1 C:\terminal\live\server\system\Navigator.php(15): system\util\Path::requireFunction(Object(system\Navigator), Object(system\Navigator), NULL)
+#2 C:\terminal\live\server\system\Ambue.php(13): system\Navigator->__construct()
+#3 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#4 {main}
+  thrown in C:\terminal\live\server\system\util\Path.php on line 15
+[14-Sep-2018 08:19:47 America/Sao_Paulo] PHP Fatal error:  Access level to system\Navigator::$ambue must be protected (as in class system\Inject) or weaker in C:\terminal\live\server\system\Navigator.php on line 26
+[14-Sep-2018 08:20:28 America/Sao_Paulo] PHP Fatal error:  Access level to system\Navigator::$ambue must be protected (as in class system\Inject) or weaker in C:\terminal\live\server\system\Navigator.php on line 26
+[14-Sep-2018 08:20:40 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Cannot access private property system\Navigator::$ambue in C:\terminal\live\server\system\Inject.php:14
+Stack trace:
+#0 C:\terminal\live\server\system\Navigator.php(13): system\Inject->__construct()
+#1 C:\terminal\live\server\system\Ambue.php(13): system\Navigator->__construct()
+#2 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#3 {main}
+  thrown in C:\terminal\live\server\system\Inject.php on line 14
+[14-Sep-2018 08:21:10 America/Sao_Paulo] PHP Fatal error:  Access level to system\Navigator::$ambue must be public (as in class system\Inject) in C:\terminal\live\server\system\Navigator.php on line 26
+[14-Sep-2018 08:21:21 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Cannot access private property system\Navigator::$ambue in C:\terminal\live\server\system\Inject.php:13
+Stack trace:
+#0 C:\terminal\live\server\system\Navigator.php(13): system\Inject->__construct()
+#1 C:\terminal\live\server\system\Ambue.php(13): system\Navigator->__construct()
+#2 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#3 {main}
+  thrown in C:\terminal\live\server\system\Inject.php on line 13
+[14-Sep-2018 08:21:33 America/Sao_Paulo] PHP Fatal error:  Access level to system\Navigator::$ambue must be protected (as in class system\Inject) or weaker in C:\terminal\live\server\system\Navigator.php on line 26
+[14-Sep-2018 08:21:47 America/Sao_Paulo] PHP Notice:  Undefined property: system\Ambue::$runtime in C:\terminal\live\server\system\Navigator.php on line 14
+[14-Sep-2018 08:21:47 America/Sao_Paulo] PHP Notice:  Trying to get property 'application' of non-object in C:\terminal\live\server\system\Navigator.php on line 14
+[14-Sep-2018 08:21:47 America/Sao_Paulo] PHP Notice:  Trying to get property 'routes' of non-object in C:\terminal\live\server\system\Navigator.php on line 14
+[14-Sep-2018 08:21:47 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\FileNotFound in C:\terminal\live\server\system\util\Path.php:15
+Stack trace:
+#0 C:\terminal\live\server\system\util\Path.php(20): system\util\Path::resolve(NULL)
+#1 C:\terminal\live\server\system\Navigator.php(14): system\util\Path::requireFunction(Object(system\Navigator), Object(system\Navigator), NULL)
+#2 C:\terminal\live\server\system\Ambue.php(13): system\Navigator->__construct()
+#3 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#4 {main}
+  thrown in C:\terminal\live\server\system\util\Path.php on line 15
+[14-Sep-2018 08:22:25 America/Sao_Paulo] PHP Notice:  Undefined property: system\Ambue::$runtime in C:\terminal\live\server\system\Navigator.php on line 14
+[14-Sep-2018 08:22:25 America/Sao_Paulo] PHP Notice:  Trying to get property 'application' of non-object in C:\terminal\live\server\system\Navigator.php on line 14
+[14-Sep-2018 08:22:25 America/Sao_Paulo] PHP Notice:  Trying to get property 'routes' of non-object in C:\terminal\live\server\system\Navigator.php on line 14
+[14-Sep-2018 08:22:25 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\FileNotFound in C:\terminal\live\server\system\util\Path.php:15
+Stack trace:
+#0 C:\terminal\live\server\system\util\Path.php(20): system\util\Path::resolve(NULL)
+#1 C:\terminal\live\server\system\Navigator.php(14): system\util\Path::requireFunction(Object(system\Navigator), Object(system\Navigator), NULL)
+#2 C:\terminal\live\server\system\Ambue.php(13): system\Navigator->__construct()
+#3 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#4 {main}
+  thrown in C:\terminal\live\server\system\util\Path.php on line 15
+[14-Sep-2018 08:25:20 America/Sao_Paulo] PHP Notice:  Undefined property: system\Ambue::$runtime in C:\terminal\live\server\system\Navigator.php on line 14
+[14-Sep-2018 08:25:20 America/Sao_Paulo] PHP Notice:  Trying to get property 'application' of non-object in C:\terminal\live\server\system\Navigator.php on line 14
+[14-Sep-2018 08:25:20 America/Sao_Paulo] PHP Notice:  Trying to get property 'routes' of non-object in C:\terminal\live\server\system\Navigator.php on line 14
+[14-Sep-2018 08:25:20 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\FileNotFound in C:\terminal\live\server\system\util\Path.php:15
+Stack trace:
+#0 C:\terminal\live\server\system\util\Path.php(20): system\util\Path::resolve(NULL)
+#1 C:\terminal\live\server\system\Navigator.php(14): system\util\Path::requireFunction(Object(system\Navigator), Object(system\Navigator), NULL)
+#2 C:\terminal\live\server\system\Ambue.php(13): system\Navigator->__construct()
+#3 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#4 {main}
+  thrown in C:\terminal\live\server\system\util\Path.php on line 15
+[14-Sep-2018 08:28:57 America/Sao_Paulo] PHP Warning:  require_once(C:\terminal\live\server\Request.php): failed to open stream: No such file or directory in C:\terminal\live\server\system\php\autoload.php on line 4
+[14-Sep-2018 08:28:57 America/Sao_Paulo] PHP Fatal error:  require_once(): Failed opening required 'C:\terminal\live\server\Request.php' (include_path='.;C:\php\pear') in C:\terminal\live\server\system\php\autoload.php on line 4
+[14-Sep-2018 08:34:12 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in C:\terminal\live\server\system\Helper.php on line 18
+[14-Sep-2018 08:37:10 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'throw' (T_THROW) in C:\terminal\live\server\system\Helper.php on line 24
+[14-Sep-2018 08:38:12 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method system\Helper::meuHelper() in C:\terminal\live\server\applications\example\teste.php:5
+Stack trace:
+#0 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#1 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#2 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#3 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#4 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\teste.php on line 5
+[14-Sep-2018 08:38:38 America/Sao_Paulo] PHP Notice:  Undefined index: meuHelper in C:\terminal\live\server\system\Helper.php on line 24
+[14-Sep-2018 08:38:38 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\HelperNotLoaded: meuHelper in C:\terminal\live\server\system\Helper.php:26
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(5): system\Helper->__get('meuHelper')
+#1 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Helper.php on line 26
+[14-Sep-2018 08:42:20 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\HelperNotLoaded: meuHelper in C:\terminal\live\server\system\Helper.php:25
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(4): system\Helper->__call('meuHelper', Array)
+#1 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Helper.php on line 25
+[14-Sep-2018 21:45:14 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\HelperNotLoaded: meuHelper in C:\terminal\live\server\system\Helper.php:25
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(4): system\Helper->__call('meuHelper', Array)
+#1 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Helper.php on line 25
+[14-Sep-2018 22:01:05 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\HelperNotLoaded: meuHelper in C:\terminal\live\server\system\Helper.php:26
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(4): system\Helper->__call('meuHelper', Array)
+#1 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Helper.php on line 26
+[14-Sep-2018 22:01:20 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\HelperNotLoaded: meuHelper in C:\terminal\live\server\system\Helper.php:26
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(4): system\Helper->__call('meuHelper', Array)
+#1 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Helper.php on line 26
+[14-Sep-2018 22:03:19 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\HelperNotLoaded: meuHelper in C:\terminal\live\server\system\Helper.php:27
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(4): system\Helper->__call('meuHelper', Array)
+#1 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Helper.php on line 27
+[14-Sep-2018 22:03:32 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\HelperNotLoaded: meuHelper in C:\terminal\live\server\system\Helper.php:27
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(4): system\Helper->__call('meuHelper', Array)
+#1 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Helper.php on line 27
+[14-Sep-2018 22:05:35 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\HelperNotLoaded: meuHelper in C:\terminal\live\server\system\Helper.php:28
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(4): system\Helper->__call('meuHelper', Array)
+#1 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Helper.php on line 28
+[14-Sep-2018 22:05:57 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\HelperNotLoaded: meuHelper in C:\terminal\live\server\system\Helper.php:29
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(4): system\Helper->__call('meuHelper', Array)
+#1 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Helper.php on line 29
+[16-Sep-2018 15:37:12 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\HelperNotLoaded: meuHelper in C:\terminal\live\server\system\Helper.php:29
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(4): system\Helper->__call('meuHelper', Array)
+#1 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Helper.php on line 29
+[16-Sep-2018 15:41:18 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '}' in C:\terminal\live\server\system\Helper.php on line 20
+[16-Sep-2018 15:41:28 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\HelperNotLoaded: meuHelper in C:\terminal\live\server\system\Helper.php:35
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(4): system\Helper->__call('meuHelper', Array)
+#1 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Helper.php on line 35
+[16-Sep-2018 15:41:52 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\FileNotFound: C:\terminal\live\server\applications\example\helpers in C:\terminal\live\server\system\util\Path.php:15
+Stack trace:
+#0 C:\terminal\live\server\system\util\Path.php(20): system\util\Path::resolve('C:\\terminal\\liv...')
+#1 C:\terminal\live\server\system\Helper.php(19): system\util\Path::require('C:\\terminal\\liv...')
+#2 C:\terminal\live\server\applications\example\teste.php(3): system\Helper->load('meuHelper')
+#3 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#4 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#5 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#6 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#7 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#8 {main}
+  thrown in C:\terminal\live\server\system\util\Path.php on line 15
+[16-Sep-2018 15:42:06 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\FileNotFound: C:\terminal\live\server\applications\example\helpers in C:\terminal\live\server\system\util\Path.php:15
+Stack trace:
+#0 C:\terminal\live\server\system\util\Path.php(20): system\util\Path::resolve('C:\\terminal\\liv...')
+#1 C:\terminal\live\server\system\Helper.php(18): system\util\Path::require('C:\\terminal\\liv...')
+#2 C:\terminal\live\server\applications\example\teste.php(3): system\Helper->load('meuHelper')
+#3 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#4 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#5 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#6 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#7 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#8 {main}
+  thrown in C:\terminal\live\server\system\util\Path.php on line 15
+[16-Sep-2018 15:42:25 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\HelperNotLoaded: meuHelper in C:\terminal\live\server\system\Helper.php:35
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(4): system\Helper->__call('meuHelper', Array)
+#1 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Helper.php on line 35
+[16-Sep-2018 15:43:21 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\FileNotFound: C:\terminal\live\server\system\helpers\meuHelper in C:\terminal\live\server\system\util\Path.php:15
+Stack trace:
+#0 C:\terminal\live\server\system\util\Path.php(20): system\util\Path::resolve('C:\\terminal\\liv...', 'meuHelper')
+#1 C:\terminal\live\server\system\Helper.php(21): system\util\Path::require('C:\\terminal\\liv...', 'meuHelper')
+#2 C:\terminal\live\server\applications\example\teste.php(3): system\Helper->load('meuHelper')
+#3 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#4 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#5 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#6 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#7 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#8 {main}
+  thrown in C:\terminal\live\server\system\util\Path.php on line 15
+[16-Sep-2018 15:43:29 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\FileNotFound: C:\terminal\live\server\system\helpers\meuHelper in C:\terminal\live\server\system\util\Path.php:15
+Stack trace:
+#0 C:\terminal\live\server\system\util\Path.php(20): system\util\Path::resolve('C:\\terminal\\liv...', 'meuHelper')
+#1 C:\terminal\live\server\system\Helper.php(21): system\util\Path::require('C:\\terminal\\liv...', 'meuHelper')
+#2 C:\terminal\live\server\applications\example\teste.php(3): system\Helper->load('meuHelper')
+#3 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#4 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#5 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#6 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#7 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#8 {main}
+  thrown in C:\terminal\live\server\system\util\Path.php on line 15
+[16-Sep-2018 15:44:42 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\FileNotFound: C:\terminal\live\server\system\helpers\meuHelper in C:\terminal\live\server\system\util\Path.php:15
+Stack trace:
+#0 C:\terminal\live\server\system\util\Path.php(20): system\util\Path::resolve('C:\\terminal\\liv...', 'meuHelper')
+#1 C:\terminal\live\server\system\Helper.php(21): system\util\Path::require('C:\\terminal\\liv...', 'meuHelper')
+#2 C:\terminal\live\server\applications\example\teste.php(3): system\Helper->load('meuHelper')
+#3 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#4 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#5 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#6 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#7 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#8 {main}
+  thrown in C:\terminal\live\server\system\util\Path.php on line 15
+[16-Sep-2018 15:44:58 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\HelperNotLoaded: meuHelper in C:\terminal\live\server\system\Helper.php:35
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(4): system\Helper->__call('meuHelper', Array)
+#1 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Helper.php on line 35
+[16-Sep-2018 15:45:09 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\HelperNotLoaded: meuHelper in C:\terminal\live\server\system\Helper.php:35
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(4): system\Helper->__call('meuHelper', Array)
+#1 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Helper.php on line 35
+[16-Sep-2018 15:48:21 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Function name must be a string in C:\terminal\live\server\system\Helper.php:26
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(3): system\Helper->load('teste-object')
+#1 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Helper.php on line 26
+[16-Sep-2018 15:48:36 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Function name must be a string in C:\terminal\live\server\system\Helper.php:26
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(3): system\Helper->load('teste-object')
+#1 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Helper.php on line 26
+[16-Sep-2018 15:48:44 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Function name must be a string in C:\terminal\live\server\system\Helper.php:26
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(3): system\Helper->load('teste-object')
+#1 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Helper.php on line 26
+[16-Sep-2018 15:52:10 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined function system\is_function() in C:\terminal\live\server\system\Helper.php:26
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(3): system\Helper->load('teste-function')
+#1 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Helper.php on line 26
+[16-Sep-2018 16:09:16 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\FileNotFound: C:\terminal\live\server\system\helpers\teste-functionA.php in C:\terminal\live\server\system\util\Path.php:15
+Stack trace:
+#0 C:\terminal\live\server\system\util\Path.php(20): system\util\Path::resolve('C:\\terminal\\liv...', 'teste-functionA...')
+#1 C:\terminal\live\server\system\Helper.php(21): system\util\Path::require('C:\\terminal\\liv...', 'teste-functionA...')
+#2 C:\terminal\live\server\applications\example\teste.php(3): system\Helper->load('teste-functionA')
+#3 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#4 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#5 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#6 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#7 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#8 {main}
+  thrown in C:\terminal\live\server\system\util\Path.php on line 15
+[16-Sep-2018 16:10:01 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\FileNotFound: C:\terminal\live\server\system\helpers\teste-functionA.php in C:\terminal\live\server\system\util\Path.php:15
+Stack trace:
+#0 C:\terminal\live\server\system\util\Path.php(20): system\util\Path::resolve('C:\\terminal\\liv...', 'teste-functionA...')
+#1 C:\terminal\live\server\system\Helper.php(21): system\util\Path::require('C:\\terminal\\liv...', 'teste-functionA...')
+#2 C:\terminal\live\server\applications\example\teste.php(3): system\Helper->load('teste-functionA')
+#3 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#4 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#5 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#6 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#7 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#8 {main}
+  thrown in C:\terminal\live\server\system\util\Path.php on line 15
+[16-Sep-2018 16:20:54 America/Sao_Paulo] PHP Fatal error:  Cannot use try without catch or finally in C:\terminal\live\server\system\Helper.php on line 28
+[16-Sep-2018 16:21:11 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method system\util\Path::fisrtFound() in C:\terminal\live\server\system\Helper.php:18
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(3): system\Helper->load('teste-functionA')
+#1 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Helper.php on line 18
+[16-Sep-2018 16:21:34 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method system\util\Path::fisrtFound() in C:\terminal\live\server\system\Helper.php:18
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(4): system\Helper->load('teste-function')
+#1 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Helper.php on line 18
+[16-Sep-2018 16:22:25 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\FileNotFound: C:\terminal\live\server\system\helpers in C:\terminal\live\server\system\util\Path.php:15
+Stack trace:
+#0 C:\terminal\live\server\system\Runtime.php(25): system\util\Path::resolve('C:\\terminal\\liv...')
+#1 C:\terminal\live\server\system\Ambue.php(15): system\Runtime->__construct()
+#2 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#3 {main}
+  thrown in C:\terminal\live\server\system\util\Path.php on line 15
+[16-Sep-2018 16:23:34 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\FileNotFound: C:\terminal\live\server\system\helpers in C:\terminal\live\server\system\util\Path.php:15
+Stack trace:
+#0 C:\terminal\live\server\system\Runtime.php(25): system\util\Path::resolve('C:\\terminal\\liv...')
+#1 C:\terminal\live\server\system\Ambue.php(15): system\Runtime->__construct()
+#2 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#3 {main}
+  thrown in C:\terminal\live\server\system\util\Path.php on line 15
+[16-Sep-2018 16:23:58 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\FileNotFound: C:\terminal\live\server\system\helpers in C:\terminal\live\server\system\util\Path.php:15
+Stack trace:
+#0 C:\terminal\live\server\system\Runtime.php(25): system\util\Path::resolve('C:\\terminal\\liv...')
+#1 C:\terminal\live\server\system\Ambue.php(15): system\Runtime->__construct()
+#2 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#3 {main}
+  thrown in C:\terminal\live\server\system\util\Path.php on line 15
+[16-Sep-2018 16:24:18 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\FileNotFound: C:\terminal\live\server\system\helpers in C:\terminal\live\server\system\util\Path.php:15
+Stack trace:
+#0 C:\terminal\live\server\system\Runtime.php(25): system\util\Path::resolve('C:\\terminal\\liv...')
+#1 C:\terminal\live\server\system\Ambue.php(15): system\Runtime->__construct()
+#2 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#3 {main}
+  thrown in C:\terminal\live\server\system\util\Path.php on line 15
+[16-Sep-2018 16:24:30 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\FileNotFound: C:\terminal\live\server\system\helpers in C:\terminal\live\server\system\util\Path.php:15
+Stack trace:
+#0 C:\terminal\live\server\system\Runtime.php(25): system\util\Path::resolve('C:\\terminal\\liv...')
+#1 C:\terminal\live\server\system\Ambue.php(15): system\Runtime->__construct()
+#2 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#3 {main}
+  thrown in C:\terminal\live\server\system\util\Path.php on line 15
+[16-Sep-2018 16:25:42 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\FileNotFound: C:\terminal\live\server\system\helpers in C:\terminal\live\server\system\util\Path.php:15
+Stack trace:
+#0 C:\terminal\live\server\system\Runtime.php(25): system\util\Path::resolve('C:\\terminal\\liv...')
+#1 C:\terminal\live\server\system\Ambue.php(15): system\Runtime->__construct()
+#2 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#3 {main}
+  thrown in C:\terminal\live\server\system\util\Path.php on line 15
+[16-Sep-2018 16:28:24 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\FileNotFound: C:\terminal\live\server\system\helpers in C:\terminal\live\server\system\util\Path.php:15
+Stack trace:
+#0 C:\terminal\live\server\system\Runtime.php(25): system\util\Path::resolve('C:\\terminal\\liv...')
+#1 C:\terminal\live\server\system\Ambue.php(15): system\Runtime->__construct()
+#2 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#3 {main}
+  thrown in C:\terminal\live\server\system\util\Path.php on line 15
+[16-Sep-2018 16:30:07 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\FileNotFound: C:\terminal\live\server\system\helpers in C:\terminal\live\server\system\util\Path.php:15
+Stack trace:
+#0 C:\terminal\live\server\system\Runtime.php(25): system\util\Path::resolve('C:\\terminal\\liv...')
+#1 C:\terminal\live\server\system\Ambue.php(15): system\Runtime->__construct()
+#2 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#3 {main}
+  thrown in C:\terminal\live\server\system\util\Path.php on line 15
+[16-Sep-2018 16:41:06 America/Sao_Paulo] PHP Fatal error:  Cannot redeclare system\util\Path::require() in C:\terminal\live\server\system\util\Path.php on line 23
+[16-Sep-2018 16:58:28 America/Sao_Paulo] PHP Warning:  Use of undefined constant DIRECTORY_SEPARRATOR - assumed 'DIRECTORY_SEPARRATOR' (this will throw an Error in a future version of PHP) in C:\terminal\live\server\system\Helper.php on line 18
+[16-Sep-2018 18:21:48 America/Sao_Paulo] PHP Warning:  implode(): Invalid arguments passed in C:\terminal\live\server\system\util\Path.php on line 39
+[16-Sep-2018 18:21:48 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\FilesNotFound in C:\terminal\live\server\system\util\Path.php:39
+Stack trace:
+#0 C:\terminal\live\server\system\Helper.php(21): system\util\Path::firstFound('C:\\terminal\\liv...', 'C:\\terminal\\liv...')
+#1 C:\terminal\live\server\applications\example\teste.php(3): system\Helper->load('teste-functionA')
+#2 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#3 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#4 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#5 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#6 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#7 {main}
+  thrown in C:\terminal\live\server\system\util\Path.php on line 39
+[16-Sep-2018 18:22:03 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\FilesNotFound: C:\terminal\live\server\applications\example\helpers\teste-functionA.php, C:\terminal\live\server\system\helpers\teste-functionA.php in C:\terminal\live\server\system\util\Path.php:39
+Stack trace:
+#0 C:\terminal\live\server\system\Helper.php(21): system\util\Path::firstFound('C:\\terminal\\liv...', 'C:\\terminal\\liv...')
+#1 C:\terminal\live\server\applications\example\teste.php(3): system\Helper->load('teste-functionA')
+#2 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#3 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#4 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#5 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#6 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#7 {main}
+  thrown in C:\terminal\live\server\system\util\Path.php on line 39
+[16-Sep-2018 18:25:37 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\FilesNotFound: C:\terminal\live\server\applications\example\helpers\teste-functionA.php, C:\terminal\live\server\system\helpers\teste-functionA.php in C:\terminal\live\server\system\util\Path.php:39
+Stack trace:
+#0 C:\terminal\live\server\system\Helper.php(21): system\util\Path::firstFound('C:\\terminal\\liv...', 'C:\\terminal\\liv...')
+#1 C:\terminal\live\server\applications\example\teste.php(3): system\Helper->load('teste-functionA')
+#2 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#3 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#4 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#5 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#6 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#7 {main}
+  thrown in C:\terminal\live\server\system\util\Path.php on line 39
+[16-Sep-2018 18:28:34 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\FilesNotFound: C:\terminal\live\server\applications\example\helpers\teste-functionA.php, C:\terminal\live\server\system\helpers\teste-functionA.php in C:\terminal\live\server\system\util\Path.php:39
+Stack trace:
+#0 C:\terminal\live\server\system\Helper.php(21): system\util\Path::firstFound('C:\\terminal\\liv...', 'C:\\terminal\\liv...')
+#1 C:\terminal\live\server\applications\example\teste.php(3): system\Helper->load('teste-functionA')
+#2 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#3 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#4 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#5 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#6 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#7 {main}
+  thrown in C:\terminal\live\server\system\util\Path.php on line 39
+[17-Sep-2018 14:04:19 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method system\Ambue::helper() in C:\terminal\live\server\applications\example\teste.php:6
+Stack trace:
+#0 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#1 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#2 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#3 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#4 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\teste.php on line 6
+[17-Sep-2018 14:04:45 America/Sao_Paulo] PHP Fatal error:  Method system\Helper::__call() must take exactly 2 arguments in C:\terminal\live\server\system\Helper.php on line 35
+[17-Sep-2018 14:04:54 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method system\Ambue::helper() in C:\terminal\live\server\applications\example\teste.php:6
+Stack trace:
+#0 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#1 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#2 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#3 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#4 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\teste.php on line 6
+[17-Sep-2018 14:05:56 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method system\Ambue::helper() in C:\terminal\live\server\applications\example\teste.php:6
+Stack trace:
+#0 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#1 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#2 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#3 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#4 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\teste.php on line 6
+[17-Sep-2018 14:06:46 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method system\Ambue::helper() in C:\terminal\live\server\applications\example\teste.php:6
+Stack trace:
+#0 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#1 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#2 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#3 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#4 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\teste.php on line 6
+[17-Sep-2018 14:07:57 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method system\Ambue::helper() in C:\terminal\live\server\applications\example\teste.php:6
+Stack trace:
+#0 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#1 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#2 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#3 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#4 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\teste.php on line 6
+[17-Sep-2018 14:10:22 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method system\Helper::teste-function() in C:\terminal\live\server\applications\example\teste.php:6
+Stack trace:
+#0 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#1 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#2 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#3 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#4 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\teste.php on line 6
+[17-Sep-2018 14:11:56 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Function name must be a string in C:\terminal\live\server\system\Helper.php:30
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(8): system\Helper->__call('teste-object', Array)
+#1 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Helper.php on line 30
+[17-Sep-2018 14:12:35 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'do' (T_DO), expecting function (T_FUNCTION) or const (T_CONST) in C:\terminal\live\server\system\helpers\teste-object.php on line 6
+[17-Sep-2018 14:12:43 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'test' (T_STRING), expecting function (T_FUNCTION) or const (T_CONST) in C:\terminal\live\server\system\helpers\teste-object.php on line 6
+[17-Sep-2018 14:13:51 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Cannot use object of type system\Helper as array in C:\terminal\live\server\system\Helper.php:35
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(9): system\Helper->__get('teste-object')
+#1 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Helper.php on line 35
+[17-Sep-2018 14:14:07 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Cannot use object of type system\Helper as array in C:\terminal\live\server\system\Helper.php:35
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(9): system\Helper->__get('teste-object')
+#1 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Helper.php on line 35
+[17-Sep-2018 14:15:31 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Cannot use object of type Closure as array in C:\terminal\live\server\applications\example\teste.php:12
+Stack trace:
+#0 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#1 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#2 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#3 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#4 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\teste.php on line 12
+[17-Sep-2018 14:16:26 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\HelperNotLoaded: teste-function in C:\terminal\live\server\system\Helper.php:29
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(7): system\Helper->__call('teste-function', Array)
+#1 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Helper.php on line 29
+[17-Sep-2018 15:49:18 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method class@anonymous::do() in C:\terminal\live\server\applications\example\teste.php:14
+Stack trace:
+#0 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#1 C:\terminal\live\server\applications\example\routes.php(8): system\Navigator->regex('{/\\w+/(?<nome>\\...', Object(Closure))
+#2 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#3 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#4 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\teste.php on line 14

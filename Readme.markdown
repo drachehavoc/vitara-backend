@@ -1,0 +1,14 @@
+- main.php
+ - configura constantes inclui/injeta o arquivo **Ambue.php**
+   - inclui/injeta arquivos de confugurações do PHP
+   - cria objeto **Ambue**
+     - cria objeto **Request** contendo dados da requisição
+     - cria objeto **Runtime** 
+       - carrega nome da aplicação atual
+       - carrega arquivo de entrada **gates.php**
+       - carrega caminho da função de rota da aplicação atual **routes.php**
+     - cria objeto **Navigator**
+       - executa a função de rota no contexto do objeto Navigator
+       - cria função de carregamento de rota, baseada no objeto Request e Runtime
+         - executa aquivo endpoint
+       - cria função de carregamento de funções de ajuda
