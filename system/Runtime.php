@@ -10,18 +10,22 @@ class Runtime extends Inject
     {
         Parent::__construct();
 
-        $gates     = require AMBUE_FILE_GATES;
-        $appName   = $gates[$_SERVER['HTTP_HOST']] ?? AMBUE_DEFAULT_APP;
-        $appPath   = Path::resolve(AMBUE_DIR_APPLICATIONS, $appName);
+        $gates   = require AMBUE_FILE_GATES;
+        $appName = $gates[$_SERVER['HTTP_HOST']] ?? AMBUE_DEFAULT_APP;
+        $appPath = Path::resolve(AMBUE_DIR_APPLICATIONS, $appName);
 
         $this->application = (Object)[
-            'name'    => $appName,
-            'path'    => $appPath,
-            'routes'  => Path::resolve($appPath, 'routes.php'),
-            'helpers' => Path::join($appPath, 'helpers')
+            'name'           => $appName,
+            'path'           => $appPath,
+            'routes'         => Path::resolve($appPath, 'routes.php'),
+            'helpers'        => Path::join($appPath, 'helpers'),
+            'configurations' => Path::join($appPath, 'configurations'),
+            'types'          => Path::join($appPath, 'types'),
         ];
 
-        $this->gates   = $gates;
-        $this->helpers = Path::resolve(AMBUE_DIR_HELPERS);
+        $this->gates          = $gates;
+        $this->helpers        = Path::resolve(AMBUE_DIR_HELPERS);
+        $this->configurations = Path::resolve(AMBUE_DIR_CONFIGURATIONS);
+        $this->types          = Path::resolve(AMBUE_DIR_TYPES);
     }
 }

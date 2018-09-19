@@ -697,3 +697,270 @@ Stack trace:
 #4 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
 #5 {main}
   thrown in C:\terminal\live\server\applications\example\teste.php on line 14
+[17-Sep-2018 16:43:58 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in C:\terminal\live\server\system\Runtime.php on line 22
+[17-Sep-2018 16:44:29 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in C:\terminal\live\server\applications\example\routes.php on line 9
+[18-Sep-2018 19:48:05 America/Sao_Paulo] PHP Notice:  Undefined index: custom-name in C:\terminal\live\server\system\Helper.php on line 21
+[18-Sep-2018 19:48:05 America/Sao_Paulo] PHP Notice:  Undefined index: teste-function in C:\terminal\live\server\system\Helper.php on line 21
+[18-Sep-2018 19:48:05 America/Sao_Paulo] PHP Notice:  Undefined index: teste-object in C:\terminal\live\server\system\Helper.php on line 21
+[18-Sep-2018 19:50:38 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Using $this when not in object context in C:\terminal\live\server\applications\example\helpers\teste-function.php:4
+Stack trace:
+#0 C:\terminal\live\server\system\Helper.php(37): system\util\Path::{closure}()
+#1 C:\terminal\live\server\applications\example\teste.php(8): system\Helper->__call('custom-name', Array)
+#2 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#3 C:\terminal\live\server\applications\example\routes.php(6): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure), true)
+#4 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#5 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#6 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#7 {main}
+  thrown in C:\terminal\live\server\applications\example\helpers\teste-function.php on line 4
+[18-Sep-2018 19:51:39 America/Sao_Paulo] PHP Warning:  Closure::bind() expects parameter 1 to be Closure, object given in C:\terminal\live\server\system\Helper.php on line 30
+[18-Sep-2018 19:52:39 America/Sao_Paulo] PHP Warning:  Closure::bind() expects parameter 1 to be Closure, object given in C:\terminal\live\server\system\Helper.php on line 30
+[18-Sep-2018 19:58:36 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE), expecting identifier (T_STRING) or namespace (T_NAMESPACE) or \\ (T_NS_SEPARATOR) in C:\terminal\live\server\applications\example\helpers\teste-object.php on line 1
+[18-Sep-2018 20:03:13 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method class@anonymous::aaa() in C:\terminal\live\server\applications\example\teste.php:4
+Stack trace:
+#0 C:\terminal\live\server\system\Navigator.php(21): Closure->{closure}()
+#1 C:\terminal\live\server\applications\example\routes.php(6): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure), true)
+#2 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#3 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#4 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\teste.php on line 4
+[18-Sep-2018 20:06:10 America/Sao_Paulo] PHP Notice:  Undefined variable: system in C:\terminal\live\server\applications\example\routes.php on line 2
+[18-Sep-2018 20:09:06 America/Sao_Paulo] PHP Notice:  Undefined property: system\Request::$search in C:\terminal\live\server\system\helpers\relational.php on line 10
+[18-Sep-2018 20:29:58 America/Sao_Paulo] PHP Notice:  Trying to get property 'matches' of non-object in C:\terminal\live\server\system\helpers\relational.php on line 11
+[18-Sep-2018 20:29:58 America/Sao_Paulo] PHP Warning:  array_intersect_key(): Argument #1 is not an array in C:\terminal\live\server\system\helpers\relational.php on line 11
+[18-Sep-2018 20:30:40 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in C:\terminal\live\server\system\Navigator.php on line 20
+[18-Sep-2018 20:31:00 America/Sao_Paulo] PHP Notice:  Undefined property: system\Request::$navigator in C:\terminal\live\server\system\helpers\relational.php on line 10
+[18-Sep-2018 20:31:00 America/Sao_Paulo] PHP Notice:  Undefined property: system\Request::$navigator in C:\terminal\live\server\system\helpers\relational.php on line 11
+[18-Sep-2018 20:31:00 America/Sao_Paulo] PHP Notice:  Trying to get property 'matches' of non-object in C:\terminal\live\server\system\helpers\relational.php on line 11
+[18-Sep-2018 20:31:00 America/Sao_Paulo] PHP Warning:  array_intersect_key(): Argument #1 is not an array in C:\terminal\live\server\system\helpers\relational.php on line 11
+[18-Sep-2018 20:35:36 America/Sao_Paulo] PHP Warning:  array_merge_recursive(): Argument #2 is not an array in C:\terminal\live\server\system\helpers\relational.php on line 12
+[18-Sep-2018 22:02:03 America/Sao_Paulo] PHP Warning:  Use of undefined constant int - assumed 'int' (this will throw an Error in a future version of PHP) in C:\terminal\live\server\applications\example\teste.php on line 6
+[18-Sep-2018 22:26:44 America/Sao_Paulo] PHP Notice:  Undefined property: system\Ambue::$type in C:\terminal\live\server\applications\example\teste.php on line 6
+[18-Sep-2018 22:26:44 America/Sao_Paulo] PHP Notice:  Trying to get property 'string' of non-object in C:\terminal\live\server\applications\example\teste.php on line 6
+[18-Sep-2018 22:27:47 America/Sao_Paulo] PHP Notice:  Undefined property: system\Ambue::$type in C:\terminal\live\server\applications\example\teste.php on line 6
+[18-Sep-2018 22:27:47 America/Sao_Paulo] PHP Notice:  Trying to get property 'string' of non-object in C:\terminal\live\server\applications\example\teste.php on line 6
+[18-Sep-2018 22:37:39 America/Sao_Paulo] PHP Notice:  Undefined property: system\Ambue::$input in C:\terminal\live\server\applications\example\teste.php on line 4
+[18-Sep-2018 22:37:39 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function check() on null in C:\terminal\live\server\applications\example\teste.php:4
+Stack trace:
+#0 C:\terminal\live\server\system\Navigator.php(22): Closure->{closure}()
+#1 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure), true)
+#2 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#3 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#4 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\teste.php on line 4
+[18-Sep-2018 22:38:00 America/Sao_Paulo] PHP Notice:  Undefined property: system\Ambue::$input in C:\terminal\live\server\applications\example\teste.php on line 4
+[18-Sep-2018 22:38:00 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function check() on null in C:\terminal\live\server\applications\example\teste.php:4
+Stack trace:
+#0 C:\terminal\live\server\system\Navigator.php(22): Closure->{closure}()
+#1 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure), true)
+#2 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#3 C:\terminal\live\server\system\Ambue.php(17): system\Navigator->__construct()
+#4 C:\terminal\live\server\main.php(32): require('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\teste.php on line 4
+[18-Sep-2018 22:38:44 America/Sao_Paulo] PHP Fatal error:  Cannot declare class system\Helper, because the name is already in use in C:\terminal\live\server\system\Input.php on line 41
+[19-Sep-2018 10:05:37 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ''types'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in C:\terminal\live\server\system\Runtime.php on line 23
+[19-Sep-2018 10:05:57 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\FileNotFound: C:\terminal\live\server\types in C:\terminal\live\server\system\util\Path.php:15
+Stack trace:
+#0 C:\terminal\live\server\system\Runtime.php(29): system\util\Path::resolve('C:\\terminal\\liv...')
+#1 C:\terminal\live\server\system\Ambue.php(15): system\Runtime->__construct()
+#2 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#3 {main}
+  thrown in C:\terminal\live\server\system\util\Path.php on line 15
+[19-Sep-2018 10:05:58 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\FileNotFound: C:\terminal\live\server\types in C:\terminal\live\server\system\util\Path.php:15
+Stack trace:
+#0 C:\terminal\live\server\system\Runtime.php(29): system\util\Path::resolve('C:\\terminal\\liv...')
+#1 C:\terminal\live\server\system\Ambue.php(15): system\Runtime->__construct()
+#2 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#3 {main}
+  thrown in C:\terminal\live\server\system\util\Path.php on line 15
+[19-Sep-2018 10:05:59 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\FileNotFound: C:\terminal\live\server\types in C:\terminal\live\server\system\util\Path.php:15
+Stack trace:
+#0 C:\terminal\live\server\system\Runtime.php(29): system\util\Path::resolve('C:\\terminal\\liv...')
+#1 C:\terminal\live\server\system\Ambue.php(15): system\Runtime->__construct()
+#2 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#3 {main}
+  thrown in C:\terminal\live\server\system\util\Path.php on line 15
+[19-Sep-2018 10:06:05 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\FileNotFound: C:\terminal\live\server\types in C:\terminal\live\server\system\util\Path.php:15
+Stack trace:
+#0 C:\terminal\live\server\system\Runtime.php(29): system\util\Path::resolve('C:\\terminal\\liv...')
+#1 C:\terminal\live\server\system\Ambue.php(15): system\Runtime->__construct()
+#2 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#3 {main}
+  thrown in C:\terminal\live\server\system\util\Path.php on line 15
+[19-Sep-2018 10:06:36 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\FileNotFound: C:\terminal\live\server\types in C:\terminal\live\server\system\util\Path.php:15
+Stack trace:
+#0 C:\terminal\live\server\system\Runtime.php(29): system\util\Path::resolve('C:\\terminal\\liv...')
+#1 C:\terminal\live\server\system\Ambue.php(15): system\Runtime->__construct()
+#2 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#3 {main}
+  thrown in C:\terminal\live\server\system\util\Path.php on line 15
+[19-Sep-2018 10:08:25 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\FilesNotFound: C:\terminal\live\server\applications\example\types\string.php, C:\terminal\live\server\system\types\string.php in C:\terminal\live\server\system\util\Path.php:39
+Stack trace:
+#0 C:\terminal\live\server\system\Input.php(26): system\util\Path::firstFound('C:\\terminal\\liv...', 'C:\\terminal\\liv...')
+#1 C:\terminal\live\server\system\Input.php(39): system\Input->load('string')
+#2 C:\terminal\live\server\applications\example\teste.php(4): system\Input->check('nome', true, true, 'string', 'params', 'to', 'type')
+#3 C:\terminal\live\server\system\Navigator.php(22): Closure->{closure}()
+#4 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure), true)
+#5 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#6 C:\terminal\live\server\system\Ambue.php(18): system\Navigator->__construct()
+#7 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#8 {main}
+  thrown in C:\terminal\live\server\system\util\Path.php on line 39
+[19-Sep-2018 10:08:53 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\InconsistentType: string in C:\terminal\live\server\system\Input.php:34
+Stack trace:
+#0 C:\terminal\live\server\system\Input.php(39): system\Input->load('string')
+#1 C:\terminal\live\server\applications\example\teste.php(4): system\Input->check('nome', true, true, 'string', 'params', 'to', 'type')
+#2 C:\terminal\live\server\system\Navigator.php(22): Closure->{closure}()
+#3 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure), true)
+#4 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#5 C:\terminal\live\server\system\Ambue.php(18): system\Navigator->__construct()
+#6 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#7 {main}
+  thrown in C:\terminal\live\server\system\Input.php on line 34
+[19-Sep-2018 10:10:51 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '{' in C:\terminal\live\server\system\Input.php on line 39
+[19-Sep-2018 10:11:16 America/Sao_Paulo] PHP Warning:  Illegal offset type in isset or empty in C:\terminal\live\server\system\Input.php on line 20
+[19-Sep-2018 10:11:16 America/Sao_Paulo] PHP Notice:  Undefined variable: context in C:\terminal\live\server\system\Input.php on line 32
+[19-Sep-2018 10:11:16 America/Sao_Paulo] PHP Warning:  Illegal offset type in C:\terminal\live\server\system\Input.php on line 32
+[19-Sep-2018 10:27:57 America/Sao_Paulo] PHP Notice:  Undefined variable: ambue in C:\terminal\live\server\system\Navigator.php on line 23
+[19-Sep-2018 10:27:57 America/Sao_Paulo] PHP Notice:  Trying to get property 'request' of non-object in C:\terminal\live\server\system\Navigator.php on line 23
+[19-Sep-2018 10:27:57 America/Sao_Paulo] PHP Notice:  Trying to get property 'matches' of non-object in C:\terminal\live\server\system\Navigator.php on line 23
+[19-Sep-2018 10:27:57 America/Sao_Paulo] PHP Notice:  Undefined variable: ambue in C:\terminal\live\server\system\Navigator.php on line 24
+[19-Sep-2018 10:27:57 America/Sao_Paulo] PHP Notice:  Trying to get property 'request' of non-object in C:\terminal\live\server\system\Navigator.php on line 24
+[19-Sep-2018 10:27:57 America/Sao_Paulo] PHP Notice:  Trying to get property 'query' of non-object in C:\terminal\live\server\system\Navigator.php on line 24
+[19-Sep-2018 10:27:57 America/Sao_Paulo] PHP Warning:  array_merge_recursive(): Argument #1 is not an array in C:\terminal\live\server\system\Navigator.php on line 24
+[19-Sep-2018 10:30:22 America/Sao_Paulo] PHP Notice:  Undefined variable: ambue in C:\terminal\live\server\system\Navigator.php on line 23
+[19-Sep-2018 10:30:22 America/Sao_Paulo] PHP Notice:  Trying to get property 'request' of non-object in C:\terminal\live\server\system\Navigator.php on line 23
+[19-Sep-2018 10:30:22 America/Sao_Paulo] PHP Notice:  Trying to get property 'matches' of non-object in C:\terminal\live\server\system\Navigator.php on line 23
+[19-Sep-2018 10:30:22 America/Sao_Paulo] PHP Notice:  Undefined variable: ambue in C:\terminal\live\server\system\Navigator.php on line 24
+[19-Sep-2018 10:30:22 America/Sao_Paulo] PHP Notice:  Trying to get property 'request' of non-object in C:\terminal\live\server\system\Navigator.php on line 24
+[19-Sep-2018 10:30:22 America/Sao_Paulo] PHP Notice:  Trying to get property 'query' of non-object in C:\terminal\live\server\system\Navigator.php on line 24
+[19-Sep-2018 10:30:22 America/Sao_Paulo] PHP Warning:  array_merge_recursive(): Argument #1 is not an array in C:\terminal\live\server\system\Navigator.php on line 24
+[19-Sep-2018 10:30:26 America/Sao_Paulo] PHP Notice:  Undefined variable: ambue in C:\terminal\live\server\system\Navigator.php on line 23
+[19-Sep-2018 10:30:26 America/Sao_Paulo] PHP Notice:  Trying to get property 'request' of non-object in C:\terminal\live\server\system\Navigator.php on line 23
+[19-Sep-2018 10:30:26 America/Sao_Paulo] PHP Notice:  Trying to get property 'matches' of non-object in C:\terminal\live\server\system\Navigator.php on line 23
+[19-Sep-2018 10:30:26 America/Sao_Paulo] PHP Notice:  Undefined variable: ambue in C:\terminal\live\server\system\Navigator.php on line 24
+[19-Sep-2018 10:30:26 America/Sao_Paulo] PHP Notice:  Trying to get property 'request' of non-object in C:\terminal\live\server\system\Navigator.php on line 24
+[19-Sep-2018 10:30:26 America/Sao_Paulo] PHP Notice:  Trying to get property 'query' of non-object in C:\terminal\live\server\system\Navigator.php on line 24
+[19-Sep-2018 10:30:26 America/Sao_Paulo] PHP Warning:  array_merge_recursive(): Argument #1 is not an array in C:\terminal\live\server\system\Navigator.php on line 24
+[19-Sep-2018 10:30:31 America/Sao_Paulo] PHP Notice:  Undefined variable: ambue in C:\terminal\live\server\system\Navigator.php on line 23
+[19-Sep-2018 10:30:31 America/Sao_Paulo] PHP Notice:  Trying to get property 'request' of non-object in C:\terminal\live\server\system\Navigator.php on line 23
+[19-Sep-2018 10:30:31 America/Sao_Paulo] PHP Notice:  Trying to get property 'matches' of non-object in C:\terminal\live\server\system\Navigator.php on line 23
+[19-Sep-2018 10:30:31 America/Sao_Paulo] PHP Notice:  Undefined variable: ambue in C:\terminal\live\server\system\Navigator.php on line 24
+[19-Sep-2018 10:30:31 America/Sao_Paulo] PHP Notice:  Trying to get property 'request' of non-object in C:\terminal\live\server\system\Navigator.php on line 24
+[19-Sep-2018 10:30:31 America/Sao_Paulo] PHP Notice:  Trying to get property 'query' of non-object in C:\terminal\live\server\system\Navigator.php on line 24
+[19-Sep-2018 10:30:31 America/Sao_Paulo] PHP Warning:  array_merge_recursive(): Argument #1 is not an array in C:\terminal\live\server\system\Navigator.php on line 24
+[19-Sep-2018 10:30:53 America/Sao_Paulo] PHP Notice:  Undefined variable: ambue in C:\terminal\live\server\system\Navigator.php on line 24
+[19-Sep-2018 10:30:53 America/Sao_Paulo] PHP Notice:  Trying to get property 'request' of non-object in C:\terminal\live\server\system\Navigator.php on line 24
+[19-Sep-2018 10:30:53 America/Sao_Paulo] PHP Notice:  Trying to get property 'query' of non-object in C:\terminal\live\server\system\Navigator.php on line 24
+[19-Sep-2018 10:30:53 America/Sao_Paulo] PHP Warning:  array_merge_recursive(): Argument #2 is not an array in C:\terminal\live\server\system\Navigator.php on line 24
+[19-Sep-2018 10:45:44 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Cannot use object of type system\Request as array in C:\terminal\live\server\system\Input.php:39
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(4): system\Input->check('nome', true, true, 'string', 'params', 'to', 'type')
+#1 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure), true)
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(18): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Input.php on line 39
+[19-Sep-2018 10:48:27 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Cannot use object of type system\Request as array in C:\terminal\live\server\system\Input.php:39
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(4): system\Input->check('nome', true, true, 'string', 'params', 'to', 'type')
+#1 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure), true)
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(18): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Input.php on line 39
+[19-Sep-2018 11:14:09 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function system\Input::check(), 2 passed in C:\terminal\live\server\applications\example\teste.php on line 6 and exactly 3 expected in C:\terminal\live\server\system\Input.php:36
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(6): system\Input->check('teste', false)
+#1 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure), true)
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(18): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Input.php on line 36
+[19-Sep-2018 11:14:13 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function system\Input::check(), 2 passed in C:\terminal\live\server\applications\example\teste.php on line 6 and exactly 3 expected in C:\terminal\live\server\system\Input.php:36
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(6): system\Input->check('teste', false)
+#1 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure), true)
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(18): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Input.php on line 36
+[19-Sep-2018 11:34:36 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in C:\terminal\live\server\system\Input.php on line 39
+[19-Sep-2018 11:36:31 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function throw() on string in C:\terminal\live\server\applications\example\teste.php:7
+Stack trace:
+#0 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#1 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure), true)
+#2 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#3 C:\terminal\live\server\system\Ambue.php(18): system\Navigator->__construct()
+#4 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\teste.php on line 7
+[19-Sep-2018 11:36:52 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function throw() on string in C:\terminal\live\server\applications\example\teste.php:7
+Stack trace:
+#0 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#1 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure), true)
+#2 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#3 C:\terminal\live\server\system\Ambue.php(18): system\Navigator->__construct()
+#4 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\teste.php on line 7
+[19-Sep-2018 11:36:53 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function throw() on string in C:\terminal\live\server\applications\example\teste.php:7
+Stack trace:
+#0 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#1 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure), true)
+#2 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#3 C:\terminal\live\server\system\Ambue.php(18): system\Navigator->__construct()
+#4 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\teste.php on line 7
+[19-Sep-2018 11:36:54 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function throw() on string in C:\terminal\live\server\applications\example\teste.php:7
+Stack trace:
+#0 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#1 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure), true)
+#2 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#3 C:\terminal\live\server\system\Ambue.php(18): system\Navigator->__construct()
+#4 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\teste.php on line 7
+[19-Sep-2018 11:37:08 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function t() on string in C:\terminal\live\server\applications\example\teste.php:7
+Stack trace:
+#0 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#1 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure), true)
+#2 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#3 C:\terminal\live\server\system\Ambue.php(18): system\Navigator->__construct()
+#4 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\teste.php on line 7
+[19-Sep-2018 11:45:51 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Cannot use object of type stdClass as array in C:\terminal\live\server\system\Input.php:48
+Stack trace:
+#0 C:\terminal\live\server\system\Input.php(71): system\Input->check(Object(stdClass), 'nome', false, 'string', 'params', 'to', 'type')
+#1 C:\terminal\live\server\applications\example\teste.php(7): system\Input->checkBody('nome', false, 'string', 'params', 'to', 'type')
+#2 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#3 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure), true)
+#4 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#5 C:\terminal\live\server\system\Ambue.php(18): system\Navigator->__construct()
+#6 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#7 {main}
+  thrown in C:\terminal\live\server\system\Input.php on line 48
+[19-Sep-2018 14:45:17 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '(', expecting variable (T_VARIABLE) or '{' or '$' in C:\terminal\live\server\system\Input.php on line 62
+[19-Sep-2018 15:05:48 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\FilesNotFound: C:\terminal\live\server\applications\example\types\params.php, C:\terminal\live\server\system\types\params.php in C:\terminal\live\server\system\util\Path.php:39
+Stack trace:
+#0 C:\terminal\live\server\system\Input.php(27): system\util\Path::firstFound('C:\\terminal\\liv...', 'C:\\terminal\\liv...')
+#1 C:\terminal\live\server\system\Input.php(57): system\Input->load('params', Object(stdClass))
+#2 C:\terminal\live\server\system\Input.php(74): system\Input->check(Object(stdClass), Object(stdClass), false, 'string', 'params', 'to', 'type')
+#3 C:\terminal\live\server\applications\example\teste.php(7): system\Input->checkBody('nome', false, 'string', 'params', 'to', 'type')
+#4 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#5 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure), true)
+#6 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#7 C:\terminal\l in C:\terminal\live\server\system\util\Path.php on line 39

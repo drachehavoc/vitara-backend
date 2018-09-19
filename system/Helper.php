@@ -8,29 +8,40 @@ class Helper extends Inject
 {
     private $loaded = [];
 
-    function __construct() 
-    {
-        Parent::__construct();
-    }
+    // function __construct() 
+    // {
+    //     Parent::__construct();
+    // }
 
-    public function load($name, $alias = null)
+    function load($name, $alias = null)
     {
+        $alias = $alias ?? $name;
+        
+        if (isset($this->loaded[$alias]))
+            return $this->loaded[$alias];
+        
         $file = DIRECTORY_SEPARATOR . "{$name}.php"; 
         $file = Path::firstFound(
             $this->ambue->runtime->application->helpers . $file,
             $this->ambue->runtime->helpers . $file
         );
-        return $this->loaded[$alias ?? $name] = Path::require($file);
+
+        $req = Path::require($file);
+
+        if (is_callable($req))
+            return $this->loaded[$alias] = \Closure::bind($req, $this);
+
+        return $req;
     }
 
-    public function __call($name, $arguments)
+    function __call($name, $arguments)
     {
         if (!isset($this->loaded[$name]))
             throw new \system\exception\HelperNotLoaded($name);
         return ($this->loaded[$name])(... $arguments);
     }
 
-    public function __get($alias)
+    function __get($alias)
     {
         return $this->loaded[$alias] ?? null;
     }

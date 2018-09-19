@@ -14,6 +14,7 @@ $ambue = new Ambue;
 new Request(); 
 new Runtime(); 
 new Helper(); 
+new Input();
 new Navigator();
 
 // print_r($ambue);

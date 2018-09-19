@@ -17,6 +17,8 @@ class Navigator extends Inject
     public function regex($destination, $function, $continue = false) 
     {
         preg_match($destination, $this->ambue->request->destination, $matches);
+        $this->ambue->request->matches = $matches;
+        $this->ambue->request->search = array_merge_recursive($matches, $this->ambue->request->query);
         if(!empty($matches)) {
             $this->returns[] = \Closure::bind($function, $this->ambue, null)();
             $continue or die(); 
