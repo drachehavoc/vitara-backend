@@ -6,16 +6,22 @@ return function() {
     $inputCheck = new \helper\InputCheck();
     
     $inputCheck
-        ->query('nome', false, new type\tString)
-        ->query('NONO', false, new type\tString)
-        ->body('nome', false, new type\tString)
+        ->query('nome', new type\tString)
+        ->query('NONO', new type\tString)
+        ->body('nome', new type\tString)
+        ->body('NONO', new type\tString, 'parameters', 'to', 'type')
         ;
         
-    $select = new \helper\Select('NOME', $inputCheck);
+    return (new \helper\Select('nome-da-tabela'))
+        ->setColumns('nome', 'email', 'telefone', 'endereco')
+        ->setPage(1)
+        ->setLimit(100)
+        ->setQuery($inputCheck->query)
+        ->fetch();
 
-    print_r($inputCheck->query);
-    print_r($inputCheck->body);
-    print_r($inputCheck->errors);
+    // print_r($inputCheck->query);
+    // print_r($inputCheck->body);
+    // print_r($inputCheck->errors);
 };
 
 

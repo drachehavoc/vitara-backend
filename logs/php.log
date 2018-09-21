@@ -775,3 +775,88 @@ Stack trace:
 #6 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
 #7 {main}
   thrown in C:\terminal\live\server\system\php\autoload\default.php on line 18
+[21-Sep-2018 16:21:49 America/Sao_Paulo] PHP Notice:  Undefined property: stdClass::$NONO in C:\terminal\live\server\applications\example\helpers\InputCheck.php on line 32
+[21-Sep-2018 16:21:49 America/Sao_Paulo] PHP Notice:  Undefined property: stdClass::$NONO in C:\terminal\live\server\applications\example\helpers\InputCheck.php on line 32
+[21-Sep-2018 16:22:13 America/Sao_Paulo] PHP Warning:  property_exists() expects exactly 2 parameters, 1 given in C:\terminal\live\server\applications\example\helpers\InputCheck.php on line 29
+[21-Sep-2018 16:22:13 America/Sao_Paulo] PHP Notice:  Undefined property: stdClass::$NONO in C:\terminal\live\server\applications\example\helpers\InputCheck.php on line 29
+[21-Sep-2018 16:22:13 America/Sao_Paulo] PHP Warning:  property_exists() expects exactly 2 parameters, 1 given in C:\terminal\live\server\applications\example\helpers\InputCheck.php on line 29
+[21-Sep-2018 16:22:13 America/Sao_Paulo] PHP Warning:  property_exists() expects exactly 2 parameters, 1 given in C:\terminal\live\server\applications\example\helpers\InputCheck.php on line 29
+[21-Sep-2018 16:22:13 America/Sao_Paulo] PHP Notice:  Undefined property: stdClass::$NONO in C:\terminal\live\server\applications\example\helpers\InputCheck.php on line 29
+[21-Sep-2018 16:22:13 America/Sao_Paulo] PHP Warning:  property_exists() expects exactly 2 parameters, 1 given in C:\terminal\live\server\applications\example\helpers\InputCheck.php on line 29
+[21-Sep-2018 16:22:14 America/Sao_Paulo] PHP Warning:  property_exists() expects exactly 2 parameters, 1 given in C:\terminal\live\server\applications\example\helpers\InputCheck.php on line 29
+[21-Sep-2018 16:22:14 America/Sao_Paulo] PHP Notice:  Undefined property: stdClass::$NONO in C:\terminal\live\server\applications\example\helpers\InputCheck.php on line 29
+[21-Sep-2018 16:22:14 America/Sao_Paulo] PHP Warning:  property_exists() expects exactly 2 parameters, 1 given in C:\terminal\live\server\applications\example\helpers\InputCheck.php on line 29
+[21-Sep-2018 16:22:14 America/Sao_Paulo] PHP Warning:  property_exists() expects exactly 2 parameters, 1 given in C:\terminal\live\server\applications\example\helpers\InputCheck.php on line 29
+[21-Sep-2018 16:22:14 America/Sao_Paulo] PHP Notice:  Undefined property: stdClass::$NONO in C:\terminal\live\server\applications\example\helpers\InputCheck.php on line 29
+[21-Sep-2018 16:22:14 America/Sao_Paulo] PHP Warning:  property_exists() expects exactly 2 parameters, 1 given in C:\terminal\live\server\applications\example\helpers\InputCheck.php on line 29
+[21-Sep-2018 16:39:06 America/Sao_Paulo] PHP Notice:  Undefined variable: value in C:\terminal\live\server\applications\example\helpers\InputCheck.php on line 29
+[21-Sep-2018 16:39:06 America/Sao_Paulo] PHP Notice:  Undefined variable: value in C:\terminal\live\server\applications\example\helpers\InputCheck.php on line 37
+[21-Sep-2018 16:39:06 America/Sao_Paulo] PHP Notice:  Undefined variable: value in C:\terminal\live\server\applications\example\helpers\InputCheck.php on line 37
+[21-Sep-2018 16:39:06 America/Sao_Paulo] PHP Notice:  Undefined variable: value in C:\terminal\live\server\applications\example\helpers\InputCheck.php on line 29
+[21-Sep-2018 16:39:06 America/Sao_Paulo] PHP Notice:  Undefined variable: value in C:\terminal\live\server\applications\example\helpers\InputCheck.php on line 37
+[21-Sep-2018 16:39:06 America/Sao_Paulo] PHP Notice:  Undefined variable: value in C:\terminal\live\server\applications\example\helpers\InputCheck.php on line 37
+[21-Sep-2018 16:39:40 America/Sao_Paulo] PHP Notice:  Undefined variable: value in C:\terminal\live\server\applications\example\helpers\InputCheck.php on line 35
+[21-Sep-2018 16:39:40 America/Sao_Paulo] PHP Notice:  Undefined variable: value in C:\terminal\live\server\applications\example\helpers\InputCheck.php on line 35
+[21-Sep-2018 16:39:40 America/Sao_Paulo] PHP Notice:  Undefined variable: value in C:\terminal\live\server\applications\example\helpers\InputCheck.php on line 35
+[21-Sep-2018 16:39:40 America/Sao_Paulo] PHP Notice:  Undefined variable: value in C:\terminal\live\server\applications\example\helpers\InputCheck.php on line 35
+[21-Sep-2018 16:39:41 America/Sao_Paulo] PHP Notice:  Undefined variable: value in C:\terminal\live\server\applications\example\helpers\InputCheck.php on line 35
+[21-Sep-2018 16:39:41 America/Sao_Paulo] PHP Notice:  Undefined variable: value in C:\terminal\live\server\applications\example\helpers\InputCheck.php on line 35
+[21-Sep-2018 16:39:41 America/Sao_Paulo] PHP Notice:  Undefined variable: value in C:\terminal\live\server\applications\example\helpers\InputCheck.php on line 35
+[21-Sep-2018 16:39:41 America/Sao_Paulo] PHP Notice:  Undefined variable: value in C:\terminal\live\server\applications\example\helpers\InputCheck.php on line 35
+[21-Sep-2018 16:43:07 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function helper\InputCheck::query(), 2 passed in C:\terminal\live\server\applications\example\teste.php on line 9 and exactly 3 expected in C:\terminal\live\server\applications\example\helpers\InputCheck.php:41
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(9): helper\InputCheck->query('nome', Object(helper\InputCheck\tString))
+#1 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure), true)
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(12): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\applications\example\helpers\InputCheck.php on line 41
+[21-Sep-2018 16:56:35 America/Sao_Paulo] PHP Warning:  Use of undefined constant falses - assumed 'falses' (this will throw an Error in a future version of PHP) in C:\terminal\live\server\applications\example\helpers\InputCheck\Type.php on line 33
+[21-Sep-2018 16:56:35 America/Sao_Paulo] PHP Warning:  Use of undefined constant falses - assumed 'falses' (this will throw an Error in a future version of PHP) in C:\terminal\live\server\applications\example\helpers\InputCheck\Type.php on line 33
+[21-Sep-2018 16:56:35 America/Sao_Paulo] PHP Warning:  Use of undefined constant falses - assumed 'falses' (this will throw an Error in a future version of PHP) in C:\terminal\live\server\applications\example\helpers\InputCheck\Type.php on line 33
+[21-Sep-2018 16:56:35 America/Sao_Paulo] PHP Warning:  Use of undefined constant falses - assumed 'falses' (this will throw an Error in a future version of PHP) in C:\terminal\live\server\applications\example\helpers\InputCheck\Type.php on line 33
+[21-Sep-2018 17:10:28 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method helper\Select::fetch() in C:\terminal\live\server\applications\example\teste.php:19
+Stack trace:
+#0 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#1 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure), true)
+#2 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#3 C:\terminal\live\server\system\Ambue.php(12): system\Navigator->__construct()
+#4 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\teste.php on line 19
+[21-Sep-2018 17:13:06 America/Sao_Paulo] PHP Notice:  Undefined property: helper\Select::$columns in C:\terminal\live\server\applications\example\helpers\Select.php on line 39
+[21-Sep-2018 17:21:41 America/Sao_Paulo] PHP Notice:  Undefined variable: ofsset in C:\terminal\live\server\applications\example\helpers\Select.php on line 47
+[21-Sep-2018 17:22:47 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method helper\Select::setColumns() in C:\terminal\live\server\applications\example\teste.php:18
+Stack trace:
+#0 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#1 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure), true)
+#2 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#3 C:\terminal\live\server\system\Ambue.php(12): system\Navigator->__construct()
+#4 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\teste.php on line 18
+[21-Sep-2018 17:39:06 America/Sao_Paulo] PHP Warning:  implode(): Invalid arguments passed in C:\terminal\live\server\applications\example\helpers\Select.php on line 59
+[21-Sep-2018 17:44:33 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Wrong parameters for system\exception\NotTrustedSqlName([string $message [, long $code [, Throwable $previous = NULL]]]) in C:\terminal\live\server\applications\example\helpers\Select.php:16
+Stack trace:
+#0 C:\terminal\live\server\applications\example\helpers\Select.php(16): Exception->__construct('table', 'nome da-tabela')
+#1 C:\terminal\live\server\applications\example\helpers\Select.php(22): helper\Select->trustedSqlName('table', 'nome da-tabela')
+#2 C:\terminal\live\server\applications\example\teste.php(15): helper\Select->__construct('nome da-tabela')
+#3 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#4 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure), true)
+#5 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#6 C:\terminal\live\server\system\Ambue.php(12): system\Navigator->__construct()
+#7 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#8 in C:\terminal\live\server\applications\example\helpers\Select.php on line 16
+[21-Sep-2018 17:45:32 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\NotTrustedSqlName in C:\terminal\live\server\applications\example\helpers\Select.php:16
+Stack trace:
+#0 C:\terminal\live\server\applications\example\helpers\Select.php(22): helper\Select->trustedSqlName('table', 'nome da-tabela')
+#1 C:\terminal\live\server\applications\example\teste.php(15): helper\Select->__construct('nome da-tabela')
+#2 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#3 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure), true)
+#4 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#5 C:\terminal\live\server\system\Ambue.php(12): system\Navigator->__construct()
+#6 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#7 {main}
+  thrown in C:\terminal\live\server\applications\example\helpers\Select.php on line 16

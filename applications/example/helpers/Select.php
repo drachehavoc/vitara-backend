@@ -4,7 +4,68 @@ namespace helper;
 
 class Select 
 {
+    private $table   = null;
+    private $page    = 1;
+    private $limit   = 100;
+    private $query   = [];
+    private $columns = [];
 
+    private function trustedSqlName($name, $str)
+    {
+        if (preg_match('/[\s;]/', $str))
+            throw new \system\exception\NotTrustedSqlName($name, $str);
+        return $str;
+    }
+
+    function __construct($table)
+    {
+        $this->table = $this->trustedSqlName('table', $table);
+    }
+
+    function setColumns(... $columns)
+    {
+        foreach($columns as $column) {
+            $this->columns[] = $this->trustedSqlName('column', $column);
+        }
+        return $this;
+    }
+
+    function setPage($page)
+    {
+        $page = (int)$page;
+        $this->page = ($page < 1) ? 1 : $page;
+        return $this;    
+    }
+
+    function setLimit($limit)
+    {
+        $limit = (int)$limit;
+        $this->limit = ($limit < 1) ? 1 : $limit;
+        return $this;    
+    }
+
+    function setQuery($queries)
+    {
+        foreach($queries as $key=>$val) {
+            $this->query[] = "$key=:$key";
+        }
+        return $this;
+    }
+
+    function set()
+    {
+        return $this;    
+    }
+
+    function fetch()
+    {
+        $table   = $this->table;
+        $columns = empty($this->columns) ? '*' : implode(', ', $this->columns);
+        $where   = empty($this->query) ? '1' : implode(' AND ', $this->query);
+        $offset  = $this->limit * ($this->page - 1);
+        $limit   = $this->limit;
+        echo "SELECT {$columns} FROM {$table} WHERE {$where} LIMIT {$offset},{$limit}";
+    }
 
     // private $limit = 100;
     // private $page = 1;

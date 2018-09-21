@@ -7,7 +7,10 @@ class InputCheck
     private $ambue;
     private $query = [];
     private $body = [];
-    private $errors = [];
+    private $errors = [
+        'query' => [],
+        'body' => []
+    ];
 
     function __construct()
     {
@@ -15,52 +18,37 @@ class InputCheck
         $this->ambue = $ambue;
     }
 
-    private function errorMessage($prefix, $columnName, $msg)
+    function check($prefix, &$saveTo, $checkOn, $name, $type, ... $customParameters)
     {
-        $this->errors[$prefix][$columnName][] = $msg;
-        return $this;
-    }
-
-    function check($prefix, &$saveTo, $checkOn, $name, $nullable, $type)
-    {
-        $value = null;
-        $checkOn = (Object)$checkOn;
-
         if (!($type instanceof InputCheck\Type))
             throw new Exception('tratar as mensagens de erro de ImputCheck::query');
         
-        if ( isset($checkOn->{$name}) ) 
-            $value = $checkOn->{$name};
+        $checkOn = (Object)$checkOn;
 
-        if (is_null($value) && !$nullable)
-            return $this->errorMessage($prefix, $name, "ouoeruoeruoerueorueroueroueroureoeeoruoeru `{$name}` can't be null");
-        
-        $type->setValue($value);
-        $saveTo['name'] = $type->getFormated();
+        $type->setParameters(... $customParameters);
+        $type->setValue($checkOn->{$name} ?? null);
+
+        if ($type->isValid())
+            $saveTo[$name] = $type->getFormatted();
+
+        if ($errors = $type->getErrors())
+            $this->errors[$prefix][$name] = $errors;
         
         return $this;
     }
 
-    function query($name, $nullable, $type)
+    function query($name, $type, ... $parameters)
     {
         return $this->check(
-            "query",
-            $this->query,
-            $this->ambue->request->search, 
-            $name, 
-            $nullable, 
-            $type);
+            "query", $this->query, $this->ambue->request->search, 
+            $name, $type, ... $parameters);
     }
 
-    function body($name, $nullable, $type)
+    function body($name, $type, ... $parameters)
     {
         return $this->check(
-            "body",
-            $this->body,
-            $this->ambue->request->body, 
-            $name, 
-            $nullable, 
-            $type);
+            "body", $this->body, $this->ambue->request->body, 
+            $name, $type, ... $parameters);
     }
 
     function __get($name)
