@@ -14,13 +14,14 @@ class Navigator extends Inject
         Path::requireFunction($this, $this, $this->ambue->runtime->application->routes)();
     }
 
-    public function regex($destination, $function, $continue = false) 
+    public function regex($destination, $function) 
     {
         preg_match($destination, $this->ambue->request->destination, $matches);
         $this->ambue->request->matches = $matches;
         $this->ambue->request->search = array_merge_recursive($matches, $this->ambue->request->query);
         if(!empty($matches)) {
-            $this->returns[] = \Closure::bind($function, $this->ambue, null)();
+            $ret = \Closure::bind($function, $this->ambue, null)();
+            die( json_encode($ret) );
             $continue or die(); 
         }
         return $this;

@@ -35,7 +35,6 @@ class Path {
         forEach($files as $file) 
             if (file_exists($file))
                 return $file;
-        
-        throw new \system\exception\FilesNotFound(implode(', ', $files));
+        throw new \system\exception\FilesNotFound($files);
     }
 }

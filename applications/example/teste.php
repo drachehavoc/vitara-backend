@@ -4,24 +4,28 @@ use \helper\InputCheck as type;
 
 return function() {
     $inputCheck = new \helper\InputCheck();
-    
+    $pdo = new \helper\PDO();
+    $sql = new \helper\Select($pdo);
+
     $inputCheck
         ->query('nome', new type\tString)
-        ->query('NONO', new type\tString)
+        // ->query('NONO', new type\tString)
         ->body('nome', new type\tString)
         ->body('NONO', new type\tString, 'parameters', 'to', 'type')
         ;
         
-    return (new \helper\Select('nome-da-tabela'))
-        ->setColumns('nome', 'email', 'telefone', 'endereco')
+    // return 
+    return $sql('pessoa')
+        ->setColumns('nome', 'id')
         ->setPage(1)
         ->setLimit(100)
-        ->setQuery($inputCheck->query)
+        // ->setQuery($inputCheck->query)
         ->fetch();
 
     // print_r($inputCheck->query);
     // print_r($inputCheck->body);
     // print_r($inputCheck->errors);
+
 };
 
 

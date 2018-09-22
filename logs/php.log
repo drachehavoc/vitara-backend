@@ -860,3 +860,290 @@ Stack trace:
 #6 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
 #7 {main}
   thrown in C:\terminal\live\server\applications\example\helpers\Select.php on line 16
+[21-Sep-2018 22:54:29 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\NotTrustedSqlName: aaaaaaaaaa in C:\terminal\live\server\applications\example\helpers\Select.php:16
+Stack trace:
+#0 C:\terminal\live\server\applications\example\helpers\Select.php(22): helper\Select->trustedSqlName('table', 'nome-da tabela')
+#1 C:\terminal\live\server\applications\example\teste.php(15): helper\Select->__construct('nome-da tabela')
+#2 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#3 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure), true)
+#4 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#5 C:\terminal\live\server\system\Ambue.php(12): system\Navigator->__construct()
+#6 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#7 {main}
+  thrown in C:\terminal\live\server\applications\example\helpers\Select.php on line 16
+[21-Sep-2018 22:54:29 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\NotTrustedSqlName: aaaaaaaaaa in C:\terminal\live\server\applications\example\helpers\Select.php:16
+Stack trace:
+#0 C:\terminal\live\server\applications\example\helpers\Select.php(22): helper\Select->trustedSqlName('table', 'nome-da tabela')
+#1 C:\terminal\live\server\applications\example\teste.php(15): helper\Select->__construct('nome-da tabela')
+#2 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#3 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure), true)
+#4 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#5 C:\terminal\live\server\system\Ambue.php(12): system\Navigator->__construct()
+#6 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#7 {main}
+  thrown in C:\terminal\live\server\applications\example\helpers\Select.php on line 16
+[21-Sep-2018 22:55:55 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\NotTrustedSqlName: table, `nome-da tabela` in C:\terminal\live\server\applications\example\helpers\Select.php:16
+Stack trace:
+#0 C:\terminal\live\server\applications\example\helpers\Select.php(22): helper\Select->trustedSqlName('table', 'nome-da tabela')
+#1 C:\terminal\live\server\applications\example\teste.php(15): helper\Select->__construct('nome-da tabela')
+#2 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#3 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure), true)
+#4 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#5 C:\terminal\live\server\system\Ambue.php(12): system\Navigator->__construct()
+#6 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#7 {main}
+  thrown in C:\terminal\live\server\applications\example\helpers\Select.php on line 16
+[21-Sep-2018 23:07:06 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\AttributeNotExists: O atributo `queryA` não existe na classe `helper\InputCheck`. in C:\terminal\live\server\applications\example\helpers\InputCheck.php:62
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(22): helper\InputCheck->__get('queryA')
+#1 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure), true)
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(12): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\applications\example\helpers\InputCheck.php on line 62
+[21-Sep-2018 23:07:20 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\NotTrustedSqlName: O nome de table não pode ser utilizado como parametro para SQL Query, o valor recebido foi `nome-da tabela`, verifique caracteres inválidos. in C:\terminal\live\server\applications\example\helpers\Select.php:16
+Stack trace:
+#0 C:\terminal\live\server\applications\example\helpers\Select.php(22): helper\Select->trustedSqlName('table', 'nome-da tabela')
+#1 C:\terminal\live\server\applications\example\teste.php(15): helper\Select->__construct('nome-da tabela')
+#2 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#3 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure), true)
+#4 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#5 C:\terminal\live\server\system\Ambue.php(12): system\Navigator->__construct()
+#6 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#7 {main}
+  thrown in C:\terminal\live\server\applications\example\helpers\Select.php on line 16
+[21-Sep-2018 23:13:07 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\NotTrustedSqlName: O nome de table não pode ser utilizado como parametro para SQL Query, o valor recebido foi `nome-da tabela`, verifique caracteres inválidos. in C:\terminal\live\server\applications\example\helpers\Select.php:16
+Stack trace:
+#0 C:\terminal\live\server\applications\example\helpers\Select.php(22): helper\Select->trustedSqlName('table', 'nome-da tabela')
+#1 C:\terminal\live\server\applications\example\teste.php(15): helper\Select->__construct('nome-da tabela')
+#2 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#3 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure), true)
+#4 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#5 C:\terminal\live\server\system\Ambue.php(12): system\Navigator->__construct()
+#6 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#7 {main}
+  thrown in C:\terminal\live\server\applications\example\helpers\Select.php on line 16
+[21-Sep-2018 23:32:59 America/Sao_Paulo] PHP Fatal error:  Uncaught system\exception\NotTrustedSqlName: O nome de table não pode ser utilizado como parametro para SQL Query, o valor recebido foi `nome-da tabela`, verifique caracteres inválidos. in C:\terminal\live\server\applications\example\helpers\Select.php:16
+Stack trace:
+#0 C:\terminal\live\server\applications\example\helpers\Select.php(22): helper\Select->trustedSqlName('table', 'nome-da tabela')
+#1 C:\terminal\live\server\applications\example\teste.php(15): helper\Select->__construct('nome-da tabela')
+#2 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#3 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure), true)
+#4 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#5 C:\terminal\live\server\system\Ambue.php(12): system\Navigator->__construct()
+#6 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#7 {main}
+  thrown in C:\terminal\live\server\applications\example\helpers\Select.php on line 16
+[22-Sep-2018 00:03:32 America/Sao_Paulo] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-da-tabela WHERE nome='XXX daniel de andrade varela XXXX' AND NONO='XXX  XXXX' L' at line 1 in C:\terminal\live\server\applications\example\teste.php:26
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(26): PDOStatement->execute(Array)
+#1 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure))
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(12): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\applications\example\teste.php on line 26
+[22-Sep-2018 00:03:33 America/Sao_Paulo] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-da-tabela WHERE nome='XXX daniel de andrade varela XXXX' AND NONO='XXX  XXXX' L' at line 1 in C:\terminal\live\server\applications\example\teste.php:26
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(26): PDOStatement->execute(Array)
+#1 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure))
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(12): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\applications\example\teste.php on line 26
+[22-Sep-2018 00:03:56 America/Sao_Paulo] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-da-tabela WHERE nome='XXX daniel de andrade varela XXXX' AND NONO='XXX  XXXX' L' at line 1 in C:\terminal\live\server\applications\example\teste.php:26
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(26): PDOStatement->execute(Array)
+#1 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure))
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(12): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\applications\example\teste.php on line 26
+[22-Sep-2018 00:03:57 America/Sao_Paulo] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-da-tabela WHERE nome='XXX daniel de andrade varela XXXX' AND NONO='XXX  XXXX' L' at line 1 in C:\terminal\live\server\applications\example\teste.php:26
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(26): PDOStatement->execute(Array)
+#1 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure))
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(12): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\applications\example\teste.php on line 26
+[22-Sep-2018 00:04:08 America/Sao_Paulo] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-da-tabela WHERE nome='XXX daniel de andrade varela XXXX' AND NONO='XXX  XXXX' L' at line 1 in C:\terminal\live\server\applications\example\teste.php:26
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(26): PDOStatement->execute(Array)
+#1 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure))
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(12): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\applications\example\teste.php on line 26
+[22-Sep-2018 00:04:19 America/Sao_Paulo] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: no parameters were bound in C:\terminal\live\server\applications\example\teste.php:26
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(26): PDOStatement->execute()
+#1 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure))
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(12): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\applications\example\teste.php on line 26
+[22-Sep-2018 00:04:40 America/Sao_Paulo] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-da-tabela WHERE nome='XXX daniel de andrade varela XXXX' LIMIT 0,100' at line 1 in C:\terminal\live\server\applications\example\teste.php:26
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(26): PDOStatement->execute(Array)
+#1 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure))
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(12): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\applications\example\teste.php on line 26
+[22-Sep-2018 00:07:24 America/Sao_Paulo] PHP Notice:  Undefined variable: x in C:\terminal\live\server\applications\example\helpers\Select.php on line 71
+[22-Sep-2018 00:07:24 America/Sao_Paulo] PHP Notice:  Undefined variable: inputCheck in C:\terminal\live\server\applications\example\helpers\Select.php on line 72
+[22-Sep-2018 00:07:24 America/Sao_Paulo] PHP Notice:  Trying to get property 'query' of non-object in C:\terminal\live\server\applications\example\helpers\Select.php on line 72
+[22-Sep-2018 00:07:24 America/Sao_Paulo] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1065 Query was empty in C:\terminal\live\server\applications\example\helpers\Select.php:72
+Stack trace:
+#0 C:\terminal\live\server\applications\example\helpers\Select.php(72): PDOStatement->execute(NULL)
+#1 C:\terminal\live\server\applications\example\teste.php(23): helper\Select->fetch()
+#2 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#3 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure))
+#4 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#5 C:\terminal\live\server\system\Ambue.php(12): system\Navigator->__construct()
+#6 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#7 {main}
+  thrown in C:\terminal\live\server\applications\example\helpers\Select.php on line 72
+[22-Sep-2018 00:07:24 America/Sao_Paulo] PHP Notice:  Undefined variable: x in C:\terminal\live\server\applications\example\helpers\Select.php on line 71
+[22-Sep-2018 00:07:24 America/Sao_Paulo] PHP Notice:  Undefined variable: inputCheck in C:\terminal\live\server\applications\example\helpers\Select.php on line 72
+[22-Sep-2018 00:07:24 America/Sao_Paulo] PHP Notice:  Trying to get property 'query' of non-object in C:\terminal\live\server\applications\example\helpers\Select.php on line 72
+[22-Sep-2018 00:07:24 America/Sao_Paulo] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1065 Query was empty in C:\terminal\live\server\applications\example\helpers\Select.php:72
+Stack trace:
+#0 C:\terminal\live\server\applications\example\helpers\Select.php(72): PDOStatement->execute(NULL)
+#1 C:\terminal\live\server\applications\example\teste.php(23): helper\Select->fetch()
+#2 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#3 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure))
+#4 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#5 C:\terminal\live\server\system\Ambue.php(12): system\Navigator->__construct()
+#6 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#7 {main}
+  thrown in C:\terminal\live\server\applications\example\helpers\Select.php on line 72
+[22-Sep-2018 00:07:46 America/Sao_Paulo] PHP Notice:  Undefined variable: x in C:\terminal\live\server\applications\example\helpers\Select.php on line 71
+[22-Sep-2018 00:07:46 America/Sao_Paulo] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1065 Query was empty in C:\terminal\live\server\applications\example\helpers\Select.php:72
+Stack trace:
+#0 C:\terminal\live\server\applications\example\helpers\Select.php(72): PDOStatement->execute(Array)
+#1 C:\terminal\live\server\applications\example\teste.php(23): helper\Select->fetch()
+#2 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#3 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure))
+#4 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#5 C:\terminal\live\server\system\Ambue.php(12): system\Navigator->__construct()
+#6 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#7 {main}
+  thrown in C:\terminal\live\server\applications\example\helpers\Select.php on line 72
+[22-Sep-2018 00:08:08 America/Sao_Paulo] PHP Notice:  Undefined variable: x in C:\terminal\live\server\applications\example\helpers\Select.php on line 73
+[22-Sep-2018 00:08:08 America/Sao_Paulo] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1065 Query was empty in C:\terminal\live\server\applications\example\helpers\Select.php:74
+Stack trace:
+#0 C:\terminal\live\server\applications\example\helpers\Select.php(74): PDOStatement->execute(Array)
+#1 C:\terminal\live\server\applications\example\teste.php(23): helper\Select->fetch()
+#2 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#3 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure))
+#4 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#5 C:\terminal\live\server\system\Ambue.php(12): system\Navigator->__construct()
+#6 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#7 {main}
+  thrown in C:\terminal\live\server\applications\example\helpers\Select.php on line 74
+[22-Sep-2018 00:11:22 America/Sao_Paulo] PHP Fatal error:  Method helper\Select::__call() must take exactly 2 arguments in C:\terminal\live\server\applications\example\helpers\Select.php on line 68
+[22-Sep-2018 00:11:54 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function helper\Select::__construct(), 1 passed in C:\terminal\live\server\applications\example\teste.php on line 8 and exactly 2 expected in C:\terminal\live\server\applications\example\helpers\Select.php:14
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(8): helper\Select->__construct(Object(helper\PDO))
+#1 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure))
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(12): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\applications\example\helpers\Select.php on line 14
+[22-Sep-2018 00:12:05 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function setPage() on null in C:\terminal\live\server\applications\example\teste.php:20
+Stack trace:
+#0 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#1 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure))
+#2 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#3 C:\terminal\live\server\system\Ambue.php(12): system\Navigator->__construct()
+#4 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\teste.php on line 20
+[22-Sep-2018 00:12:07 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function setPage() on null in C:\terminal\live\server\applications\example\teste.php:20
+Stack trace:
+#0 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#1 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure))
+#2 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#3 C:\terminal\live\server\system\Ambue.php(12): system\Navigator->__construct()
+#4 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\teste.php on line 20
+[22-Sep-2018 00:13:13 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function fetchAll() on boolean in C:\terminal\live\server\applications\example\helpers\Select.php:82
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(23): helper\Select->fetch()
+#1 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure))
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(12): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\applications\example\helpers\Select.php on line 82
+[22-Sep-2018 00:13:29 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function fetchAll() on boolean in C:\terminal\live\server\applications\example\helpers\Select.php:82
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(23): helper\Select->fetch()
+#1 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure))
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(12): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\applications\example\helpers\Select.php on line 82
+[22-Sep-2018 00:13:45 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function fetchAll() on boolean in C:\terminal\live\server\applications\example\helpers\Select.php:81
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(23): helper\Select->fetch()
+#1 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure))
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(12): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\applications\example\helpers\Select.php on line 81
+[22-Sep-2018 00:14:06 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function fetchAll() on boolean in C:\terminal\live\server\applications\example\helpers\Select.php:81
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(23): helper\Select->fetch()
+#1 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure))
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(12): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\applications\example\helpers\Select.php on line 81
+[22-Sep-2018 00:14:55 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function fetchAll() on boolean in C:\terminal\live\server\applications\example\helpers\Select.php:83
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(23): helper\Select->fetch()
+#1 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure))
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(12): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\applications\example\helpers\Select.php on line 83
+[22-Sep-2018 00:15:04 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function fetchAll() on boolean in C:\terminal\live\server\applications\example\helpers\Select.php:83
+Stack trace:
+#0 C:\terminal\live\server\applications\example\teste.php(23): helper\Select->fetch()
+#1 C:\terminal\live\server\system\Navigator.php(23): Closure->{closure}()
+#2 C:\terminal\live\server\applications\example\routes.php(5): system\Navigator->regex('{POST/nome/(?<n...', Object(Closure))
+#3 C:\terminal\live\server\system\Navigator.php(14): system\Navigator->{closure}()
+#4 C:\terminal\live\server\system\Ambue.php(12): system\Navigator->__construct()
+#5 C:\terminal\live\server\main.php(33): require('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\applications\example\helpers\Select.php on line 83

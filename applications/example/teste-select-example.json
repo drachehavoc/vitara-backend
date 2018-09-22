@@ -1,0 +1,17 @@
+{
+    "input-check": { 
+        "query": {
+            "nome" : ["nome", "type\\tString"],
+            "nono" : ["nome", "type\\tString"]
+        }
+    },
+
+    "query": {
+        "select": {
+            "table"   : "nome-da-tabela",
+            "columns" : ["nome", "email", "telefone", "endereco"],
+            "page"    : 1,
+            "limit"   : 100
+        }   
+    }
+}

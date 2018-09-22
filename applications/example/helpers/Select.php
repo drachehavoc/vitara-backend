@@ -4,11 +4,17 @@ namespace helper;
 
 class Select 
 {
-    private $table   = null;
+    private $pdo     = null;
+    private $table   = "no-table-defined";
     private $page    = 1;
     private $limit   = 100;
     private $query   = [];
     private $columns = [];
+
+    public function __construct(\PDO $pdo)
+    {
+        $this->pdo = $pdo;
+    }
 
     private function trustedSqlName($name, $str)
     {
@@ -17,9 +23,10 @@ class Select
         return $str;
     }
 
-    function __construct($table)
+    function setTable($table)
     {
         $this->table = $this->trustedSqlName('table', $table);
+        return $this;
     }
 
     function setColumns(... $columns)
@@ -57,6 +64,11 @@ class Select
         return $this;    
     }
 
+    function __invoke($table)
+    {
+        return $this->setTable($table);
+    }
+
     function fetch()
     {
         $table   = $this->table;
@@ -64,7 +76,11 @@ class Select
         $where   = empty($this->query) ? '1' : implode(' AND ', $this->query);
         $offset  = $this->limit * ($this->page - 1);
         $limit   = $this->limit;
-        echo "SELECT {$columns} FROM {$table} WHERE {$where} LIMIT {$offset},{$limit}";
+        $sql     = "SELECT {$columns} FROM {$table} WHERE {$where} LIMIT {$offset},{$limit}";
+        $stmt    = $this->pdo->prepare($sql);
+        // -------------------------------
+        $stmt->execute($this->query);
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
 
     // private $limit = 100;

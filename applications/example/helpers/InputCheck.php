@@ -21,7 +21,7 @@ class InputCheck
     function check($prefix, &$saveTo, $checkOn, $name, $type, ... $customParameters)
     {
         if (!($type instanceof InputCheck\Type))
-            throw new Exception('tratar as mensagens de erro de ImputCheck::query');
+            throw new \system\exception\InconsistentType($name);
         
         $checkOn = (Object)$checkOn;
 
@@ -59,6 +59,6 @@ class InputCheck
             case 'errors' : return $this->errors;
         }
 
-        throw new \system\exception\AttributeNotExists($name);
+        throw new \system\exception\AttributeNotExists($name, __CLASS__);
     }
 }
