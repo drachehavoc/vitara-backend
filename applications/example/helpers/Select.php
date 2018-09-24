@@ -4,12 +4,15 @@ namespace helper;
 
 class Select 
 {
-    private $pdo     = null;
-    private $table   = "no-table-defined";
-    private $page    = 1;
-    private $limit   = 100;
-    private $query   = [];
-    private $columns = [];
+    private $pdo         = null;
+    private $table       = "no-table-defined";
+    private $page        = 1;
+    private $limit       = 100;
+    private $query       = [];
+    private $queryValues = [];
+    private $columns     = [];
+    private $forEachFns  = [];
+    private $subSelects  = [];
 
     public function __construct(\PDO $pdo)
     {
@@ -53,6 +56,7 @@ class Select
 
     function setQuery($queries)
     {
+        $this->queryValues = $queries;
         foreach($queries as $key=>$val) {
             $this->query[] = "$key=:$key";
         }
@@ -69,6 +73,18 @@ class Select
         return $this->setTable($table);
     }
 
+    function forEach($columnName, $function)
+    {
+        $this->forEachFns[$columnName] = $function;
+        return $this;
+    }
+
+    function select($columnName, Select $select)
+    {
+        $this->subSelects[$columnName] = $select;
+        return $this;
+    }
+
     function fetch()
     {
         $table   = $this->table;
@@ -78,60 +94,40 @@ class Select
         $limit   = $this->limit;
         $sql     = "SELECT {$columns} FROM {$table} WHERE {$where} LIMIT {$offset},{$limit}";
         $stmt    = $this->pdo->prepare($sql);
+        
         // -------------------------------
-        $stmt->execute($this->query);
-        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        
+        $stmt->execute($this->queryValues);
+
+        // if ($columns == '*') {
+        //     $count = 0;
+        //     while($columnMeta = $stmt->getColumnMeta($count++)) {
+        //         $this->columns[] = $columnMeta['name'];
+        //     }   
+        // }
+        
+        // return $stmt->fetchAll(\PDO::FETCH_ASSOC|\PDO::FETCH_FUNC, function(... $values) use ($stmt) {
+        //     return array_combine($this->columns, $values);
+        // });
+
+        $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+        if (!empty($this->forEachFns)) {
+            foreach($result as $key => $row) {
+                foreach($this->forEachFns as $columnName => $fn) {
+                    $result[$key][$columnName] = $fn($row);
+                }   
+            }
+        }
+
+        if (!empty($this->subSelects)) {
+            foreach($result as $key => $row) {
+                foreach($this->subSelects as $columnName => $select) {
+                    $result[$key][$columnName] = $select->fetch();
+                }   
+            }
+        }
+        
+        return $result;
     }
-
-    // private $limit = 100;
-    // private $page = 1;
-
-    // public function preventFunnyPeople($str)
-    // {
-    //     if (preg_match('/[\s;]/', $str))
-    //         throw new \system\exception\NotTrustedSqlName($str);
-
-    //     return $str;
-    // }
-
-    // public function setPage($p)
-    // {
-    //     if (!is_int($p))
-    //         throw new InvalidArgumentException("first argument needs to be integer, `{$p}` given.");
-
-    //     if ($p < 1)
-    //         $this->page = 1;
-
-    //     $this->page = $p;
-
-    //     return $this;
-    // }
-
-    // public function select($table, $page, $limit, $column, ... $columns)
-    // {
-    //     global $ambue;
-        
-    //     array_unshift($columns, $column);
-        
-    //     $columnsQuery = [];
-    //     $table = $this->preventFunnyPeople($table);
-    //     $where = [];
-
-    //     foreach($columns as $col) 
-    //         $columnsQuery[] = $this->preventFunnyPeople($col);
-
-    //     foreach($ambue->input->search as $key => $val)
-    //         $where[] = $this->preventFunnyPeople($key) . "=:$key";
-        
-    //     if (empty($where))
-    //         throw new \system\exception\NoSearchValuesFound();
-
-    //     $columnsQuery = implode(', ', $columnsQuery);
-    //     $where = implode(' AND ', $where);
-    //     $offset = ($this->page-1) * $this->limit;
-        
-    //     echo "SELECT {$table} FROM $columnsQuery WHERE $where LIMIT {$offset}, {$this->limit}";
-        
-    //     return $this;
-    // }
 };

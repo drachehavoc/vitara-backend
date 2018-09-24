@@ -4,8 +4,9 @@ use \helper\InputCheck as type;
 
 return function() {
     $inputCheck = new \helper\InputCheck();
-    $pdo = new \helper\PDO();
-    $sql = new \helper\Select($pdo);
+    $pdo        = new \helper\PDO();
+    $pessoa     = new \helper\Select($pdo);
+    $telefone   = new \helper\Select($pdo);
 
     $inputCheck
         ->query('nome', new type\tString)
@@ -13,19 +14,26 @@ return function() {
         ->body('nome', new type\tString)
         ->body('NONO', new type\tString, 'parameters', 'to', 'type')
         ;
-        
-    // return 
-    return $sql('pessoa')
+
+    $telefone('telefone');
+
+    return 
+        $pessoa('pessoa')
         ->setColumns('nome', 'id')
         ->setPage(1)
         ->setLimit(100)
-        // ->setQuery($inputCheck->query)
+        ->setQuery($inputCheck->query)
+        ->forEach('func', function($data){ return [
+                "teste" => 123123,
+                "same data" => $data['nome'].' - '.$data['id']
+            ]; 
+        })
+        ->select('telefone', $telefone)
         ->fetch();
-
+        
     // print_r($inputCheck->query);
     // print_r($inputCheck->body);
     // print_r($inputCheck->errors);
-
 };
 
 

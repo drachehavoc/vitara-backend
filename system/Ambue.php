@@ -2,6 +2,8 @@
 
 namespace system;
 
+$__ELIPSED = microtime(true);
+
 require __DIR__ . '/php/configure.php';
 require __DIR__ . '/php/autoload/default.php';
 

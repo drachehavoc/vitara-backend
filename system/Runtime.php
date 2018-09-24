@@ -19,13 +19,11 @@ class Runtime extends Inject
             'path'           => $appPath,
             'routes'         => Path::resolve($appPath, 'routes.php'),
             'helpers'        => Path::join($appPath, 'helpers'),
-            'configurations' => Path::join($appPath, 'configurations'),
-            'types'          => Path::join($appPath, 'types'),
+            'configurations' => Path::join($appPath, 'configurations')
         ];
 
         $this->gates          = $gates;
         $this->helpers        = Path::resolve(AMBUE_DIR_HELPERS);
         $this->configurations = Path::resolve(AMBUE_DIR_CONFIGURATIONS);
-        $this->types          = Path::resolve(AMBUE_DIR_TYPES);
     }
 }

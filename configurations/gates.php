@@ -1,3 +1,4 @@
 <?php return [
-    '127.0.0.1' => 'example'
+    '127.0.0.1' => 'example',
+    'localhost' => 'example',
 ];
