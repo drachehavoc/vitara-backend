@@ -16,4 +16,22 @@ class PDO extends \PDO
             ]
         );
     }
+
+    function select($query, $data, $func=null)
+    {
+        $s = $this->prepare($query);
+        $s->execute($data);
+        $res = $s->fetchAll(\PDO::FETCH_OBJ);
+        
+        if ($func)
+            foreach ($res as $key => $row) 
+                \Closure::bind($func, $this)($row, $res);
+
+        return $res;
+    }
+
+    function search($sql)
+    {
+        return new \helper\Select($this, $sql);
+    }
 }

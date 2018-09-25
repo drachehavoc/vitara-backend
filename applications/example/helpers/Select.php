@@ -1,133 +1,44 @@
-<?php 
+<?php
 
 namespace helper;
 
-class Select 
-{
-    private $pdo         = null;
-    private $table       = "no-table-defined";
-    private $page        = 1;
-    private $limit       = 100;
-    private $query       = [];
-    private $queryValues = [];
-    private $columns     = [];
-    private $forEachFns  = [];
-    private $subSelects  = [];
+class Select {
+    public $pdo;
+    private $query;
+    private $where = [];
+    private $additionalColumns = [];
 
-    public function __construct(\PDO $pdo)
+    function __construct (\helper\PDO $pdo, $query) 
     {
+        $this->query = $query;
         $this->pdo = $pdo;
     }
 
-    private function trustedSqlName($name, $str)
+    function whereValues (... $param)
     {
-        if (preg_match('/[\s;]/', $str))
-            throw new \system\exception\NotTrustedSqlName($name, $str);
-        return $str;
+        $this->where = array_merge($this->where, $param);
+        return $this;
     }
-
-    function setTable($table)
+    
+    function addColumn ($columnName, $function)
     {
-        $this->table = $this->trustedSqlName('table', $table);
+        $this->additionalColumns[$columnName] = \Closure::bind($function, $this); 
         return $this;
     }
 
-    function setColumns(... $columns)
+    function fetch ()
     {
-        foreach($columns as $column) {
-            $this->columns[] = $this->trustedSqlName('column', $column);
-        }
-        return $this;
-    }
-
-    function setPage($page)
-    {
-        $page = (int)$page;
-        $this->page = ($page < 1) ? 1 : $page;
-        return $this;    
-    }
-
-    function setLimit($limit)
-    {
-        $limit = (int)$limit;
-        $this->limit = ($limit < 1) ? 1 : $limit;
-        return $this;    
-    }
-
-    function setQuery($queries)
-    {
-        $this->queryValues = $queries;
-        foreach($queries as $key=>$val) {
-            $this->query[] = "$key=:$key";
-        }
-        return $this;
-    }
-
-    function set()
-    {
-        return $this;    
-    }
-
-    function __invoke($table)
-    {
-        return $this->setTable($table);
-    }
-
-    function forEach($columnName, $function)
-    {
-        $this->forEachFns[$columnName] = $function;
-        return $this;
-    }
-
-    function select($columnName, Select $select)
-    {
-        $this->subSelects[$columnName] = $select;
-        return $this;
-    }
-
-    function fetch()
-    {
-        $table   = $this->table;
-        $columns = empty($this->columns) ? '*' : implode(', ', $this->columns);
-        $where   = empty($this->query) ? '1' : implode(' AND ', $this->query);
-        $offset  = $this->limit * ($this->page - 1);
-        $limit   = $this->limit;
-        $sql     = "SELECT {$columns} FROM {$table} WHERE {$where} LIMIT {$offset},{$limit}";
-        $stmt    = $this->pdo->prepare($sql);
+        $s = $this->pdo->prepare($this->query);
+        $s->execute($this->where);
+        $res = $s->fetchAll(\PDO::FETCH_OBJ);
         
-        // -------------------------------
-        
-        $stmt->execute($this->queryValues);
+        if (empty($this->additionalColumns))
+            return $res;
 
-        // if ($columns == '*') {
-        //     $count = 0;
-        //     while($columnMeta = $stmt->getColumnMeta($count++)) {
-        //         $this->columns[] = $columnMeta['name'];
-        //     }   
-        // }
-        
-        // return $stmt->fetchAll(\PDO::FETCH_ASSOC|\PDO::FETCH_FUNC, function(... $values) use ($stmt) {
-        //     return array_combine($this->columns, $values);
-        // });
+        foreach ($res as $row)
+            foreach ($this->additionalColumns as $columnName => $columnFunction) 
+                $row->{$columnName} = $columnFunction($row, $res);
 
-        $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-
-        if (!empty($this->forEachFns)) {
-            foreach($result as $key => $row) {
-                foreach($this->forEachFns as $columnName => $fn) {
-                    $result[$key][$columnName] = $fn($row);
-                }   
-            }
-        }
-
-        if (!empty($this->subSelects)) {
-            foreach($result as $key => $row) {
-                foreach($this->subSelects as $columnName => $select) {
-                    $result[$key][$columnName] = $select->fetch();
-                }   
-            }
-        }
-        
-        return $result;
+        return $res;
     }
-};
+}

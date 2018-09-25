@@ -2,94 +2,30 @@
 
 use \helper\InputCheck as type;
 
-return function() {
-    $inputCheck = new \helper\InputCheck();
-    $pdo        = new \helper\PDO();
-    $pessoa     = new \helper\Select($pdo);
-    $telefone   = new \helper\Select($pdo);
+return function() 
+{
+    $pdo = new \helper\PDO();
 
-    $inputCheck
-        ->query('nome', new type\tString)
-        // ->query('NONO', new type\tString)
-        ->body('nome', new type\tString)
-        ->body('NONO', new type\tString, 'parameters', 'to', 'type')
-        ;
+    // $stm = $pdo->prepare('SELECT * FROM pessoa WHERE id=:id');
+    // $stm->execute(['id'=>1]);
+    // return $stm->fetchAll(\PDO::FETCH_ASSOC);
 
-    $telefone('telefone');
+    $telefone = $pdo
+        ->search('SELECT * FROM telefone WHERE pessoa=?')
+        ->addColumn('aew', function() {
+            return "NADA NADA NADA";
+        });
 
-    return 
-        $pessoa('pessoa')
-        ->setColumns('nome', 'id')
-        ->setPage(1)
-        ->setLimit(100)
-        ->setQuery($inputCheck->query)
-        ->forEach('func', function($data){ return [
-                "teste" => 123123,
-                "same data" => $data['nome'].' - '.$data['id']
-            ]; 
-        })
-        ->select('telefone', $telefone)
-        ->fetch();
-        
-    // print_r($inputCheck->query);
-    // print_r($inputCheck->body);
-    // print_r($inputCheck->errors);
+    $pessoa = $pdo
+        ->search('SELECT * FROM pessoa WHERE nome=?')
+        ->whereValues("Daniel de Andrade Varela")
+        ->addColumn("telefone", function ($pessoa) use ($telefone) {
+            return (clone $telefone)->whereValues($pessoa->id)->fetch();
+        });
+
+    return $pessoa->fetch();
+
+    // return $pdo->select('SELECT * FROM pessoa WHERE nome=?', ["Daniel de Andrade Varela"], function ($pessoa) {
+    //     $pessoa->telefone = $this->select('SELECT * FROM telefone WHERE pessoa=?', (Array)$pessoa->id);
+    // });
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-//     $relational = $this->helper->load('relational');
-
-//     $this->input
-//         ->checkSearch('teste', false, 'string')
-//         ->checkSearch('nome' , false, 'string', 'params', 'to', 'type')
-        
-//         ->checkBody('nome', false, 'string', 'params', 'to', 'type')
-        
-//         // ->throw()
-//     ;
-
-//     $relational->select('table-name', 2, 100, 'nome', 'telefone');
-
-//     $relational
-//         ->select 
-//             ->page(2)
-//             ->limit(100)
-//             ->table('table-name')
-//             ->columns('nome', 'telefone')
-//             ->fetch();
-
-//     print_r($this->input->search);
-//     print_r($this->input->body);
-
-//     $this->helper->load('teste-function', 'custom-name');
-//     $fn = $this->helper->load('teste-function');
-//     $ob = $this->helper->load('teste-object');
-    
-//     echo "\r\n--------------------------\r\n";
-//     $this->helper->{'custom-name'}();
-    
-//     echo "\r\n--------------------------\r\n";
-//     $this->helper->{'teste-function'}();
-//     echo "\r\n";
-//     $this->helper->{'teste-object'}->do();
-    
-//     echo "\r\n--------------------------\r\n";
-//     $fn();
-//     echo "\r\n";
-//     $ob->do();
-// };

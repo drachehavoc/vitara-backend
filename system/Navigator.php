@@ -24,7 +24,6 @@ class Navigator extends Inject
             $ret['response'] = \Closure::bind($function, $this->ambue, null)();
             $ret['debug']['elipsed'] = (microtime(true) - $__ELIPSED) * 1000;
             die( json_encode($ret) );
-            $continue or die(); 
         }
         return $this;
     }
