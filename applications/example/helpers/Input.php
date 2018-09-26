@@ -46,9 +46,8 @@ class Input
 
     private function getAsArray()
     {
-        if (!empty($this->nulls) 
-            || !empty($this->exceptions) 
-        ) throw new \helper\input\Exception($this->nulls, $this->exceptions);
+        if (!empty($this->nulls) || !empty($this->exceptions))
+            throw new \helper\input\Exception($this->nulls, $this->exceptions);
         return $this->result;
     }
 
