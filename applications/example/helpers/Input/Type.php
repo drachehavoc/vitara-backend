@@ -1,6 +1,6 @@
 <?php
 
-namespace helper\InputCheck;
+namespace helper\Input;
 
 class Type
 {

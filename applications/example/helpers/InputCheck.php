@@ -12,7 +12,7 @@ class InputCheck
         'body' => []
     ];
 
-    function __construct()
+    function __construct($arrayInput)
     {
         global $ambue;
         $this->ambue = $ambue;

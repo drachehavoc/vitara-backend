@@ -21,8 +21,21 @@ class Navigator extends Inject
         $this->ambue->request->matches = $matches;
         $this->ambue->request->search = array_merge_recursive($matches, $this->ambue->request->query);
         if(!empty($matches)) {
-            $ret['response'] = \Closure::bind($function, $this->ambue, null)();
-            $ret['debug']['elipsed'] = (microtime(true) - $__ELIPSED) * 1000;
+            try {
+                $ret['response'] = \Closure::bind($function, $this->ambue, null)();
+            } catch (\Exception $e) {
+                $ret['response'] = null;
+                $ret['error']['message'] = $e->getMessage();
+                $ret['error']['detail'] = $e->getCode();
+                $ret['error']['type'] = get_class($e);
+                $stackTrace = $e->getTrace();
+            }
+            
+            if (!AMBUE_PRODUCTION) {
+                $ret['debug']['error'] = $stackTrace ?? null;
+                $ret['debug']['elipsed'] = (microtime(true) - $__ELIPSED) * 1000;
+            }
+
             die( json_encode($ret) );
         }
         return $this;
