@@ -32,6 +32,6 @@ class Type
 
     function validate()
     {
-        throw new \Exception('xxxxxxxxx');
+        // throw new \Exception('xxxxxxxxx');
     }
 }

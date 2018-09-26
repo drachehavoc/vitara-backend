@@ -8,7 +8,7 @@ return function()
     $inp = new \helper\Input($this->request->search);
 
     $inp->check('nome', null, new type\tString());
-    $inp->check('nono', null, new type\tString());
+    $inp->check('nono', 'null', new type\tString());
 
     return $inp->array;
 

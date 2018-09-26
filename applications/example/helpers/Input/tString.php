@@ -10,8 +10,8 @@ class tString extends Type
         $this->errors[] = 'erro teste';
     }
     
-    // function getFormatted()
-    // {
-    //     return "XXX {$this->value} XXXX";
-    // }
+    function getFormatted()
+    {
+        return "XXX {$this->value} XXXX";
+    }
 }
