@@ -4,11 +4,12 @@ namespace helper\Input;
 
 class Exception extends \Exception
 {
-    function __construct($nulls)
+    function __construct($nulls, $typeExceptions)
     {
         $this->message = 'Invalid input data.';
         $this->code = (Object)[
-            'nulls' => $nulls
+            'nulls' => $nulls,
+            'custom' => $typeExceptions
         ];
     }
 }

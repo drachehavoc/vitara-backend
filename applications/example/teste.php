@@ -10,9 +10,7 @@ return function()
     $inp->check('nome', null, new type\tString());
     $inp->check('nono', null, new type\tString());
 
-    print_r($inp->array);
-
-    return;
+    return $inp->array;
 
     // $stm = $pdo->prepare('SELECT * FROM pessoa WHERE id=:id');
     // $stm->execute(['id'=>1]);

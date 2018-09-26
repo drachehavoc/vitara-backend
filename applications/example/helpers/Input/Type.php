@@ -18,15 +18,6 @@ class Type
     }
 
     /**
-     * define os parametros customizados do input
-     */
-    
-    function setParameters(... $parameters)
-    {
-        $this->paramaters = $parameters;
-    }
-
-    /**
      * formata para retornar para o banco de dados
      */
     
@@ -36,20 +27,11 @@ class Type
     }
 
     /**
-     * retorna a lista de error do campo 
-     */
-
-    function getErrors()
-    {
-        return empty($this->errors) ? null : $this->errors;
-    }
-
-    /**
      * se retornar false não é adicionado a lista de inputs verificados
      */
 
-    function isValid()
+    function validate()
     {
-        return true;
+        throw new \Exception('xxxxxxxxx');
     }
 }

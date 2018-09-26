@@ -8,6 +8,7 @@ class Input
     private $input;
     private $result;
     private $nulls = [];
+    private $exceptions = [];
 
     function __construct(Array $input)
     {
@@ -26,17 +27,28 @@ class Input
             
         if (is_null($value)) {
             $this->nulls[] = $name;
-            return;
+            return $this;
         }
         
-        $this->result[$name] = $value;
+        try {
+            $type->setValue($value);
+            $value = $type->getFormatted();
+            $type->validate();
+            $this->result[$name] = $value; 
+        } catch (\Exception $e) {
+            $this->exceptions[$name]['message'] = $e->getMessage();
+            $this->exceptions[$name]['detail'] = $e->getCode();
+            $this->exceptions[$name]['type'] = get_class($e);
+        }
+
         return $this;
     }
 
     private function getAsArray()
     {
-        if (!empty($this->nulls))
-            throw new \helper\input\Exception($this->nulls);
+        if (!empty($this->nulls) 
+            || !empty($this->exceptions) 
+        ) throw new \helper\input\Exception($this->nulls, $this->exceptions);
         return $this->result;
     }
 
