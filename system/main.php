@@ -1,34 +1,36 @@
 <?php
 
-header('Content-Type: application/json');
+//
+//
+//
 
-require "constants.php";
-require "autoload.php";
+namespace SYSTEM;
+const HOME    = __DIR__.DS; 
+const HELPERS = HOME.'Helper'.DS;
 
-try {
-    new Core\System();
-    die;
-} 
+//
+//
+//
 
-catch (Core\Exception\HttpException $e) {
-    $exp = $e;
-    $httpCode = $e->getHttpCode();
-} 
+namespace APPLICATIONS;
+const HOME = HOME.'applications'.DS;
+require_once HOME.'configuration.php';
 
-catch (\Exception $e) {
-    $exp = $e;
-    $httpCode = 500;
-} 
+//
+//
+//
 
-finally {
-    http_response_code($httpCode);
-    echo json_encode([
-        "error" => [
-            'message' => $exp->getMessage(),
-            'detail'  => $exp->getCode(),
-            'code'    => $httpCode,
-            'type'    => get_class($exp),
-            'trace'   => \APPLICATION\PRODUCTION ? NULL : $exp->getTrace() 
-        ]
-    ]);
-}
+namespace APPLICATION;
+const HOME = \APPLICATIONS\HOME.\APPLICATIONS\GATES[ HOST ].DS;
+require_once HOME.'configuration.php';
+
+//
+//
+//
+
+namespace Core;
+require "Core\Autoload.php";
+
+Autoload::getInstance();
+ErrorHandler::getInstance();
+System::getInstance();

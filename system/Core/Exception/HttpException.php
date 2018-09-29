@@ -3,10 +3,10 @@
 namespace Core\Exception;
 
 class HttpException extends \Exception {
-    protected $httpCode = 500;
+    protected $httpStatus = 500;
 
-    public function getHttpCode()
+    public function getHttpStatus()
     {
-        return $this->httpCode;
+        return $this->httpStatus;
     }
 }

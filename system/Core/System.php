@@ -6,16 +6,46 @@ use Core\Util\Path;
 
 class System
 {
-    function __construct()
-    {   
-        $this->configurePHP();
-        $this->route();
+    static private $instance = null;
+    
+    static function getInstance()
+    {
+        return Self::$instance 
+        ? Self::$instance 
+        : Self::$instance = new Self(); 
+    }
+
+    private $response = [];
+    private $errorHandler;
+    
+    private function __construct()
+    { 
+        $this->errorHandler = ErrorHandler::getInstance();
+
+        try 
+        {
+            $this->configurePHP();
+            $this->route();
+        } catch (\Exception $e) {
+            $this->errorHandler->exception($e);
+        } finally {
+            $this->response();
+        }  
     }
 
     private function configurePHP()
     {
+        header('Content-Type: application/json');
         date_default_timezone_set(\APPLICATION\TIMEZONE);
         ini_set('display_errors', !\APPLICATION\PRODUCTION);
+        if (\APPLICATION\LOGS) 
+        {
+            is_dir(\APPLICATION\LOGS)
+            or mkdir(\APPLICATION\LOGS, 0755, true);
+            ini_set('log_errors', true); 
+            ini_set('error_log', \APPLICATION\LOGS.'fatal-php-errors.log'); 
+            ini_set('log_errors_max_len', 1024); 
+        }
     }
 
     private function route()
@@ -42,6 +72,14 @@ class System
         if (!$endpoint) 
             throw new \Core\Exception\EndPointNotFound();
         
-        die( json_encode([ "reponse" => $endpoint() ]) );
+        $this->response = $endpoint();
+    }
+
+    private function response()
+    {
+        echo json_encode([
+            'response' => $this->response,
+            'errors' => $this->errorHandler->getTrace()
+        ]);
     }
 }
