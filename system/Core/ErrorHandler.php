@@ -4,6 +4,15 @@ namespace Core;
 
 class ErrorHandler
 {
+    static private $instance = null;
+    
+    static function getInstance()
+    {
+        return Self::$instance 
+        ? Self::$instance 
+        : Self::$instance = new Self(); 
+    }
+ 
     const NAME = [
         1     => "E_ERROR",
         2     => "E_WARNING",
@@ -23,25 +32,15 @@ class ErrorHandler
         32767 => "E_ALL",
     ];
 
-    static private $instance = null;
     private $trace = [];
 
-    static function getInstance()
-    {
-        return Self::$instance 
-            ? Self::$instance 
-            : Self::$instance = new Self(); 
-    }
-    
     private function __construct(){
         set_error_handler([$this, 'error']);
     }
-
+    
     function exception(\Exception $e)
     {
-
-        $this->trace[] = !\APPLICATION\PRODUCTION
-            
+        $this->trace['exception'][] = !\APPLICATION\PRODUCTION
             ? [ "message" => $e->getMessage(),
                 "type"    => get_class($e),
                 "detail"  => $e->getCode(),
@@ -54,20 +53,23 @@ class ErrorHandler
                 "detail"  => $e->getCode()];
     }
 
-    function error($no, $str, $file, $line)
+    function error($no, $message, $file, $line)
     {
-        $this->trace[] = !\APPLICATION\PRODUCTION
-        
-            ? [ "message" => $str,
-                "type"    => ErrorHandler::NAME[ $no ],
+        $type = ErrorHandler::NAME[ $no ];
+        $this->trace['error'][] = !\APPLICATION\PRODUCTION
+            ? [ "message" => $message,
+                "type"    => $type,
                 "detail"  => $no,
                 "file"    => $file,
                 "line"    => $line]
-                
             
-            : [ "message" => $str,
-                "type"    => ErrorHandler::NAME[ $no ],
+            : [ "message" => $message,
+                "type"    => $type,
                 "detail"  => $no];
+
+
+            $type = ltrim($type, 'E_');
+            error_log("{$type} {$message} in {$file} on line {$line}");
     }
 
     function getTrace()

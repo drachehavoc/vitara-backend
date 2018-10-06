@@ -10,9 +10,7 @@ class System
     
     static function getInstance()
     {
-        return Self::$instance 
-        ? Self::$instance 
-        : Self::$instance = new Self(); 
+        return Self::$instance ? Self::$instance : Self::$instance = new Self(); 
     }
 
     private $response = [];
@@ -21,14 +19,20 @@ class System
     private function __construct()
     { 
         $this->errorHandler = ErrorHandler::getInstance();
+        $this->configurePHP();
 
         try 
         {
-            $this->configurePHP();
             $this->route();
-        } catch (\Exception $e) {
+        } 
+        
+        catch (\Exception $e) 
+        {
             $this->errorHandler->exception($e);
-        } finally {
+        } 
+        
+        finally
+        {
             $this->response();
         }  
     }
@@ -43,7 +47,7 @@ class System
             is_dir(\APPLICATION\LOGS)
             or mkdir(\APPLICATION\LOGS, 0755, true);
             ini_set('log_errors', true); 
-            ini_set('error_log', \APPLICATION\LOGS.'fatal-php-errors.log'); 
+            ini_set('error_log', \APPLICATION\LOGS.'php-errors.log'); 
             ini_set('log_errors_max_len', 1024); 
         }
     }
@@ -77,9 +81,14 @@ class System
 
     private function response()
     {
-        echo json_encode([
+        $errors = $this->errorHandler->getTrace();
+        $response = [
             'response' => $this->response,
-            'errors' => $this->errorHandler->getTrace()
-        ]);
+        ];
+
+        if (!empty($errors)) 
+            $response = array_merge($response, $errors);
+
+        echo json_encode($response);
     }
 }
