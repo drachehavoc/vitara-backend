@@ -7,7 +7,7 @@ class PDO extends \PDO
     function __construct()
     {
         parent::__construct(
-            "mysql:host=127.0.0.1:3306;dbname=pessoas", 
+            "mysql:host=null:3306;dbname=null", 
             "root", 
             "", 
             [

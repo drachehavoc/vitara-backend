@@ -4,97 +4,116 @@ namespace Helper\Relational\Map;
 
 class Condition
 {
+
     protected $columnsNames = [];
     protected $parts = [];
     protected $values = [];
-    protected $uid = 0;
+    protected $anchors = [];
+    protected $ident = "    ";
 
     function __construct(string $col, string $cond, $val, ... $vals)
     {
-        $this->set($col, $cond, $val, $vals);
+        $this->set(null, $col, $cond, $val, ... $vals);
     }
 
-    function and(string $col, string $cond, $val, ... $vals)
+    private function set($glue, $col, $cond, $val, ... $vals)
     {
-        $this->parts[] = PHP_EOL . "    AND";
-        return $this->set($col, $cond, $val, $vals);
-    }
-    
-    function or(string $col, string $cond, $val, ... $vals)
-    {
-        $this->parts[] = PHP_EOL . "    OR ";
-        return $this->set($col, $cond, $val, $vals);
-    }
-
-    function __toString()
-    {
-        return implode(" ", $this->parts);
+        array_unshift($vals, $val);
+        $this->parts[] = [
+            "col"  => $col,
+            "cond" => $cond,
+            "glue" => $glue ? $glue : "",
+            "vals" => $vals
+        ];
+        return $this;
     }
 
-    function getValues()
+    private function createAnchor($value)
     {
-        return $this->values;
+        $name = ":val" . count($this->values) . "_";
+        $this->values[$name] = $value;
+        return $name;
     }
 
-    private function set(string $col, string $cond, $val, $vals)
+    private function common($part)
     {
-        $col = checkColumnName($col);
-        switch ($cond)
+        $anchorName = $this->createAnchor($part['vals'][0]);
+        return "{$part['glue']}{$part['col']} {$part['cond']} {$anchorName}";
+    } 
+
+    private function in($part)
+    {
+        $anchorNames = [];
+        foreach($part['vals'] as $val)
+            $anchorNames[] = $this->createAnchor($val);
+        return "{$part['glue']}{$part['col']} in (". implode(", ", $anchorNames) .")";
+    } 
+
+    private function between($part)
+    {
+        if (count($part['vals']) < 2)
+            throw new \Exception("a clausula 'between' precisa receber exatos dois parâmetros, recebido '". implode(", ", $part['vals']) ."' <--- melhorar");
+        $anchorName1 = $this->createAnchor($part['vals'][0]);
+        $anchorName2 = $this->createAnchor($part['vals'][1]);
+        return "{$part['glue']}{$part['col']} between {$anchorName1} and {$anchorName2}";
+    }
+
+    function and($col, $cond, $val, ... $vals)
+    {
+        return $this->set($this->ident.'AND ', $col, $cond, $val, ... $vals);
+    } 
+
+    function or($col, $cond, $val, ... $vals)
+    {
+        return $this->set($this->ident.' OR ', $col, $cond, $val, ... $vals);
+    } 
+
+    function setAnchors($anchors)
+    {
+        $this->values = [];
+        $this->anchors = (Array)$anchors;
+        return $this;
+    }
+
+    function getPDOParams()
+    {
+        $query = [];
+
+        foreach($this->parts as $part)
         {
-            case 'like':
-            case '<>':
-            case '>=':
-            case '<=':
-            case '>':
-            case '<':
-            case '=':
-                return $this->setSimple($col, $cond, $val);
-                
-            case 'between':
-                if (count($vals) < 1)
-                    throw new \Exception('between precisa ter valor inicial e final');
-                return $this->setBetween($col, $val, $vals[0]);
+            if ($part['vals'][0] === ANCHOR)
+            {
+                $anchorName = $part['vals'][1];
+                if (!isset($this->anchors[ $anchorName ]))
+                    throw new \Exception("ancora '$anchorName' não foi definida <--- melhorar");
+                $part['vals'] = $this->anchors[ $anchorName ];
+            }
 
-            case 'in':
-                array_unshift($vals, $val);
-                return $this->setIn($col, $vals);
+            switch ($part['cond'])
+            {
+                case 'like':
+                case '<>':
+                case '>=':
+                case '<=':
+                case '>':
+                case '<':
+                case '=':
+                    $query[] = $this->common($part);
+                    break;
+
+                case 'between':
+                    $query[] = $this->between($part);
+                    break;
+
+                case 'in':
+                    $query[] = $this->in($part);
+                    break;
+            }
         }
-    }
 
-    private function setSimple(string $col, string $cond, $val)
-    {
-        $uid = $this->uid++;
-        $anchor = "{$col}_{$uid}";
-        $this->parts[] = "{$col} {$cond} :{$anchor}";
-        $this->values[$anchor] = $val;
-        return $this;
-    }
-
-    private function setBetween(string $col, $min, $max)
-    {
-        $uid = $this->uid++;
-        $anchor1 = "{$col}_{$uid}";
-        
-        $uid = $this->uid++;
-        $anchor2 = "{$col}_{$uid}";
-
-        $this->parts[] = "{$col} between :{$anchor1} and :{$anchor2}";
-        $this->values[$anchor1] = $min;
-        $this->values[$anchor2] = $max;
-        return $this;
-    }
-    
-    private function setIn(string $col, $vals)
-    {
-        $ins = [];
-        foreach($vals as $val)
-        {
-            $uid = $this->uid++;
-            $anchor = "{$col}_{$uid}";
-            $ins[] = ":{$anchor}";
-            $this->values[$anchor] = $val;
-        }
-        $this->parts[] = "{$col} in (". implode(', ', $ins) .")";
-        return $this;
+        return (Object)[
+            "query" => implode(PHP_EOL, $query),
+            "values" => $this->values
+        ];
     }
 }

@@ -1,11 +1,24 @@
 <?php
 
-namespace Helper\Relational;
+namespace Helper\Relational\Map;
 
-require_once "functions.php";
+const ANCHOR = "__LJHNMKHNKSHBNJDHBNJDHN____LJHNMKHNKSHBNJDHBNJDHN__";
+
+function Conditional(string $col, string $cond, $val, ... $vals)
+{
+    return new Condition($col, $cond, $val, ... $vals);
+}
+
+function Cond(string $col, string $cond, $val, ... $vals)
+{
+    return Conditional($col, $cond, $val, ... $vals);
+}
+
+namespace Helper\Relational;
 
 class Map
 {
+
     public $raw;
     private $select;
 
@@ -13,7 +26,7 @@ class Map
     {
         $this->raw = (Object)[
             "pdo"   => $pdo ?? new PDO,
-            "table" => Map\checkTableName($table)
+            "table" => Map\Check::tableName($table)
         ];
     }
 
