@@ -7,11 +7,12 @@ class PDO extends \PDO
     function __construct()
     {
         parent::__construct(
-            "mysql:host=null:3306;dbname=null", 
-            "root", 
-            "", 
+            Config::dsn, 
+            Config::usr, 
+            Config::psw, 
             [
-                PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'
+                \PDO::ATTR_ERRMODE            => \PDO::ERRMODE_EXCEPTION,
+                \PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'
             ]
         );
     }

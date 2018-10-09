@@ -9,6 +9,10 @@ const TIMEZONE   = 'America/Sao_Paulo';
 const HELPERS    = HOME.'helpers'.DS;
 const LOGS       = HOME.'logs'.DS;
 const ROUTES     = [
+    // ERROR TEST
+    '{^.*?/error}'                => 'test-errors',
     '{^.*?/error/(?<err>[0-9]+)}' => 'test-errors',
-    '{^POST/crud/(?<nome>[a-zA-Z ]+)}' => 'crud-post',
+    
+    // CRUD TEST
+    '{^GET/crud/(?<nome>[a-zA-Z ]+)}' => 'crud-get',
 ];
