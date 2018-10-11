@@ -8,6 +8,8 @@ class Select
     protected $condition;
     protected $columns = [];
     protected $customColumnsFunctions = [];
+    protected $page = 1;
+    protected $offset = 100;
 
     function __construct(\Helper\Relational\Map $map)
     {
@@ -21,8 +23,13 @@ class Select
             case 'cond':
             case 'condition':
                 return $this->condition;
+
+            case 'map':
+                return $this->map;
+            
+            default:
+                throw new \Core\Exception\InaccessibleAttribute(); 
         }
-        throw new \Exception("propriedade '{$name}' inacessivel na classe '". __CLASS__."'"); 
     }
 
     function columns($column, ... $columns)
@@ -57,7 +64,7 @@ class Select
     {
         $this->customColumnsFunctions[$column] = function ($row) use ($select) 
         {
-            $select->getCondition()->setAnchors((Array)$row);
+            $select->getCondition()->anchors($row);
             return $select->fetch();
         };
         return $this;
@@ -82,19 +89,16 @@ class Select
     }
 
     private function prepareQuery()
-    {
-        $columnsName = count($this->columns) 
-            ? implode(','.PHP_EOL.'    ', $this->columns) 
-            : PHP_EOL.'    *';
-        
-        $conditionMeta = $this->condition->getPDOParams(); 
+    {        
+        $conditionMeta = $this->condition->mount(); 
 
-        $query = "SELECT" . PHP_EOL
-               . "    {$columnsName}" . PHP_EOL
-               . "FROM " . PHP_EOL
-               . "    {$this->map->raw->table}" . PHP_EOL
-               . "WHERE " . PHP_EOL
-               . "    {$conditionMeta->query}";
+        $query = $this->map->querySelect(
+            $this->columns,
+            $this->map->raw->table,
+            $conditionMeta->query,
+            $this->offset * ($this->page - 1),
+            $this->offset
+        );
 
         return [
             "query"  => $query,

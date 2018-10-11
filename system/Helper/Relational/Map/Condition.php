@@ -4,116 +4,90 @@ namespace Helper\Relational\Map;
 
 class Condition
 {
-
-    protected $columnsNames = [];
     protected $parts = [];
-    protected $values = [];
-    protected $anchors = [];
-    protected $ident = "    ";
+    protected $values;
+    protected $count = 0;
 
     function __construct(string $col, string $cond, $val, ... $vals)
     {
-        $this->set(null, $col, $cond, $val, ... $vals);
-    }
-
-    private function set($glue, $col, $cond, $val, ... $vals)
-    {
-        array_unshift($vals, $val);
-        $this->parts[] = [
-            "col"  => $col,
-            "cond" => $cond,
-            "glue" => $glue ? $glue : "",
-            "vals" => $vals
-        ];
-        return $this;
-    }
-
-    private function createAnchor($value)
-    {
-        $name = ":val" . count($this->values) . "_";
-        $this->values[$name] = $value;
-        return $name;
-    }
-
-    private function common($part)
-    {
-        $anchorName = $this->createAnchor($part['vals'][0]);
-        return "{$part['glue']}{$part['col']} {$part['cond']} {$anchorName}";
-    } 
-
-    private function in($part)
-    {
-        $anchorNames = [];
-        foreach($part['vals'] as $val)
-            $anchorNames[] = $this->createAnchor($val);
-        return "{$part['glue']}{$part['col']} in (". implode(", ", $anchorNames) .")";
-    } 
-
-    private function between($part)
-    {
-        if (count($part['vals']) < 2)
-            throw new \Exception("a clausula 'between' precisa receber exatos dois parâmetros, recebido '". implode(", ", $part['vals']) ."' <--- melhorar");
-        $anchorName1 = $this->createAnchor($part['vals'][0]);
-        $anchorName2 = $this->createAnchor($part['vals'][1]);
-        return "{$part['glue']}{$part['col']} between {$anchorName1} and {$anchorName2}";
+        $this->values = new Values();
+        $this->set('', $col, $cond, $val, ... $vals);
     }
 
     function and($col, $cond, $val, ... $vals)
     {
-        return $this->set($this->ident.'AND ', $col, $cond, $val, ... $vals);
+        return $this->set('AND ', $col, $cond, $val, ... $vals);
     } 
 
     function or($col, $cond, $val, ... $vals)
     {
-        return $this->set($this->ident.' OR ', $col, $cond, $val, ... $vals);
-    } 
+        return $this->set('OR ', $col, $cond, $val, ... $vals);
+    }
 
-    function setAnchors($anchors)
+    function anchors($anchors)
     {
-        $this->values = [];
-        $this->anchors = (Array)$anchors;
+        $this->values->anchors((Array)$anchors);
+        return $this;
+    }
+    
+    private function set($glue, $col, $cond, $val, ... $vals)
+    {
+        $conf = [
+            "glue"      => $glue,
+            "condition" => $cond,
+            "column"    => $col
+        ];
+
+        $this->values->addWithConfig($conf, $val, ... $vals);
         return $this;
     }
 
-    function getPDOParams()
+    function mount()
     {
-        $query = [];
+        $mntQuery = [];
+        $mntValues = [];
 
-        foreach($this->parts as $part)
+        foreach($this->values->mount() as $key => $part)
         {
-            if ($part['vals'][0] === ANCHOR)
-            {
-                $anchorName = $part['vals'][1];
-                if (!isset($this->anchors[ $anchorName ]))
-                    throw new \Exception("ancora '$anchorName' não foi definida <--- melhorar");
-                $part['vals'] = $this->anchors[ $anchorName ];
-            }
+            $config = $part['config'];
+            $partValues = $part['value'];
 
-            switch ($part['cond'])
+            switch ($config['condition'])
             {
-                case 'like':
-                case '<>':
-                case '>=':
-                case '<=':
+                case '=':
                 case '>':
                 case '<':
-                case '=':
-                    $query[] = $this->common($part);
+                case '>=':
+                case '<=':
+                case '<>':
+                case 'like':
+                    $mntValues[$key] = $partValues[0];
+                    $mntQuery[] = "{$config['glue']}{$config['column']} {$config['condition']} :{$key}";
                     break;
-
-                case 'between':
-                    $query[] = $this->between($part);
-                    break;
-
+                    
                 case 'in':
-                    $query[] = $this->in($part);
+                    $keys = [];
+                    foreach($partValues as $valueIndex => $value) 
+                    {
+                        $keys[] = ":".$key."{$valueIndex}_";
+                        $mntValues[$key."{$valueIndex}_"] = $value;
+                    }
+                    $mntQuery[] = "{$config['glue']}{$config['column']} in (".implode(", ", $keys).")";
+                    break;
+                
+                case 'between':
+                    if (!isset($partValues[1]))
+                        throw new \Exception("between precisa ter dois parâmetros <--- melhorar"); 
+                    $mntValues[$key.'A_'] = $partValues[0];
+                    $mntValues[$key.'B_'] = $partValues[1];
+                    $mntQuery[] = "{$config['glue']}{$config['column']} between :{$key}_A_ and :{$key}_B_";
                     break;
             }
         }
 
         return (Object)[
-            "query" => implode(PHP_EOL, $query),
-            "values" => $this->values
+            'query'  => implode(' ', $mntQuery),
+            'values' => $mntValues
         ];
     }
 }

@@ -1,0 +1,893 @@
+[09-Oct-2018 10:10:06 America/Sao_Paulo] NOTICE Undefined property: Core\Exception\InaccessibleAttribute::$trace in C:\terminal\live\server\system\Core\Exception\InaccessibleAttribute.php on line 9
+[09-Oct-2018 10:45:53 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Helper\Relational\Map::querySelect(), 3 passed in C:\terminal\live\server\system\Helper\Relational\Map\Select.php on line 100 and exactly 5 expected in C:\terminal\live\server\system\Helper\Relational\Map.php:55
+Stack trace:
+#0 C:\terminal\live\server\system\Helper\Relational\Map\Select.php(100): Helper\Relational\Map->querySelect(Array, 'pessoas', 'id = :val0_')
+#1 C:\terminal\live\server\system\Helper\Relational\Map\Select.php(129): Helper\Relational\Map\Select->prepareQuery()
+#2 C:\terminal\live\server\applications\example\crud-get.php(57): Helper\Relational\Map\Select->debug()
+#3 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#4 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#5 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#6 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#7 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\ in C:\terminal\live\server\system\Helper\Relational\Map.php on line 55
+[09-Oct-2018 10:46:32 America/Sao_Paulo] PHP Fatal error:  Uncaught TypeError: Argument 4 passed to Helper\Relational\Map::querySelect() must be an instance of Helper\Relational\integer, integer given, called in C:\terminal\live\server\system\Helper\Relational\Map\Select.php on line 102 and defined in C:\terminal\live\server\system\Helper\Relational\Map.php:55
+Stack trace:
+#0 C:\terminal\live\server\system\Helper\Relational\Map\Select.php(102): Helper\Relational\Map->querySelect(Array, 'pessoas', 'id = :val0_', 1, 100)
+#1 C:\terminal\live\server\system\Helper\Relational\Map\Select.php(131): Helper\Relational\Map\Select->prepareQuery()
+#2 C:\terminal\live\server\applications\example\crud-get.php(57): Helper\Relational\Map\Select->debug()
+#3 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#4 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#5 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#6 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#7 C:\terminal\live\server\ in C:\terminal\live\server\system\Helper\Relational\Map.php on line 55
+[09-Oct-2018 10:47:22 America/Sao_Paulo] PHP Fatal error:  Uncaught TypeError: Argument 4 passed to Helper\Relational\Map::querySelect() must be an instance of Helper\Relational\integer, integer given, called in C:\terminal\live\server\system\Helper\Relational\Map\Select.php on line 102 and defined in C:\terminal\live\server\system\Helper\Relational\Map.php:55
+Stack trace:
+#0 C:\terminal\live\server\system\Helper\Relational\Map\Select.php(102): Helper\Relational\Map->querySelect(Array, 'pessoas', 'id = :val0_', 1, 100)
+#1 C:\terminal\live\server\system\Helper\Relational\Map\Select.php(131): Helper\Relational\Map\Select->prepareQuery()
+#2 C:\terminal\live\server\applications\example\crud-get.php(57): Helper\Relational\Map\Select->debug()
+#3 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#4 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#5 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#6 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#7 C:\terminal\live\server\ in C:\terminal\live\server\system\Helper\Relational\Map.php on line 55
+[09-Oct-2018 10:47:28 America/Sao_Paulo] PHP Fatal error:  Uncaught TypeError: Argument 4 passed to Helper\Relational\Map::querySelect() must be an instance of Helper\Relational\integer, integer given, called in C:\terminal\live\server\system\Helper\Relational\Map\Select.php on line 102 and defined in C:\terminal\live\server\system\Helper\Relational\Map.php:55
+Stack trace:
+#0 C:\terminal\live\server\system\Helper\Relational\Map\Select.php(102): Helper\Relational\Map->querySelect(Array, 'pessoas', 'id = :val0_', 1, 100)
+#1 C:\terminal\live\server\system\Helper\Relational\Map\Select.php(131): Helper\Relational\Map\Select->prepareQuery()
+#2 C:\terminal\live\server\applications\example\crud-get.php(57): Helper\Relational\Map\Select->debug()
+#3 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#4 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#5 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#6 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#7 C:\terminal\live\server\ in C:\terminal\live\server\system\Helper\Relational\Map.php on line 55
+[09-Oct-2018 10:47:30 America/Sao_Paulo] PHP Fatal error:  Uncaught TypeError: Argument 4 passed to Helper\Relational\Map::querySelect() must be an instance of Helper\Relational\integer, integer given, called in C:\terminal\live\server\system\Helper\Relational\Map\Select.php on line 102 and defined in C:\terminal\live\server\system\Helper\Relational\Map.php:55
+Stack trace:
+#0 C:\terminal\live\server\system\Helper\Relational\Map\Select.php(102): Helper\Relational\Map->querySelect(Array, 'pessoas', 'id = :val0_', 1, 100)
+#1 C:\terminal\live\server\system\Helper\Relational\Map\Select.php(131): Helper\Relational\Map\Select->prepareQuery()
+#2 C:\terminal\live\server\applications\example\crud-get.php(57): Helper\Relational\Map\Select->debug()
+#3 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#4 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#5 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#6 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#7 C:\terminal\live\server\ in C:\terminal\live\server\system\Helper\Relational\Map.php on line 55
+[09-Oct-2018 10:47:31 America/Sao_Paulo] PHP Fatal error:  Uncaught TypeError: Argument 4 passed to Helper\Relational\Map::querySelect() must be an instance of Helper\Relational\integer, integer given, called in C:\terminal\live\server\system\Helper\Relational\Map\Select.php on line 102 and defined in C:\terminal\live\server\system\Helper\Relational\Map.php:55
+Stack trace:
+#0 C:\terminal\live\server\system\Helper\Relational\Map\Select.php(102): Helper\Relational\Map->querySelect(Array, 'pessoas', 'id = :val0_', 1, 100)
+#1 C:\terminal\live\server\system\Helper\Relational\Map\Select.php(131): Helper\Relational\Map\Select->prepareQuery()
+#2 C:\terminal\live\server\applications\example\crud-get.php(57): Helper\Relational\Map\Select->debug()
+#3 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#4 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#5 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#6 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#7 C:\terminal\live\server\ in C:\terminal\live\server\system\Helper\Relational\Map.php on line 55
+[09-Oct-2018 10:47:32 America/Sao_Paulo] PHP Fatal error:  Uncaught TypeError: Argument 4 passed to Helper\Relational\Map::querySelect() must be an instance of Helper\Relational\integer, integer given, called in C:\terminal\live\server\system\Helper\Relational\Map\Select.php on line 102 and defined in C:\terminal\live\server\system\Helper\Relational\Map.php:55
+Stack trace:
+#0 C:\terminal\live\server\system\Helper\Relational\Map\Select.php(102): Helper\Relational\Map->querySelect(Array, 'pessoas', 'id = :val0_', 1, 100)
+#1 C:\terminal\live\server\system\Helper\Relational\Map\Select.php(131): Helper\Relational\Map\Select->prepareQuery()
+#2 C:\terminal\live\server\applications\example\crud-get.php(57): Helper\Relational\Map\Select->debug()
+#3 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#4 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#5 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#6 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#7 C:\terminal\live\server\ in C:\terminal\live\server\system\Helper\Relational\Map.php on line 55
+[09-Oct-2018 11:12:28 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class 'Helper\Relational\Map\Insert' not found in C:\terminal\live\server\system\Helper\Relational\Map.php:50
+Stack trace:
+#0 C:\terminal\live\server\applications\example\crud-post.php(8): Helper\Relational\Map->__get('insert')
+#1 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#2 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#3 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#4 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#5 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Helper\Relational\Map.php on line 50
+[09-Oct-2018 11:12:41 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Helper\Relational\Map\Insert::fetch() in C:\terminal\live\server\applications\example\crud-post.php:10
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#1 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#2 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#3 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#4 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\crud-post.php on line 10
+[09-Oct-2018 11:21:28 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined function Helper\Relational\Map\Table() in C:\terminal\live\server\applications\example\crud-post.php:7
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#1 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#2 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#3 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#4 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\crud-post.php on line 7
+[09-Oct-2018 11:23:04 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined function Helper\Relational\Map\Cond() in C:\terminal\live\server\applications\example\crud-get.php:33
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#1 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#2 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#3 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#4 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\crud-get.php on line 33
+[09-Oct-2018 11:26:19 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined function Helper\Relational\Map\Table() in C:\terminal\live\server\applications\example\crud-post.php:7
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#1 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#2 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#3 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#4 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\crud-post.php on line 7
+[09-Oct-2018 11:26:38 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Helper\Relational\Map\Insert::values() in C:\terminal\live\server\applications\example\crud-post.php:10
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#1 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#2 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#3 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#4 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\crud-post.php on line 10
+[09-Oct-2018 11:27:22 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Helper\Relational\Map\Insert::values() in C:\terminal\live\server\applications\example\crud-post.php:11
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#1 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#2 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#3 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#4 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\crud-post.php on line 11
+[09-Oct-2018 11:29:51 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Helper\Relational\Map\Insert::values() in C:\terminal\live\server\applications\example\crud-post.php:11
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#1 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#2 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#3 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#4 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\crud-post.php on line 11
+[09-Oct-2018 11:30:07 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Helper\Relational\Map\Insert::values() in C:\terminal\live\server\applications\example\crud-post.php:11
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#1 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#2 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#3 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#4 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\crud-post.php on line 11
+[09-Oct-2018 11:30:24 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Helper\Relational\Map\Insert::values() in C:\terminal\live\server\applications\example\crud-post.php:11
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#1 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#2 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#3 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#4 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\crud-post.php on line 11
+[09-Oct-2018 11:30:26 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Helper\Relational\Map\Insert::values() in C:\terminal\live\server\applications\example\crud-post.php:11
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#1 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#2 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#3 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#4 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\crud-post.php on line 11
+[09-Oct-2018 11:30:32 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Helper\Relational\Map\Insert::values() in C:\terminal\live\server\applications\example\crud-post.php:11
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#1 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#2 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#3 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#4 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\crud-post.php on line 11
+[09-Oct-2018 11:30:54 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Helper\Relational\Map\Insert::execute() in C:\terminal\live\server\applications\example\crud-post.php:13
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#1 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#2 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#3 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#4 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\crud-post.php on line 13
+[09-Oct-2018 11:37:25 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Helper\Relational\Map\Select::setAnchor() in C:\terminal\live\server\applications\example\crud-get.php:61
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#1 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#2 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#3 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#4 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\crud-get.php on line 61
+[09-Oct-2018 11:37:35 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Helper\Relational\Map\Select::setAnchors() in C:\terminal\live\server\applications\example\crud-get.php:61
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#1 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#2 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#3 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#4 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\crud-get.php on line 61
+[09-Oct-2018 12:00:15 America/Sao_Paulo] NOTICE Array to string conversion in C:\terminal\live\server\system\Helper\Relational\Map\Select.php on line 124
+[09-Oct-2018 12:01:37 America/Sao_Paulo] NOTICE Array to string conversion in C:\terminal\live\server\system\Helper\Relational\Map\Select.php on line 124
+[09-Oct-2018 12:23:09 America/Sao_Paulo] NOTICE Array to string conversion in C:\terminal\live\server\system\Helper\Relational\Map\Select.php on line 124
+[09-Oct-2018 12:24:12 America/Sao_Paulo] NOTICE Array to string conversion in C:\terminal\live\server\system\Helper\Relational\Map\Select.php on line 124
+[09-Oct-2018 12:24:12 America/Sao_Paulo] NOTICE Array to string conversion in C:\terminal\live\server\system\Helper\Relational\Map\Select.php on line 124
+[09-Oct-2018 12:25:53 America/Sao_Paulo] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Helper\Relational\Map\Condition::createAnchorAndAddValue() must be of the type array, string given, called in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 76 and defined in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php:52
+Stack trace:
+#0 C:\terminal\live\server\system\Helper\Relational\Map\Condition.php(76): Helper\Relational\Map\Condition->createAnchorAndAddValue('__LJHNMKHNKSHBN...')
+#1 C:\terminal\live\server\system\Helper\Relational\Map\Condition.php(145): Helper\Relational\Map\Condition->in(Array)
+#2 C:\terminal\live\server\system\Helper\Relational\Map\Select.php(93): Helper\Relational\Map\Condition->getPDOParams()
+#3 C:\terminal\live\server\system\Helper\Relational\Map\Select.php(121): Helper\Relational\Map\Select->prepareQuery()
+#4 C:\terminal\live\server\applications\example\crud-get.php(64): Helper\Relational\Map\Select->debug()
+#5 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#6 C:\ in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 52
+[09-Oct-2018 12:49:04 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Undefined constant 'Helper\Relational\Map\ANCHOR' in C:\terminal\live\server\applications\example\crud-get.php:10
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#1 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#2 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#3 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#4 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\crud-get.php on line 10
+[09-Oct-2018 12:49:31 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Undefined constant 'Helper\Relational\Map\ANCHOR' in C:\terminal\live\server\applications\example\crud-get.php:10
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#1 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#2 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#3 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#4 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\crud-get.php on line 10
+[09-Oct-2018 12:50:03 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Undefined constant 'Helper\Relational\Map\ANCHOR' in C:\terminal\live\server\applications\example\crud-get.php:10
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#1 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#2 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#3 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#4 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\crud-get.php on line 10
+[09-Oct-2018 12:54:49 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Undefined constant 'Helper\Relational\Map\ANCHOR' in C:\terminal\live\server\applications\example\crud-get.php:11
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#1 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#2 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#3 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#4 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\crud-get.php on line 11
+[09-Oct-2018 13:01:20 America/Sao_Paulo] NOTICE Undefined variable: x in C:\terminal\live\server\applications\example\crud-get.php on line 10
+[09-Oct-2018 13:01:20 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function add() on null in C:\terminal\live\server\applications\example\crud-get.php:10
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#1 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#2 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#3 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#4 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\crud-get.php on line 10
+[09-Oct-2018 13:01:36 America/Sao_Paulo] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Helper\Relational\Map\ColumnsControl::add() must be of the type array, string given, called in C:\terminal\live\server\applications\example\crud-get.php on line 11 and defined in C:\terminal\live\server\system\Helper\Relational\Map\ColumnsControl.php:14
+Stack trace:
+#0 C:\terminal\live\server\applications\example\crud-get.php(11): Helper\Relational\Map\ColumnsControl->add('COL_B', 'valor')
+#1 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#2 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#3 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#4 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#5 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Helper\Relational\Map\ColumnsControl.php on line 14
+[09-Oct-2018 13:10:05 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Helper\Relational\Map\Condition::getValues() in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php:43
+Stack trace:
+#0 C:\terminal\live\server\applications\example\crud-get.php(28): Helper\Relational\Map\Condition->test()
+#1 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#2 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#3 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#4 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#5 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 43
+[09-Oct-2018 13:13:55 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Helper\Relational\Map\Condition::anchors() in C:\terminal\live\server\applications\example\crud-get.php:28
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#1 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#2 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#3 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#4 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\crud-get.php on line 28
+[09-Oct-2018 13:15:28 America/Sao_Paulo] NOTICE Undefined offset: 1 in C:\terminal\live\server\system\Helper\Relational\Map\ColumnsControl.php on line 20
+[09-Oct-2018 13:38:32 America/Sao_Paulo] NOTICE Undefined property: Helper\Relational\Map\Condition::$mountQuery in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 63
+[09-Oct-2018 13:38:42 America/Sao_Paulo] NOTICE Undefined property: Helper\Relational\Map\Condition::$mountQuery in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 63
+[09-Oct-2018 13:38:47 America/Sao_Paulo] NOTICE Undefined index: cond in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 50
+[09-Oct-2018 13:38:47 America/Sao_Paulo] NOTICE Undefined index: cond in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 50
+[09-Oct-2018 13:38:47 America/Sao_Paulo] NOTICE Undefined index: cond in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 50
+[09-Oct-2018 13:38:47 America/Sao_Paulo] NOTICE Undefined index: cond in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 50
+[09-Oct-2018 13:38:47 America/Sao_Paulo] NOTICE Undefined index: cond in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 50
+[09-Oct-2018 13:38:47 America/Sao_Paulo] NOTICE Undefined index: cond in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 50
+[09-Oct-2018 14:13:04 America/Sao_Paulo] NOTICE Undefined index: cond in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 89
+[09-Oct-2018 14:13:04 America/Sao_Paulo] NOTICE Undefined index: cond in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 89
+[09-Oct-2018 14:13:04 America/Sao_Paulo] NOTICE Undefined variable: query in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 66
+[09-Oct-2018 14:13:04 America/Sao_Paulo] WARNING implode(): Invalid arguments passed in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 66
+[09-Oct-2018 14:13:16 America/Sao_Paulo] NOTICE Undefined index: cond in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 89
+[09-Oct-2018 14:13:16 America/Sao_Paulo] NOTICE Undefined index: cond in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 89
+[09-Oct-2018 14:16:49 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Cannot unpack array with string keys in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php:62
+Stack trace:
+#0 C:\terminal\live\server\system\Helper\Relational\Map\Condition.php(107): Helper\Relational\Map\Condition->mount()
+#1 C:\terminal\live\server\applications\example\crud-get.php(39): Helper\Relational\Map\Condition->test()
+#2 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#3 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#4 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#5 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#6 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#7 {main}
+  thrown in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 62
+[09-Oct-2018 14:17:04 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Cannot unpack array with string keys in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php:62
+Stack trace:
+#0 C:\terminal\live\server\system\Helper\Relational\Map\Condition.php(107): Helper\Relational\Map\Condition->mount()
+#1 C:\terminal\live\server\applications\example\crud-get.php(39): Helper\Relational\Map\Condition->test()
+#2 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#3 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#4 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#5 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#6 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#7 {main}
+  thrown in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 62
+[09-Oct-2018 14:17:12 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Helper\Relational\Map\Condition::mountIn() in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php:86
+Stack trace:
+#0 C:\terminal\live\server\system\Helper\Relational\Map\Condition.php(60): Helper\Relational\Map\Condition->mountCheckType(Array, Array)
+#1 C:\terminal\live\server\system\Helper\Relational\Map\Condition.php(107): Helper\Relational\Map\Condition->mount()
+#2 C:\terminal\live\server\applications\example\crud-get.php(39): Helper\Relational\Map\Condition->test()
+#3 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#4 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#5 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#6 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#7 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#8 {main}
+  thrown in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 86
+[09-Oct-2018 14:38:07 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Undefined constant 'Helper\Relational\Map\ANCHOR' in C:\terminal\live\server\applications\example\crud-get.php:73
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#1 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#2 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#3 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#4 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\crud-get.php on line 73
+[09-Oct-2018 14:38:29 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Helper\Relational\Map\Condition::setAnchors() in C:\terminal\live\server\applications\example\crud-get.php:99
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#1 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#2 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#3 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#4 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\crud-get.php on line 99
+[09-Oct-2018 14:38:43 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'anchors' (T_STRING), expecting '{' in C:\terminal\live\server\applications\example\crud-get.php on line 74
+[09-Oct-2018 14:39:12 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to private method Helper\Relational\Map\Condition::mount() from context 'Helper\Relational\Map\Select' in C:\terminal\live\server\system\Helper\Relational\Map\Select.php:93
+Stack trace:
+#0 C:\terminal\live\server\system\Helper\Relational\Map\Select.php(121): Helper\Relational\Map\Select->prepareQuery()
+#1 C:\terminal\live\server\applications\example\crud-get.php(102): Helper\Relational\Map\Select->debug()
+#2 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#3 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#4 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#5 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#6 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#7 {main}
+  thrown in C:\terminal\live\server\system\Helper\Relational\Map\Select.php on line 93
+[09-Oct-2018 14:39:56 America/Sao_Paulo] NOTICE Trying to get property 'query' of non-object in C:\terminal\live\server\system\Helper\Relational\Map\Select.php on line 98
+[09-Oct-2018 14:39:56 America/Sao_Paulo] PHP Fatal error:  Uncaught TypeError: Argument 3 passed to Helper\Relational\Map::querySelect() must be of the type string, null given, called in C:\terminal\live\server\system\Helper\Relational\Map\Select.php on line 100 and defined in C:\terminal\live\server\system\Helper\Relational\Map.php:67
+Stack trace:
+#0 C:\terminal\live\server\system\Helper\Relational\Map\Select.php(100): Helper\Relational\Map->querySelect(Array, 'pessoas', NULL, 0, 100)
+#1 C:\terminal\live\server\system\Helper\Relational\Map\Select.php(121): Helper\Relational\Map\Select->prepareQuery()
+#2 C:\terminal\live\server\applications\example\crud-get.php(102): Helper\Relational\Map\Select->debug()
+#3 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#4 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#5 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#6 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#7 C:\terminal\live\server\main.php(8): require_once('C:\\te in C:\terminal\live\server\system\Helper\Relational\Map.php on line 67
+[09-Oct-2018 14:41:08 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Helper\Relational\Map\Condition::setAnchors() in C:\terminal\live\server\system\Helper\Relational\Map\Select.php:67
+Stack trace:
+#0 C:\terminal\live\server\system\Helper\Relational\Map\Select.php(136): Helper\Relational\Map\Select->Helper\Relational\Map\{closure}(Object(stdClass))
+#1 C:\terminal\live\server\applications\example\crud-get.php(101): Helper\Relational\Map\Select->fetch()
+#2 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#3 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#4 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#5 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#6 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#7 {main}
+  thrown in C:\terminal\live\server\system\Helper\Relational\Map\Select.php on line 67
+[09-Oct-2018 14:41:31 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Helper\Relational\Map\Condition::setAnchors() in C:\terminal\live\server\system\Helper\Relational\Map\Select.php:67
+Stack trace:
+#0 C:\terminal\live\server\system\Helper\Relational\Map\Select.php(136): Helper\Relational\Map\Select->Helper\Relational\Map\{closure}(Object(stdClass))
+#1 C:\terminal\live\server\applications\example\crud-get.php(97): Helper\Relational\Map\Select->fetch()
+#2 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#3 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#4 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#5 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#6 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#7 {main}
+  thrown in C:\terminal\live\server\system\Helper\Relational\Map\Select.php on line 67
+[09-Oct-2018 14:41:36 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Helper\Relational\Map\Condition::setAnchors() in C:\terminal\live\server\system\Helper\Relational\Map\Select.php:67
+Stack trace:
+#0 C:\terminal\live\server\system\Helper\Relational\Map\Select.php(136): Helper\Relational\Map\Select->Helper\Relational\Map\{closure}(Object(stdClass))
+#1 C:\terminal\live\server\applications\example\crud-get.php(97): Helper\Relational\Map\Select->fetch()
+#2 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#3 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#4 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#5 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#6 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#7 {main}
+  thrown in C:\terminal\live\server\system\Helper\Relational\Map\Select.php on line 67
+[09-Oct-2018 14:42:57 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Helper\Relational\Map\Condition::setAnchors() in C:\terminal\live\server\system\Helper\Relational\Map\Select.php:67
+Stack trace:
+#0 C:\terminal\live\server\system\Helper\Relational\Map\Select.php(136): Helper\Relational\Map\Select->Helper\Relational\Map\{closure}(Object(stdClass))
+#1 C:\terminal\live\server\applications\example\crud-get.php(97): Helper\Relational\Map\Select->fetch()
+#2 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#3 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#4 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#5 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#6 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#7 {main}
+  thrown in C:\terminal\live\server\system\Helper\Relational\Map\Select.php on line 67
+[09-Oct-2018 14:43:16 America/Sao_Paulo] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Helper\Relational\Map\Condition::anchors() must be of the type array, object given, called in C:\terminal\live\server\applications\example\crud-get.php on line 77 and defined in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php:27
+Stack trace:
+#0 C:\terminal\live\server\applications\example\crud-get.php(77): Helper\Relational\Map\Condition->anchors(Object(stdClass))
+#1 C:\terminal\live\server\system\Helper\Relational\Map\Select.php(136): Closure->{closure}(Object(stdClass))
+#2 C:\terminal\live\server\applications\example\crud-get.php(97): Helper\Relational\Map\Select->fetch()
+#3 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#4 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#5 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#6 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#7 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv... in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 27
+[09-Oct-2018 14:43:38 America/Sao_Paulo] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Helper\Relational\Map\Condition::anchors() must be of the type array, object given, called in C:\terminal\live\server\applications\example\crud-get.php on line 77 and defined in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php:27
+Stack trace:
+#0 C:\terminal\live\server\applications\example\crud-get.php(77): Helper\Relational\Map\Condition->anchors(Object(stdClass))
+#1 C:\terminal\live\server\system\Helper\Relational\Map\Select.php(136): Closure->{closure}(Object(stdClass))
+#2 C:\terminal\live\server\applications\example\crud-get.php(97): Helper\Relational\Map\Select->fetch()
+#3 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#4 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#5 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#6 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#7 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv... in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 27
+[09-Oct-2018 14:57:55 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Undefined constant 'Helper\Relational\Map\ANCHOR' in C:\terminal\live\server\applications\example\crud-post.php:12
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#1 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#2 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#3 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#4 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\crud-post.php on line 12
+[09-Oct-2018 14:58:05 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Undefined constant 'Helper\Relational\Map\ANCHOR' in C:\terminal\live\server\applications\example\crud-post.php:12
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#1 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#2 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#3 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#4 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\crud-post.php on line 12
+[09-Oct-2018 14:58:08 America/Sao_Paulo] NOTICE Undefined index: err in C:\terminal\live\server\applications\example\test-errors.php on line 13
+[09-Oct-2018 14:58:10 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Undefined constant 'Helper\Relational\Map\ANCHOR' in C:\terminal\live\server\applications\example\crud-post.php:12
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#1 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#2 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#3 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#4 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\crud-post.php on line 12
+[09-Oct-2018 15:01:08 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Undefined constant 'Helper\Relational\Map\ANCHOR' in C:\terminal\live\server\applications\example\crud-post.php:12
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#1 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#2 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#3 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#4 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\crud-post.php on line 12
+[09-Oct-2018 15:01:52 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Undefined constant 'Helper\Relational\Map\ANCHOR' in C:\terminal\live\server\applications\example\crud-post.php:12
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#1 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#2 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#3 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#4 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\crud-post.php on line 12
+[09-Oct-2018 15:03:24 America/Sao_Paulo] NOTICE Undefined variable: pessoas in C:\terminal\live\server\applications\example\crud-post.php on line 19
+[09-Oct-2018 15:03:24 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function execute() on null in C:\terminal\live\server\applications\example\crud-post.php:19
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#1 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#2 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#3 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#4 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\crud-post.php on line 19
+[09-Oct-2018 15:03:40 America/Sao_Paulo] NOTICE Undefined variable: pessoas in C:\terminal\live\server\applications\example\crud-post.php on line 19
+[09-Oct-2018 15:03:41 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function execute() on null in C:\terminal\live\server\applications\example\crud-post.php:19
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#1 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#2 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#3 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#4 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\crud-post.php on line 19
+[09-Oct-2018 15:05:13 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Helper\Relational\Map\Insert::anchor() in C:\terminal\live\server\applications\example\crud-post.php:15
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#1 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#2 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#3 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#4 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\crud-post.php on line 15
+[09-Oct-2018 17:50:37 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Helper\Relational\Map::queryInsert() in C:\terminal\live\server\system\Helper\Relational\Map\Insert.php:31
+Stack trace:
+#0 C:\terminal\live\server\applications\example\crud-post.php(19): Helper\Relational\Map\Insert->execute()
+#1 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#2 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#3 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#4 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#5 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Helper\Relational\Map\Insert.php on line 31
+[09-Oct-2018 17:52:53 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')' in C:\terminal\live\server\system\Helper\Relational\Map\Insert.php on line 35
+[10-Oct-2018 12:05:33 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Helper\Relational\Map\Insert::values() in C:\terminal\live\server\applications\example\crud-post.php:11
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#1 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#2 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#3 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#4 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\crud-post.php on line 11
+[10-Oct-2018 12:05:58 America/Sao_Paulo] WARNING array_merge(): Argument #2 is not an array in C:\terminal\live\server\system\Helper\Relational\Map\Insert.php on line 28
+[10-Oct-2018 12:06:53 America/Sao_Paulo] WARNING array_merge(): Argument #2 is not an array in C:\terminal\live\server\system\Helper\Relational\Map\Insert.php on line 28
+[10-Oct-2018 12:06:53 America/Sao_Paulo] WARNING array_merge(): Argument #2 is not an array in C:\terminal\live\server\system\Helper\Relational\Map\Insert.php on line 28
+[10-Oct-2018 12:06:53 America/Sao_Paulo] WARNING array_merge(): Argument #2 is not an array in C:\terminal\live\server\system\Helper\Relational\Map\Insert.php on line 28
+[10-Oct-2018 12:09:16 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Helper\Relational\Map\ColumnsControl::setAchors() in C:\terminal\live\server\system\Helper\Relational\Map\Insert.php:23
+Stack trace:
+#0 C:\terminal\live\server\applications\example\crud-post.php(16): Helper\Relational\Map\Insert->anchors(Array)
+#1 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#2 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#3 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#4 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#5 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Helper\Relational\Map\Insert.php on line 23
+[10-Oct-2018 16:12:16 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Helper\Relational\Map\Values::test() in C:\terminal\live\server\applications\example\crud-post.php:14
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#1 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#2 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#3 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#4 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\crud-post.php on line 14
+[10-Oct-2018 16:29:39 America/Sao_Paulo] NOTICE Undefined variable: key in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 29
+[10-Oct-2018 16:29:39 America/Sao_Paulo] NOTICE Undefined offset: 0 in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 20
+[10-Oct-2018 16:29:39 America/Sao_Paulo] NOTICE Undefined variable: key in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 29
+[10-Oct-2018 16:29:39 America/Sao_Paulo] NOTICE Undefined offset: 0 in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 20
+[10-Oct-2018 16:29:39 America/Sao_Paulo] NOTICE Undefined variable: key in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 29
+[10-Oct-2018 16:29:54 America/Sao_Paulo] NOTICE Undefined offset: 0 in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 20
+[10-Oct-2018 16:29:54 America/Sao_Paulo] NOTICE Undefined offset: 0 in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 20
+[10-Oct-2018 16:32:46 America/Sao_Paulo] WARNING array_unshift() expects parameter 1 to be array, string given in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 29
+[10-Oct-2018 16:32:46 America/Sao_Paulo] WARNING Invalid argument supplied for foreach() in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 29
+[10-Oct-2018 16:32:46 America/Sao_Paulo] NOTICE Undefined offset: 0 in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 20
+[10-Oct-2018 16:32:46 America/Sao_Paulo] WARNING array_unshift() expects parameter 1 to be array, string given in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 29
+[10-Oct-2018 16:32:46 America/Sao_Paulo] WARNING Invalid argument supplied for foreach() in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 29
+[10-Oct-2018 16:32:46 America/Sao_Paulo] NOTICE Undefined offset: 0 in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 20
+[10-Oct-2018 16:32:46 America/Sao_Paulo] WARNING array_unshift() expects parameter 1 to be array, string given in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 29
+[10-Oct-2018 16:32:46 America/Sao_Paulo] WARNING Invalid argument supplied for foreach() in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 29
+[10-Oct-2018 16:33:05 America/Sao_Paulo] WARNING Invalid argument supplied for foreach() in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 29
+[10-Oct-2018 16:33:05 America/Sao_Paulo] NOTICE Undefined offset: 0 in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 20
+[10-Oct-2018 16:33:05 America/Sao_Paulo] WARNING Invalid argument supplied for foreach() in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 29
+[10-Oct-2018 16:33:05 America/Sao_Paulo] NOTICE Undefined offset: 0 in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 20
+[10-Oct-2018 16:33:05 America/Sao_Paulo] WARNING Invalid argument supplied for foreach() in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 29
+[10-Oct-2018 16:34:11 America/Sao_Paulo] WARNING Invalid argument supplied for foreach() in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 29
+[10-Oct-2018 16:34:11 America/Sao_Paulo] NOTICE Undefined offset: 0 in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 20
+[10-Oct-2018 16:34:11 America/Sao_Paulo] WARNING Invalid argument supplied for foreach() in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 29
+[10-Oct-2018 16:34:11 America/Sao_Paulo] NOTICE Undefined offset: 0 in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 20
+[10-Oct-2018 16:34:11 America/Sao_Paulo] WARNING Invalid argument supplied for foreach() in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 29
+[10-Oct-2018 16:35:18 America/Sao_Paulo] NOTICE Undefined offset: 0 in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 20
+[10-Oct-2018 16:35:18 America/Sao_Paulo] NOTICE Undefined offset: 0 in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 20
+[10-Oct-2018 16:35:41 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Helper\Relational\Map\Values::add(), 2 passed in C:\terminal\live\server\applications\example\crud-post.php on line 11 and exactly 3 expected in C:\terminal\live\server\system\Helper\Relational\Map\Values.php:18
+Stack trace:
+#0 C:\terminal\live\server\applications\example\crud-post.php(11): Helper\Relational\Map\Values->add('column-b', 'oieee')
+#1 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#2 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#3 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#4 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#5 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 18
+[10-Oct-2018 16:35:50 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Helper\Relational\Map\Values::add(), 2 passed in C:\terminal\live\server\applications\example\crud-post.php on line 11 and exactly 3 expected in C:\terminal\live\server\system\Helper\Relational\Map\Values.php:18
+Stack trace:
+#0 C:\terminal\live\server\applications\example\crud-post.php(11): Helper\Relational\Map\Values->add('column-b', 'oieee')
+#1 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#2 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#3 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#4 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#5 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 18
+[10-Oct-2018 16:35:58 America/Sao_Paulo] NOTICE Undefined offset: 0 in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 20
+[10-Oct-2018 16:35:58 America/Sao_Paulo] NOTICE Undefined offset: 0 in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 20
+[10-Oct-2018 16:40:31 America/Sao_Paulo] NOTICE Undefined variable: values in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 24
+[10-Oct-2018 16:41:17 America/Sao_Paulo] NOTICE Undefined variable: values in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 24
+[10-Oct-2018 17:30:42 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Can only throw objects in C:\terminal\live\server\system\Helper\Relational\Map\Values.php:53
+Stack trace:
+#0 C:\terminal\live\server\system\Helper\Relational\Map\Values.php(67): Helper\Relational\Map\Values->mount()
+#1 C:\terminal\live\server\applications\example\crud-post.php(17): Helper\Relational\Map\Values->test()
+#2 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#3 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#4 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#5 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#6 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#7 {main}
+  thrown in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 53
+[10-Oct-2018 17:39:06 America/Sao_Paulo] WARNING Invalid argument supplied for foreach() in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 35
+[10-Oct-2018 17:39:33 America/Sao_Paulo] WARNING Invalid argument supplied for foreach() in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 35
+[10-Oct-2018 17:39:55 America/Sao_Paulo] WARNING Invalid argument supplied for foreach() in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 35
+[10-Oct-2018 17:40:00 America/Sao_Paulo] WARNING Invalid argument supplied for foreach() in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 35
+[10-Oct-2018 17:42:37 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Helper\Relational\Map\Values::getValues() in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php:56
+Stack trace:
+#0 C:\terminal\live\server\system\Helper\Relational\Map\Select.php(93): Helper\Relational\Map\Condition->mount()
+#1 C:\terminal\live\server\system\Helper\Relational\Map\Select.php(129): Helper\Relational\Map\Select->prepareQuery()
+#2 C:\terminal\live\server\applications\example\crud-get.php(61): Helper\Relational\Map\Select->fetch()
+#3 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#4 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#5 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#6 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#7 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#8 {main}
+  thrown in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 56
+[10-Oct-2018 17:42:57 America/Sao_Paulo] WARNING Invalid argument supplied for foreach() in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 35
+[10-Oct-2018 17:42:57 America/Sao_Paulo] WARNING Illegal offset type in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 60
+[10-Oct-2018 17:43:41 America/Sao_Paulo] WARNING Invalid argument supplied for foreach() in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 35
+[10-Oct-2018 17:43:41 America/Sao_Paulo] WARNING Illegal offset type in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 60
+[10-Oct-2018 17:44:10 America/Sao_Paulo] WARNING Invalid argument supplied for foreach() in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 35
+[10-Oct-2018 17:44:10 America/Sao_Paulo] WARNING Illegal offset type in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 61
+[10-Oct-2018 17:44:17 America/Sao_Paulo] WARNING Invalid argument supplied for foreach() in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 35
+[10-Oct-2018 17:44:17 America/Sao_Paulo] WARNING Illegal offset type in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 60
+[10-Oct-2018 17:44:34 America/Sao_Paulo] WARNING Invalid argument supplied for foreach() in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 35
+[10-Oct-2018 17:44:34 America/Sao_Paulo] WARNING Illegal offset type in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 60
+[10-Oct-2018 23:17:20 America/Sao_Paulo] WARNING Invalid argument supplied for foreach() in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 35
+[10-Oct-2018 23:17:20 America/Sao_Paulo] WARNING Illegal offset type in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 60
+[10-Oct-2018 23:19:05 America/Sao_Paulo] WARNING Invalid argument supplied for foreach() in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 35
+[10-Oct-2018 23:19:05 America/Sao_Paulo] NOTICE Undefined offset: 1 in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 60
+[10-Oct-2018 23:21:35 America/Sao_Paulo] WARNING Invalid argument supplied for foreach() in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 38
+[10-Oct-2018 23:22:19 America/Sao_Paulo] WARNING Invalid argument supplied for foreach() in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 38
+[10-Oct-2018 23:22:19 America/Sao_Paulo] NOTICE Undefined index:  in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 59
+[10-Oct-2018 23:22:29 America/Sao_Paulo] WARNING Invalid argument supplied for foreach() in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 38
+[10-Oct-2018 23:22:49 America/Sao_Paulo] WARNING Invalid argument supplied for foreach() in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 39
+[10-Oct-2018 23:29:16 America/Sao_Paulo] NOTICE Constant helper\relational\map\ANCHOR already defined in C:\terminal\live\server\system\Helper\Relational\Map\ColumnsControl.php on line 5
+[10-Oct-2018 23:29:59 America/Sao_Paulo] WARNING Illegal string offset 'column' in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 46
+[10-Oct-2018 23:29:59 America/Sao_Paulo] WARNING Illegal string offset 'name' in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 47
+[10-Oct-2018 23:29:59 America/Sao_Paulo] NOTICE Undefined index: A in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 47
+[10-Oct-2018 23:30:14 America/Sao_Paulo] WARNING Illegal string offset 'column' in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 46
+[10-Oct-2018 23:30:14 America/Sao_Paulo] WARNING Illegal string offset 'name' in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 47
+[10-Oct-2018 23:30:14 America/Sao_Paulo] NOTICE Undefined index: A in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 47
+[10-Oct-2018 23:30:43 America/Sao_Paulo] WARNING Illegal string offset 'column' in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 46
+[10-Oct-2018 23:30:43 America/Sao_Paulo] WARNING Illegal string offset 'name' in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 47
+[10-Oct-2018 23:30:43 America/Sao_Paulo] NOTICE Undefined index: A in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 47
+[10-Oct-2018 23:30:49 America/Sao_Paulo] WARNING Illegal string offset 'column' in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 46
+[10-Oct-2018 23:30:49 America/Sao_Paulo] WARNING Illegal string offset 'name' in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 47
+[10-Oct-2018 23:30:49 America/Sao_Paulo] NOTICE Undefined index: A in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 47
+[10-Oct-2018 23:31:06 America/Sao_Paulo] WARNING Illegal string offset 'name' in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 45
+[10-Oct-2018 23:31:06 America/Sao_Paulo] NOTICE Undefined index: A in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 45
+[10-Oct-2018 23:32:12 America/Sao_Paulo] WARNING Illegal offset type in isset or empty in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 39
+[10-Oct-2018 23:32:12 America/Sao_Paulo] NOTICE Array to string conversion in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 49
+[10-Oct-2018 23:33:16 America/Sao_Paulo] WARNING Illegal offset type in isset or empty in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 39
+[10-Oct-2018 23:33:16 America/Sao_Paulo] NOTICE Array to string conversion in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 49
+[10-Oct-2018 23:34:07 America/Sao_Paulo] NOTICE Array to string conversion in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 23
+[10-Oct-2018 23:34:57 America/Sao_Paulo] NOTICE Array to string conversion in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 23
+[10-Oct-2018 23:45:30 America/Sao_Paulo] NOTICE Trying to get property 'query' of non-object in C:\terminal\live\server\system\Helper\Relational\Map\Select.php on line 98
+[10-Oct-2018 23:45:30 America/Sao_Paulo] PHP Fatal error:  Uncaught TypeError: Argument 3 passed to Helper\Relational\Map::querySelect() must be of the type string, null given, called in C:\terminal\live\server\system\Helper\Relational\Map\Select.php on line 100 and defined in C:\terminal\live\server\system\Helper\Relational\Map.php:67
+Stack trace:
+#0 C:\terminal\live\server\system\Helper\Relational\Map\Select.php(100): Helper\Relational\Map->querySelect(Array, 'pessoas', NULL, 0, 100)
+#1 C:\terminal\live\server\system\Helper\Relational\Map\Select.php(129): Helper\Relational\Map\Select->prepareQuery()
+#2 C:\terminal\live\server\applications\example\crud-get.php(61): Helper\Relational\Map\Select->fetch()
+#3 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#4 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#5 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#6 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#7 C:\terminal\live\server\main.php(8): require_once('C:\\ter in C:\terminal\live\server\system\Helper\Relational\Map.php on line 67
+[10-Oct-2018 23:49:04 America/Sao_Paulo] NOTICE Undefined variable: part in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 36
+[10-Oct-2018 23:49:04 America/Sao_Paulo] NOTICE Undefined variable: part in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 36
+[10-Oct-2018 23:49:04 America/Sao_Paulo] NOTICE Trying to get property 'query' of non-object in C:\terminal\live\server\system\Helper\Relational\Map\Select.php on line 98
+[10-Oct-2018 23:49:04 America/Sao_Paulo] PHP Fatal error:  Uncaught TypeError: Argument 3 passed to Helper\Relational\Map::querySelect() must be of the type string, null given, called in C:\terminal\live\server\system\Helper\Relational\Map\Select.php on line 100 and defined in C:\terminal\live\server\system\Helper\Relational\Map.php:67
+Stack trace:
+#0 C:\terminal\live\server\system\Helper\Relational\Map\Select.php(100): Helper\Relational\Map->querySelect(Array, 'pessoas', NULL, 0, 100)
+#1 C:\terminal\live\server\system\Helper\Relational\Map\Select.php(129): Helper\Relational\Map\Select->prepareQuery()
+#2 C:\terminal\live\server\applications\example\crud-get.php(61): Helper\Relational\Map\Select->fetch()
+#3 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#4 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#5 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#6 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#7 C:\terminal\live\server\main.php(8): require_once('C:\\ter in C:\terminal\live\server\system\Helper\Relational\Map.php on line 67
+[10-Oct-2018 23:49:24 America/Sao_Paulo] NOTICE Trying to get property 'query' of non-object in C:\terminal\live\server\system\Helper\Relational\Map\Select.php on line 98
+[10-Oct-2018 23:49:24 America/Sao_Paulo] PHP Fatal error:  Uncaught TypeError: Argument 3 passed to Helper\Relational\Map::querySelect() must be of the type string, null given, called in C:\terminal\live\server\system\Helper\Relational\Map\Select.php on line 100 and defined in C:\terminal\live\server\system\Helper\Relational\Map.php:67
+Stack trace:
+#0 C:\terminal\live\server\system\Helper\Relational\Map\Select.php(100): Helper\Relational\Map->querySelect(Array, 'pessoas', NULL, 0, 100)
+#1 C:\terminal\live\server\system\Helper\Relational\Map\Select.php(129): Helper\Relational\Map\Select->prepareQuery()
+#2 C:\terminal\live\server\applications\example\crud-get.php(61): Helper\Relational\Map\Select->fetch()
+#3 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#4 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#5 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#6 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#7 C:\terminal\live\server\main.php(8): require_once('C:\\ter in C:\terminal\live\server\system\Helper\Relational\Map.php on line 67
+[11-Oct-2018 00:07:04 America/Sao_Paulo] NOTICE Undefined offset: 1 in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 55
+[11-Oct-2018 00:07:21 America/Sao_Paulo] NOTICE Undefined offset: 1 in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 55
+[11-Oct-2018 00:08:16 America/Sao_Paulo] NOTICE Undefined offset: 1 in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 55
+[11-Oct-2018 00:16:05 America/Sao_Paulo] NOTICE Undefined offset: 1 in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 55
+[11-Oct-2018 00:17:18 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Helper\Relational\Map\Condition::getPDOParams() in C:\terminal\live\server\applications\example\crud-get.php:27
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#1 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#2 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#3 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#4 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\crud-get.php on line 27
+[11-Oct-2018 00:22:07 America/Sao_Paulo] NOTICE Undefined variable: val in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 64
+[11-Oct-2018 00:22:07 America/Sao_Paulo] NOTICE Undefined variable: vals in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 64
+[11-Oct-2018 00:22:07 America/Sao_Paulo] WARNING Only arrays and Traversables can be unpacked in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 64
+[11-Oct-2018 00:22:07 America/Sao_Paulo] NOTICE Undefined variable: glue in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 65
+[11-Oct-2018 00:22:07 America/Sao_Paulo] NOTICE Undefined variable: col in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 65
+[11-Oct-2018 00:22:07 America/Sao_Paulo] NOTICE Undefined variable: val in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 64
+[11-Oct-2018 00:22:07 America/Sao_Paulo] NOTICE Undefined variable: vals in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 64
+[11-Oct-2018 00:22:07 America/Sao_Paulo] WARNING Only arrays and Traversables can be unpacked in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 64
+[11-Oct-2018 00:22:07 America/Sao_Paulo] NOTICE Undefined variable: glue in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 65
+[11-Oct-2018 00:22:07 America/Sao_Paulo] NOTICE Undefined variable: col in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 65
+[11-Oct-2018 00:32:55 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '}', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 48
+[11-Oct-2018 00:33:04 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function add() on null in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php:38
+Stack trace:
+#0 C:\terminal\live\server\system\Helper\Relational\Map\Condition.php(13): Helper\Relational\Map\Condition->set('', 'anchor', '=', '__LJHNMKHNKSHBN...', 'ancora1')
+#1 C:\terminal\live\server\system\Helper\Relational\Map.php(26): Helper\Relational\Map\Condition->__construct('anchor', '=', '__LJHNMKHNKSHBN...', 'ancora1')
+#2 C:\terminal\live\server\system\Helper\Relational\Map.php(36): Helper\Relational\Map::conditional('anchor', '=', '__LJHNMKHNKSHBN...', 'ancora1')
+#3 C:\terminal\live\server\applications\example\crud-get.php(14): Helper\Relational\Map::where('anchor', '=', '__LJHNMKHNKSHBN...', 'ancora1')
+#4 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#5 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#6 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#7 C:\terminal\live\server\system\m in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 38
+[11-Oct-2018 00:33:27 America/Sao_Paulo] WARNING Illegal offset type in isset or empty in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 39
+[11-Oct-2018 00:33:27 America/Sao_Paulo] WARNING Illegal offset type in isset or empty in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 39
+[11-Oct-2018 00:33:27 America/Sao_Paulo] WARNING Illegal offset type in isset or empty in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 39
+[11-Oct-2018 00:33:27 America/Sao_Paulo] NOTICE Array to string conversion in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 49
+[11-Oct-2018 00:33:27 America/Sao_Paulo] NOTICE Array to string conversion in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 49
+[11-Oct-2018 00:33:27 America/Sao_Paulo] NOTICE Array to string conversion in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 49
+[11-Oct-2018 00:35:32 America/Sao_Paulo] WARNING Illegal offset type in isset or empty in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 39
+[11-Oct-2018 00:35:32 America/Sao_Paulo] WARNING Illegal offset type in isset or empty in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 39
+[11-Oct-2018 00:35:32 America/Sao_Paulo] WARNING Illegal offset type in isset or empty in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 39
+[11-Oct-2018 00:35:32 America/Sao_Paulo] NOTICE Array to string conversion in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 49
+[11-Oct-2018 00:35:33 America/Sao_Paulo] NOTICE Array to string conversion in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 49
+[11-Oct-2018 00:35:33 America/Sao_Paulo] NOTICE Array to string conversion in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 49
+[11-Oct-2018 01:22:58 America/Sao_Paulo] NOTICE Undefined index: condition in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 53
+[11-Oct-2018 01:22:58 America/Sao_Paulo] NOTICE Undefined index: condition in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 53
+[11-Oct-2018 01:22:58 America/Sao_Paulo] NOTICE Undefined index: condition in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 53
+[11-Oct-2018 01:22:58 America/Sao_Paulo] NOTICE Undefined index: condition in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 53
+[11-Oct-2018 01:22:58 America/Sao_Paulo] NOTICE Undefined index: condition in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 53
+[11-Oct-2018 01:22:58 America/Sao_Paulo] NOTICE Undefined index: condition in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 53
+[11-Oct-2018 01:23:47 America/Sao_Paulo] NOTICE Undefined index: condition in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 53
+[11-Oct-2018 01:23:47 America/Sao_Paulo] NOTICE Undefined index: condition in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 53
+[11-Oct-2018 01:23:47 America/Sao_Paulo] NOTICE Undefined index: condition in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 53
+[11-Oct-2018 01:23:47 America/Sao_Paulo] NOTICE Undefined index: condition in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 53
+[11-Oct-2018 01:23:47 America/Sao_Paulo] NOTICE Undefined index: condition in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 53
+[11-Oct-2018 01:23:47 America/Sao_Paulo] NOTICE Undefined index: condition in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 53
+[11-Oct-2018 01:24:01 America/Sao_Paulo] WARNING Use of undefined constant glue - assumed 'glue' (this will throw an Error in a future version of PHP) in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 63
+[11-Oct-2018 01:24:01 America/Sao_Paulo] NOTICE Undefined variable: conf in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 63
+[11-Oct-2018 01:24:01 America/Sao_Paulo] WARNING Use of undefined constant condition - assumed 'condition' (this will throw an Error in a future version of PHP) in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 63
+[11-Oct-2018 01:24:01 America/Sao_Paulo] NOTICE Undefined variable: conf in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 63
+[11-Oct-2018 01:24:01 America/Sao_Paulo] WARNING Use of undefined constant condition - assumed 'condition' (this will throw an Error in a future version of PHP) in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 63
+[11-Oct-2018 01:24:01 America/Sao_Paulo] NOTICE Undefined variable: conf in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 63
+[11-Oct-2018 01:24:01 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Helper\Relational\Map\Condition::mountIn() in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php:67
+Stack trace:
+#0 C:\terminal\live\server\applications\example\crud-get.php(27): Helper\Relational\Map\Condition->mount()
+#1 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#2 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#3 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#4 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#5 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 67
+[11-Oct-2018 01:24:14 America/Sao_Paulo] WARNING Use of undefined constant glue - assumed 'glue' (this will throw an Error in a future version of PHP) in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 63
+[11-Oct-2018 01:24:14 America/Sao_Paulo] WARNING Use of undefined constant condition - assumed 'condition' (this will throw an Error in a future version of PHP) in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 63
+[11-Oct-2018 01:24:14 America/Sao_Paulo] WARNING Use of undefined constant condition - assumed 'condition' (this will throw an Error in a future version of PHP) in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 63
+[11-Oct-2018 01:24:14 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Helper\Relational\Map\Condition::mountIn() in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php:67
+Stack trace:
+#0 C:\terminal\live\server\applications\example\crud-get.php(27): Helper\Relational\Map\Condition->mount()
+#1 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#2 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#3 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#4 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#5 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 67
+[11-Oct-2018 01:24:27 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Helper\Relational\Map\Condition::mountIn() in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php:67
+Stack trace:
+#0 C:\terminal\live\server\applications\example\crud-get.php(27): Helper\Relational\Map\Condition->mount()
+#1 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#2 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#3 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#4 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#5 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 67
+[11-Oct-2018 01:42:12 America/Sao_Paulo] NOTICE Undefined variable: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 49
+[11-Oct-2018 01:42:12 America/Sao_Paulo] NOTICE Undefined variable: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 51
+[11-Oct-2018 01:42:12 America/Sao_Paulo] NOTICE Undefined variable: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 49
+[11-Oct-2018 01:42:12 America/Sao_Paulo] NOTICE Undefined variable: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 51
+[11-Oct-2018 01:42:12 America/Sao_Paulo] NOTICE Undefined variable: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 49
+[11-Oct-2018 01:42:12 America/Sao_Paulo] NOTICE Undefined variable: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 51
+[11-Oct-2018 01:42:12 America/Sao_Paulo] NOTICE Undefined index: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 49
+[11-Oct-2018 01:42:12 America/Sao_Paulo] NOTICE Undefined variable: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 55
+[11-Oct-2018 01:42:12 America/Sao_Paulo] NOTICE Undefined index:  in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 55
+[11-Oct-2018 01:42:12 America/Sao_Paulo] NOTICE Undefined index: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 49
+[11-Oct-2018 01:42:12 America/Sao_Paulo] NOTICE Undefined variable: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 55
+[11-Oct-2018 01:42:12 America/Sao_Paulo] NOTICE Undefined index:  in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 55
+[11-Oct-2018 01:42:12 America/Sao_Paulo] NOTICE Undefined index: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 49
+[11-Oct-2018 01:42:12 America/Sao_Paulo] NOTICE Undefined variable: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 55
+[11-Oct-2018 01:42:12 America/Sao_Paulo] NOTICE Undefined index:  in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 55
+[11-Oct-2018 01:42:41 America/Sao_Paulo] NOTICE Undefined index: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 49
+[11-Oct-2018 01:42:41 America/Sao_Paulo] NOTICE Undefined index: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 55
+[11-Oct-2018 01:42:41 America/Sao_Paulo] NOTICE Undefined index:  in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 55
+[11-Oct-2018 01:42:41 America/Sao_Paulo] NOTICE Undefined index: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 49
+[11-Oct-2018 01:42:41 America/Sao_Paulo] NOTICE Undefined index: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 55
+[11-Oct-2018 01:42:41 America/Sao_Paulo] NOTICE Undefined index:  in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 55
+[11-Oct-2018 01:42:41 America/Sao_Paulo] NOTICE Undefined index: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 49
+[11-Oct-2018 01:42:41 America/Sao_Paulo] NOTICE Undefined index: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 55
+[11-Oct-2018 01:42:41 America/Sao_Paulo] NOTICE Undefined index:  in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 55
+[11-Oct-2018 01:42:41 America/Sao_Paulo] NOTICE Undefined index: config in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 52
+[11-Oct-2018 01:42:41 America/Sao_Paulo] NOTICE Undefined index: config in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 52
+[11-Oct-2018 01:42:41 America/Sao_Paulo] NOTICE Undefined index: config in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 52
+[11-Oct-2018 01:42:41 America/Sao_Paulo] NOTICE Undefined index: config in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 52
+[11-Oct-2018 01:42:41 America/Sao_Paulo] NOTICE Undefined index: config in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 52
+[11-Oct-2018 01:42:41 America/Sao_Paulo] NOTICE Undefined index: config in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 52
+[11-Oct-2018 01:42:57 America/Sao_Paulo] NOTICE Undefined index: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 49
+[11-Oct-2018 01:42:57 America/Sao_Paulo] NOTICE Undefined index: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 55
+[11-Oct-2018 01:42:57 America/Sao_Paulo] NOTICE Undefined index:  in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 55
+[11-Oct-2018 01:42:57 America/Sao_Paulo] NOTICE Undefined index: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 49
+[11-Oct-2018 01:42:57 America/Sao_Paulo] NOTICE Undefined index: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 55
+[11-Oct-2018 01:42:57 America/Sao_Paulo] NOTICE Undefined index:  in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 55
+[11-Oct-2018 01:42:57 America/Sao_Paulo] NOTICE Undefined index: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 49
+[11-Oct-2018 01:42:57 America/Sao_Paulo] NOTICE Undefined index: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 55
+[11-Oct-2018 01:42:57 America/Sao_Paulo] NOTICE Undefined index:  in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 55
+[11-Oct-2018 01:43:10 America/Sao_Paulo] NOTICE Undefined index: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 49
+[11-Oct-2018 01:43:10 America/Sao_Paulo] NOTICE Undefined index: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 55
+[11-Oct-2018 01:43:10 America/Sao_Paulo] NOTICE Undefined index:  in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 55
+[11-Oct-2018 01:43:10 America/Sao_Paulo] NOTICE Undefined index: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 49
+[11-Oct-2018 01:43:10 America/Sao_Paulo] NOTICE Undefined index: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 55
+[11-Oct-2018 01:43:10 America/Sao_Paulo] NOTICE Undefined index:  in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 55
+[11-Oct-2018 01:43:10 America/Sao_Paulo] NOTICE Undefined index: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 49
+[11-Oct-2018 01:43:10 America/Sao_Paulo] NOTICE Undefined index: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 55
+[11-Oct-2018 01:43:10 America/Sao_Paulo] NOTICE Undefined index:  in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 55
+[11-Oct-2018 01:48:01 America/Sao_Paulo] NOTICE Undefined index: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 48
+[11-Oct-2018 01:48:01 America/Sao_Paulo] NOTICE Undefined index: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 48
+[11-Oct-2018 01:48:01 America/Sao_Paulo] NOTICE Undefined index: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 48
+[11-Oct-2018 01:48:24 America/Sao_Paulo] NOTICE Undefined index: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 48
+[11-Oct-2018 01:48:24 America/Sao_Paulo] NOTICE Undefined index: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 48
+[11-Oct-2018 01:48:24 America/Sao_Paulo] NOTICE Undefined index: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 48
+[11-Oct-2018 01:48:24 America/Sao_Paulo] NOTICE Undefined index: config in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 52
+[11-Oct-2018 01:48:24 America/Sao_Paulo] NOTICE Undefined index: config in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 52
+[11-Oct-2018 01:48:24 America/Sao_Paulo] NOTICE Undefined index: config in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 52
+[11-Oct-2018 01:48:31 America/Sao_Paulo] NOTICE Undefined index: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 48
+[11-Oct-2018 01:48:31 America/Sao_Paulo] NOTICE Undefined index: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 48
+[11-Oct-2018 01:48:31 America/Sao_Paulo] NOTICE Undefined index: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 48
+[11-Oct-2018 01:48:31 America/Sao_Paulo] NOTICE Undefined index: config in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 52
+[11-Oct-2018 01:48:31 America/Sao_Paulo] NOTICE Undefined index: config in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 52
+[11-Oct-2018 01:48:31 America/Sao_Paulo] NOTICE Undefined index: config in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 52
+[11-Oct-2018 01:49:23 America/Sao_Paulo] NOTICE Undefined index: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 48
+[11-Oct-2018 01:49:23 America/Sao_Paulo] NOTICE Undefined index: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 48
+[11-Oct-2018 01:49:23 America/Sao_Paulo] NOTICE Undefined index: anchor in C:\terminal\live\server\system\Helper\Relational\Map\Values.php on line 48
+[11-Oct-2018 01:49:23 America/Sao_Paulo] NOTICE Undefined index: config in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 52
+[11-Oct-2018 01:49:23 America/Sao_Paulo] NOTICE Undefined index: config in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 52
+[11-Oct-2018 01:49:23 America/Sao_Paulo] NOTICE Undefined index: config in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 52
+[11-Oct-2018 01:49:48 America/Sao_Paulo] NOTICE Undefined index: config in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 52
+[11-Oct-2018 01:49:48 America/Sao_Paulo] NOTICE Undefined index: config in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 52
+[11-Oct-2018 01:49:48 America/Sao_Paulo] NOTICE Undefined index: config in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 52
+[11-Oct-2018 01:49:57 America/Sao_Paulo] NOTICE Undefined index: config in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 52
+[11-Oct-2018 01:49:57 America/Sao_Paulo] NOTICE Undefined index: config in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 52
+[11-Oct-2018 01:49:57 America/Sao_Paulo] NOTICE Undefined index: config in C:\terminal\live\server\system\Helper\Relational\Map\Condition.php on line 52
