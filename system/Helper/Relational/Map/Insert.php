@@ -5,11 +5,12 @@ namespace Helper\Relational\Map;
 class Insert 
 {
     protected $map;
+    protected $columns = [];
     protected $values;
 
     function __construct(\Helper\Relational\Map $map)
     {
-        $this->values = new ColumnsControl();
+        $this->values = new Values();
         $this->map = $map;
     }
 
@@ -20,24 +21,31 @@ class Insert
 
     function anchors(Array $achors)
     {
-        $this->values->setAnchors($achors);
+        $this->values->anchors($achors);
         return $this;
     }
 
-    function value(string $col, $value, string $anchorName = null)
+    function value(string $col, $value, ... $values)
     {
-        $this->values->add(Check::columnName($col), array_merge((Array)$anchorName), (Array)$value);
+        $this->columns[] = Check::columnName($col);
+        $this->values->add($value, ... $values);
         return $this;
     }
 
     function execute()
     {
-        print_r($this->values->getValues());
+        $data = $this->values->mountSimple();
         $query = $this->map->queryInsert(
             $this->map->raw->table,
-            ['a', 'b', 'c', 'd'],
-            ['A', 'B', 'C', 'D']
+            $this->columns,
+            array_keys($data)
         );
+
+        $stmt = $this->map->raw->pdo->prepare($query);
+        $stmt->execute($data);
+        
+        die('retornar o id inserido e executar query filha');
+
         return $query;
     }
 }

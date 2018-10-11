@@ -38,10 +38,11 @@ class Values {
     /**
      * monta array com valores preenchidos, substituindo ancoras se necessário
      */
-    function mount()
+    function mount($simple=false)
     {
         $errors = [];
         $values = [];
+        $valuesSimple = [];
 
         // monta array de valores
         foreach($this->map as $key => $item)
@@ -56,17 +57,24 @@ class Values {
                 }
                 $values[$key]['config'] = $item['config'];
                 $values[$key]['value'] = (Array)$this->anchorsValues[ $item['anchor'] ];
-                continue;
+
+            } else {
+                // monta valores fixos
+                $values[$key] = $item;
             }
             
-            // monta valores fixos
-            $values[$key] = $item;
+            //
+            $valuesSimple[$key] = $values[$key]['value'][0];
         }
 
         if (!empty($errors))
             throw new \Exception("não foram definidos valores para as seguintes ancoras: ". implode(', ', $errors) ." <--- melhorar");
 
-        return $values;
+        return $simple ? $valuesSimple : $values;
     }
 
+    function mountSimple()
+    {
+        return $this->mount(true);
+    }
 }
