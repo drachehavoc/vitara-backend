@@ -15,10 +15,6 @@ return function ()
     $dadosTelefones = [
         ['anch_ddd' => '01', 'anch_numero' => '77778888'],
         ['anch_ddd' => '02', 'anch_numero' => '77778888'],
-        ['anch_ddd' => '03', 'anch_numero' => '77778888'],
-        ['anch_ddd' => '04', 'anch_numero' => '77778888'],
-        ['anch_ddd' => '05', 'anch_numero' => '77778888'],
-        ['anch_ddd' => '06', 'anch_numero' => '77778888']
     ];
 
     $functionInsertTelefones = function(&$result) use ($telefones, $dadosTelefones)
@@ -37,8 +33,9 @@ return function ()
         ->insert
         ->value('nome', Map::ANCHOR, 'ancora1')
         ->value('nascimento', '2019-01-01')
-        // ->callback($telefones, ... $dadosTelefones)
-        ->callback($functionInsertTelefones)
+        // ->callback($telefones, null, ... $dadosTelefones) // return ids array with table name
+        ->callback($telefones, 'alias', ... $dadosTelefones) // return ids array with alias
+        // ->callback($functionInsertTelefones) // custom function
         ->anchors([
             'ancora1' => 'Dunha da Silva ' . random_int(0, 100),
             'ancora2' => random_int(14, 18)

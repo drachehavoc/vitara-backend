@@ -61,14 +61,15 @@ class Insert
         return $this;
     }
 
-    private function callbackInsert($aim, ... $values)
+    private function callbackInsert($aim, string $alias = null, Array $value, ... $values)
     {
-        $this->callbacks[] = function(&$result) use ($aim, $values)
+        $values = array_merge([$value], $values);
+        $this->callbacks[] = function(&$result) use ($aim, $alias, $values)
         {
-            $table = $aim->map->raw->table;
+            $alias = $alias ?? $aim->map->raw->table;
             foreach($values as $value) {
                 $id = $aim->anchors(array_merge((Array)$result, (Array)$value))->execute()[ Self::insertedId ];
-                $result[ $table ][] = $id;
+                $result[ $alias ][] = $id;
             }
         };
         return $this;

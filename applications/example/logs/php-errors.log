@@ -78,3 +78,43 @@ Stack trace:
 #4 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
 #5 {main}
   thrown in C:\terminal\live\server\applications\example\crud-post.php on line 13
+[13-Oct-2018 22:42:33 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Helper\Relational\Map\Insert::callbackInsert(), 1 passed in C:\terminal\live\server\system\Helper\Relational\Map\Insert.php on line 53 and exactly 2 expected in C:\terminal\live\server\system\Helper\Relational\Map\Insert.php:64
+Stack trace:
+#0 C:\terminal\live\server\system\Helper\Relational\Map\Insert.php(53): Helper\Relational\Map\Insert->callbackInsert(Object(Helper\Relational\Map\Insert))
+#1 C:\terminal\live\server\applications\example\crud-post.php(40): Helper\Relational\Map\Insert->callback(Object(Helper\Relational\Map\Insert))
+#2 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#3 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#4 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#5 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#6 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#7 {main}
+  thrown in C:\terminal\live\server\system\Helper\Relational\Map\Insert.php on line 64
+[13-Oct-2018 22:43:31 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Helper\Relational\Map\Insert::callbackInsert(), 1 passed in C:\terminal\live\server\system\Helper\Relational\Map\Insert.php on line 53 and exactly 3 expected in C:\terminal\live\server\system\Helper\Relational\Map\Insert.php:64
+Stack trace:
+#0 C:\terminal\live\server\system\Helper\Relational\Map\Insert.php(53): Helper\Relational\Map\Insert->callbackInsert(Object(Helper\Relational\Map\Insert))
+#1 C:\terminal\live\server\applications\example\crud-post.php(40): Helper\Relational\Map\Insert->callback(Object(Helper\Relational\Map\Insert))
+#2 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#3 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#4 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#5 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#6 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#7 {main}
+  thrown in C:\terminal\live\server\system\Helper\Relational\Map\Insert.php on line 64
+[13-Oct-2018 22:43:42 America/Sao_Paulo] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Helper\Relational\Map\Insert::callbackInsert() must be of the type string, array given, called in C:\terminal\live\server\system\Helper\Relational\Map\Insert.php on line 53 and defined in C:\terminal\live\server\system\Helper\Relational\Map\Insert.php:64
+Stack trace:
+#0 C:\terminal\live\server\system\Helper\Relational\Map\Insert.php(53): Helper\Relational\Map\Insert->callbackInsert(Object(Helper\Relational\Map\Insert), Array, Array, Array, Array, Array, Array)
+#1 C:\terminal\live\server\applications\example\crud-post.php(40): Helper\Relational\Map\Insert->callback(Object(Helper\Relational\Map\Insert), Array, Array, Array, Array, Array, Array)
+#2 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#3 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#4 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#5 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#6 C:\terminal\live\ser in C:\terminal\live\server\system\Helper\Relational\Map\Insert.php on line 64
+[13-Oct-2018 22:44:28 America/Sao_Paulo] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Helper\Relational\Map\Insert::callbackInsert() must be of the type string, null given, called in C:\terminal\live\server\system\Helper\Relational\Map\Insert.php on line 53 and defined in C:\terminal\live\server\system\Helper\Relational\Map\Insert.php:64
+Stack trace:
+#0 C:\terminal\live\server\system\Helper\Relational\Map\Insert.php(53): Helper\Relational\Map\Insert->callbackInsert(Object(Helper\Relational\Map\Insert), NULL, Array, Array, Array, Array, Array, Array)
+#1 C:\terminal\live\server\applications\example\crud-post.php(40): Helper\Relational\Map\Insert->callback(Object(Helper\Relational\Map\Insert), NULL, Array, Array, Array, Array, Array, Array)
+#2 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#3 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#4 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#5 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#6 C:\termin in C:\terminal\live\server\system\Helper\Relational\Map\Insert.php on line 64
