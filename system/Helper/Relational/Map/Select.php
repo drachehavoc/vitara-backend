@@ -86,6 +86,7 @@ class Select
             case $aim instanceof Self:
                 return $this->customColumnSelect($column, $aim);
         }
+        throw new \Core\Exception\FobiddenType('aim', $aim, 'callable', 'Map\Select');
     }
 
     private function prepareQuery()
@@ -101,8 +102,8 @@ class Select
         );
 
         return [
-            "query"  => $query,
-            "values" => $conditionMeta->values
+            'query'  => $query,
+            'values' => $conditionMeta->values
         ];
     }
 
@@ -121,7 +122,7 @@ class Select
         $prep = $this->prepareQuery();
         $keys = array_keys($prep['values']);
         $values = array_values($prep['values']);
-        return (Object)array_merge($prep, ["fullQuery" => str_replace($keys, $values, $prep['query'])]);
+        return (Object)array_merge($prep, ['fullQuery' => str_replace($keys, $values, $prep['query'])]);
     }
 
     function fetch()

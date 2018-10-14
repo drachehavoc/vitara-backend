@@ -20,8 +20,8 @@ return function ()
     
     // $cond->anchors([
     //         'ancora1' => '__=1',
-    //         'ancora2' => ["_in1", "_in2", "_in3", "_in4", "_in5"],
-    //         'ancora3' => ["_bt1", "_bt2"],
+    //         'ancora2' => ['_in1', '_in2', '_in3', '_in4', '_in5'],
+    //         'ancora3' => ['_bt1', '_bt2'],
     //     ]);
         
     // print_r( $cond->mount() ); 
@@ -32,7 +32,7 @@ return function ()
     // --------------------------------------------------------------------------
     
     $telefones = Map
-        ::table("telefones")
+        ::table('telefones')
         ->select
         ->condition($condTel = Map::cond('pessoa', '=', Map::ANCHOR, 'telefones_anc'));
         
@@ -49,7 +49,7 @@ return function ()
     };
 
     $pessoas = Map
-        ::table("pessoas")
+        ::table('pessoas')
         ->select
         ->columns('id', 'nome' , 'nascimento', ['id' => 'telefones_anc'])
         ->customColumn('telefones_sel', $telefones)

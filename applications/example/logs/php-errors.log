@@ -1,0 +1,80 @@
+[11-Oct-2018 11:45:32 America/Sao_Paulo] NOTICE Undefined variable: pdo in C:\terminal\live\server\system\Helper\Relational\Map\Insert.php on line 49
+[11-Oct-2018 11:45:32 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function lastInsertId() on null in C:\terminal\live\server\system\Helper\Relational\Map\Insert.php:49
+Stack trace:
+#0 C:\terminal\live\server\applications\example\crud-post.php(19): Helper\Relational\Map\Insert->execute()
+#1 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#2 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#3 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#4 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#5 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Helper\Relational\Map\Insert.php on line 49
+[11-Oct-2018 12:28:13 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Helper\Relational\Map\Insert::callback(), 0 passed in C:\terminal\live\server\applications\example\crud-post.php on line 14 and exactly 1 expected in C:\terminal\live\server\system\Helper\Relational\Map\Insert.php:36
+Stack trace:
+#0 C:\terminal\live\server\applications\example\crud-post.php(14): Helper\Relational\Map\Insert->callback()
+#1 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#2 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#3 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#4 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#5 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Helper\Relational\Map\Insert.php on line 36
+[11-Oct-2018 12:28:35 America/Sao_Paulo] NOTICE Undefined variable: propertie in C:\terminal\live\server\system\Core\Exception\FobiddenType.php on line 10
+[11-Oct-2018 12:28:35 America/Sao_Paulo] NOTICE Undefined variable: className in C:\terminal\live\server\system\Core\Exception\FobiddenType.php on line 10
+[11-Oct-2018 12:50:39 America/Sao_Paulo] NOTICE Undefined variable: telefones in C:\terminal\live\server\applications\example\crud-post.php on line 17
+[11-Oct-2018 12:50:39 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function acnhors() on null in C:\terminal\live\server\applications\example\crud-post.php:17
+Stack trace:
+#0 C:\terminal\live\server\system\Helper\Relational\Map\Insert.php(78): Closure->{closure}('7')
+#1 C:\terminal\live\server\applications\example\crud-post.php(38): Helper\Relational\Map\Insert->execute()
+#2 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#3 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#4 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#5 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#6 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#7 {main}
+  thrown in C:\terminal\live\server\applications\example\crud-post.php on line 17
+[11-Oct-2018 12:51:01 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Helper\Relational\Map\Insert::acnhors() in C:\terminal\live\server\applications\example\crud-post.php:17
+Stack trace:
+#0 C:\terminal\live\server\system\Helper\Relational\Map\Insert.php(78): Closure->{closure}('8')
+#1 C:\terminal\live\server\applications\example\crud-post.php(38): Helper\Relational\Map\Insert->execute()
+#2 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#3 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#4 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#5 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#6 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#7 {main}
+  thrown in C:\terminal\live\server\applications\example\crud-post.php on line 17
+[11-Oct-2018 12:52:32 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Helper\Relational\Map\Insert::acnhors() in C:\terminal\live\server\applications\example\crud-post.php:17
+Stack trace:
+#0 C:\terminal\live\server\system\Helper\Relational\Map\Insert.php(78): Closure->{closure}('9')
+#1 C:\terminal\live\server\applications\example\crud-post.php(38): Helper\Relational\Map\Insert->execute()
+#2 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#3 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#4 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#5 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#6 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#7 {main}
+  thrown in C:\terminal\live\server\applications\example\crud-post.php on line 17
+[11-Oct-2018 12:53:56 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Helper\Relational\Map\Insert::acnhors() in C:\terminal\live\server\applications\example\crud-post.php:17
+Stack trace:
+#0 C:\terminal\live\server\system\Helper\Relational\Map\Insert.php(79): Closure->{closure}('10')
+#1 C:\terminal\live\server\applications\example\crud-post.php(38): Helper\Relational\Map\Insert->execute()
+#2 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#3 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#4 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#5 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#6 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#7 {main}
+  thrown in C:\terminal\live\server\applications\example\crud-post.php on line 17
+[13-Oct-2018 22:18:56 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '&' in C:\terminal\live\server\system\Helper\Relational\Map\Insert.php on line 60
+[13-Oct-2018 22:21:25 America/Sao_Paulo] NOTICE Undefined index: lastInsertedId in C:\terminal\live\server\system\Helper\Relational\Map\Insert.php on line 67
+[13-Oct-2018 22:21:25 America/Sao_Paulo] NOTICE Undefined index: lastInsertedId in C:\terminal\live\server\system\Helper\Relational\Map\Insert.php on line 67
+[13-Oct-2018 22:28:47 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Undefined class constant 'insertId' in C:\terminal\live\server\applications\example\crud-post.php:13
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#1 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#2 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#3 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#4 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#5 {main}
+  thrown in C:\terminal\live\server\applications\example\crud-post.php on line 13
