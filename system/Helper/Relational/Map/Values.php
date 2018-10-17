@@ -2,79 +2,100 @@
 
 namespace Helper\Relational\Map;
 
-const ANCHOR = \Helper\Relational\Map::ANCHOR;
-
 class Values {
-    protected $map           = [];
+    protected $prefix = '';
+    protected $columns = [];
     protected $anchorsValues = [];
-    protected $counter       = 0;
+    protected $data = [];
+    protected $counter = 0;
 
-    private function key()
+    function __construct($prefix = null)
+    {
+        if ($prefix)
+            $this->prefix = "{$prefix}_";
+    }
+
+    private function key() : string
     {
         $this->counter++;
-        return "val_{$this->counter}_";
+        return "{$this->prefix}val_{$this->counter}_";
     }
 
-    function add($value, ... $values)
-    {
-        return $this->addWithConfig(null, $value, ... $values);
-    }
-
-    function addWithConfig($conf, $value, ... $values)
+    function define(string $columnName, $value, $payload = null) : Self
     {
         $key = $this->key();
-        $this->map[ $key ]["config"] = $conf; 
-        ($value === ANCHOR && isset($values[0])) 
-            ? $this->map[ $key ][ 'anchor'] = $values[0] 
-            : $this->map[ $key ][ 'value' ] = array_merge((Array)$value, $values) ;
-        return $key;
+        $this->columns[] = $columnName;
+        $this->data[$key] = [
+            'column'  => $columnName,
+            'payload' => $payload,
+            'value'   => $value,
+        ];
+        return $this;
+    }
+    
+    function anchor(string $columnName, string $anchorName, $payload = null) : Self
+    {
+        $key = $this->key();
+        $this->columns[] = $columnName;
+        $this->data[$key] = [
+            'column'  => $columnName,
+            'payload' => $payload,
+            'anchor'  => $anchorName
+        ];
+        return $this;
     }
 
-    function anchors(Array $anchors)
+    function set(string $columnName, $data, $payload = null)
     {
-        $this->anchorsValues = $anchors;
+        return $data[0] === \Helper\Relational\Map::ANCHOR
+            ? $this->anchor($columnName, $data[1], $payload)
+            : $this->define($columnName, $data, $payload);
     }
 
-    /**
-     * monta array com valores preenchidos, substituindo ancoras se necessário
-     */
-    function mount($simple=false)
+    function anchors(Array $values) : Self
     {
+        $this->anchorsValues = $values;
+        return $this;
+    }
+
+    function mount(bool $simple = false) : Array
+    {
+        $result = [];
+        $resultSimple = [];
         $errors = [];
-        $values = [];
-        $valuesSimple = [];
 
-        // monta array de valores
-        foreach($this->map as $key => $item)
+        foreach($this->data as $key => $curr)
         {
-            // monta valores ancora
-            if (isset($item['anchor'])) 
+            $result[ $key ] = $curr;
+
+            if (array_key_exists('anchor', $curr))
             {
-                if (!isset($this->anchorsValues[ $item['anchor'] ]) )
+                $anchor = $curr['anchor'];
+                if (array_key_exists($anchor, $this->anchorsValues)) 
                 {
-                    $errors[] = $item['anchor'];
+                    $result[ $key ]['value'] = $this->anchorsValues[$anchor];
+                } else {
+                    $errors[] = $anchor;
                     continue;
                 }
-                $values[$key]['config'] = $item['config'];
-                $values[$key]['value'] = (Array)$this->anchorsValues[ $item['anchor'] ];
-
-            } else {
-                // monta valores fixos
-                $values[$key] = $item;
             }
-            
-            //
-            $valuesSimple[$key] = $values[$key]['value'][0];
+
+            $resultSimple[ $key ] = $result[ $key ]['value'];
         }
 
         if (!empty($errors))
             throw new \Exception("não foram definidos valores para as seguintes ancoras: ". implode(', ', $errors) ." <--- melhorar");
 
-        return $simple ? $valuesSimple : $values;
+        return $simple ? $resultSimple : $result;
     }
 
     function mountSimple()
     {
         return $this->mount(true);
+    }
+
+    function columns() : Array
+    {
+        return array_unique($this->columns);
     }
 }

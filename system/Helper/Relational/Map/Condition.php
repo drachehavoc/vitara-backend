@@ -10,7 +10,7 @@ class Condition
 
     function __construct(string $col, string $cond, $val, ... $vals)
     {
-        $this->values = new Values();
+        $this->values = new Values('w');
         $this->set('', $col, $cond, $val, ... $vals);
     }
 
@@ -24,35 +24,30 @@ class Condition
         return $this->set('OR ', $col, $cond, $val, ... $vals);
     }
 
-    function anchors($anchors)
+    function anchors(Array $anchors)
     {
-        $this->values->anchors((Array)$anchors);
+        $this->values->anchors($anchors);
         return $this;
     }
     
     private function set($glue, $col, $cond, $val, ... $vals)
     {
-        $conf = [
-            "glue"      => $glue,
-            "condition" => $cond,
-            "column"    => $col
-        ];
-
-        $this->values->addWithConfig($conf, $val, ... $vals);
+        $vals = array_merge((Array)$val, $vals);
+        $this->values->set($col, $vals, [
+            'cond' => $cond,
+            'glue' => $glue
+        ]);
         return $this;
     }
 
     function mount()
     {
-        $mntQuery = [];
-        $mntValues = [];
-
+        $query = [];
+        $values = [];
+        
         foreach($this->values->mount() as $key => $part)
         {
-            $config = $part['config'];
-            $partValues = $part['value'];
-
-            switch ($config['condition'])
+            switch ($part['payload']['cond'])
             {
                 case '=':
                 case '>':
@@ -61,33 +56,34 @@ class Condition
                 case '<=':
                 case '<>':
                 case 'like':
-                    $mntValues[$key] = $partValues[0];
-                    $mntQuery[] = "{$config['glue']}{$config['column']} {$config['condition']} :{$key}";
+                    $values[$key] = ((Array)$part['value'])[0];
+                    $query[] = "{$part['payload']['glue']}{$part['column']} {$part['payload']['cond']} :{$key}";
                     break;
                     
                 case 'in':
                     $keys = [];
-                    foreach($partValues as $valueIndex => $value) 
+                    foreach($part['value'] as $keyIndex => $value) 
                     {
-                        $keys[] = ":".$key."{$valueIndex}_";
-                        $mntValues[$key."{$valueIndex}_"] = $value;
+                        $keyIndex = "{$key}{$keyIndex}_";
+                        $keys[] = ":{$keyIndex}";
+                        $values[ $keyIndex ] = $value;
                     }
-                    $mntQuery[] = "{$config['glue']}{$config['column']} in (".implode(", ", $keys).")";
+                    $query[] = "{$part['payload']['glue']}{$part['column']} in (".implode(", ", $keys).")";
                     break;
                 
                 case 'between':
-                    if (!isset($partValues[1]))
+                    if (!isset($part['value'][1]))
                         throw new \Exception("between precisa ter dois parâmetros <--- melhorar"); 
-                    $mntValues[$key.'A_'] = $partValues[0];
-                    $mntValues[$key.'B_'] = $partValues[1];
-                    $mntQuery[] = "{$config['glue']}{$config['column']} between :{$key}_A_ and :{$key}_B_";
+                    $values[$key.'0_'] = $part['value'][0];
+                    $values[$key.'1_'] = $part['value'][1];
+                    $query[] = "{$part['payload']['glue']}{$part['column']} between :{$key}0_ and :{$key}1_";
                     break;
             }
         }
 
         return (Object)[
-            'query'  => implode(' ', $mntQuery),
-            'values' => $mntValues
+            'query' => implode(' ', $query),
+            'values' => $values
         ];
     }
 }

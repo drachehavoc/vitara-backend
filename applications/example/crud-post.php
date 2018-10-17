@@ -4,42 +4,23 @@ use \Helper\Relational\Map;
 
 return function () 
 {  
-
-    $telefones = Map
-        ::table('telefones')
-        ->insert
-        ->value('ddd', Map::ANCHOR, 'anch_ddd')
-        ->value('numero', Map::ANCHOR, 'anch_numero')
-        ->value('pessoa', Map::ANCHOR, Map\Insert::insertedId);
-
-    $dadosTelefones = [
-        ['anch_ddd' => '01', 'anch_numero' => '77778888'],
-        ['anch_ddd' => '02', 'anch_numero' => '77778888'],
-    ];
-
-    $functionInsertTelefones = function(&$result) use ($telefones, $dadosTelefones)
-    {
-        foreach($dadosTelefones as $dados)
-        {
-            $telefones->anchors(array_merge([
-                Map\Insert::insertedId => $result[ Map\Insert::insertedId ],
-            ], $dados))->execute();
-        }
-        $result = 'isso aqui é o parana uÊ';
-    };
+    $cond = Map
+        ::cond('id', '>', Map::anchor('ancora3'));
 
     $pessoa = Map
         ::table('pessoas')
-        ->insert
-        ->value('nome', Map::ANCHOR, 'ancora1')
+        ->save
+        ->value('nome', Map::anchor('ancora1'))
         ->value('nascimento', '2019-01-01')
-        // ->callback($telefones, null, ... $dadosTelefones) // return ids array with table name
-        ->callback($telefones, 'alias', ... $dadosTelefones) // return ids array with alias
-        // ->callback($functionInsertTelefones) // custom function
+        // ->condition($cond)
+        // ->callback()
         ->anchors([
             'ancora1' => 'Dunha da Silva ' . random_int(0, 100),
-            'ancora2' => random_int(14, 18)
+            'ancora2' => random_int(14, 18),
+            'ancora3' => 15
         ]);
 
-    return $pessoa->execute();
+    $pessoa->execute();
+
+    return $pessoa->getAffected();
 };

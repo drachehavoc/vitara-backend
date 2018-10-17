@@ -32,6 +32,39 @@ class Select
         }
     }
 
+    private function prepareQuery()
+    {        
+        $conditionMeta = $this->condition->mount(); 
+
+        $query = $this->map->querySelect(
+            $this->columns,
+            $conditionMeta->query,
+            $this->offset * ($this->page - 1),
+            $this->offset
+        );
+
+        return [
+            'query'  => $query,
+            'values' => $conditionMeta->values
+        ];
+    }
+
+    private function customColumnSelect(string $column, $select)
+    {
+        $this->customColumnsFunctions[$column] = function ($row) use ($select) 
+        {
+            $select->getCondition()->anchors($row);
+            return $select->fetch();
+        };
+        return $this;
+    }
+
+    private function customColumnFunction(string $column, $function)
+    {
+        $this->customColumnsFunctions[$column] = $function;
+        return $this;
+    }
+
     function columns($column, ... $columns)
     {
         array_unshift($columns, $column);
@@ -60,22 +93,6 @@ class Select
         return $this;
     }
 
-    private function customColumnSelect(string $column, $select)
-    {
-        $this->customColumnsFunctions[$column] = function ($row) use ($select) 
-        {
-            $select->getCondition()->anchors($row);
-            return $select->fetch();
-        };
-        return $this;
-    }
-
-    private function customColumnFunction(string $column, $function)
-    {
-        $this->customColumnsFunctions[$column] = $function;
-        return $this;
-    }
-
     function customColumn(string $column, $aim)
     {
         switch (true)
@@ -89,24 +106,6 @@ class Select
         throw new \Core\Exception\FobiddenType('aim', $aim, 'callable', 'Map\Select');
     }
 
-    private function prepareQuery()
-    {        
-        $conditionMeta = $this->condition->mount(); 
-
-        $query = $this->map->querySelect(
-            $this->columns,
-            $this->map->raw->table,
-            $conditionMeta->query,
-            $this->offset * ($this->page - 1),
-            $this->offset
-        );
-
-        return [
-            'query'  => $query,
-            'values' => $conditionMeta->values
-        ];
-    }
-
     function getCondition()
     {
         return $this->condition;
@@ -114,7 +113,7 @@ class Select
 
     function getCond()
     {
-        return $this->condition;
+        return $this->getCondition();
     }
 
     function debug()

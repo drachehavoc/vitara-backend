@@ -56,7 +56,7 @@ return function ()
         ->customColumn('telefones_fun', $functionSelectTelefones)
         ->customColumn('telefones_alt', $functionSelectTelefonesAlternative)
         ->customColumn('telefones_anc', $telefones) // replace column telefones_anc
-        ->condition(Map::cond('id', '=', 1));
+        ->condition(Map::cond('id', '>=', 1));
 
     return $pessoas->fetch();
     // return $pessoas->debug();
