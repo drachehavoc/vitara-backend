@@ -1,0 +1,10 @@
+[18-Oct-2018 01:00:45 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Helper\Relational\Map\Check::columnName() in C:\terminal\live\server\system\Helper\Relational\Map\Select.php:82
+Stack trace:
+#0 C:\terminal\live\server\applications\example\crud-get.php(54): Helper\Relational\Map\Select->columns('id', 'nome', 'nascimento', Array)
+#1 C:\terminal\live\server\system\Core\System.php(79): Closure->{closure}()
+#2 C:\terminal\live\server\system\Core\System.php(26): Core\System->route()
+#3 C:\terminal\live\server\system\Core\System.php(13): Core\System->__construct()
+#4 C:\terminal\live\server\system\main.php(31): Core\System::getInstance()
+#5 C:\terminal\live\server\main.php(8): require_once('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\system\Helper\Relational\Map\Select.php on line 82
