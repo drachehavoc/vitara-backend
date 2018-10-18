@@ -22,10 +22,8 @@ class Select
         {
             case 'cond':
             case 'condition':
+            case 'conditional':
                 return $this->condition;
-
-            case 'map':
-                return $this->map;
             
             default:
                 throw new \Core\Exception\InaccessibleAttribute(); 

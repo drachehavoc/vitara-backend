@@ -14,7 +14,7 @@ class mysql
     const sqlDelete          = "DELETE FROM {table} WHERE {where}";
 
     protected $databaseName = null;
-    protected $tables = null;
+    protected $tables       = null;
     
     function __construct(\PDO $pdo)
     {
@@ -106,7 +106,7 @@ class mysql
 
         return $this->tables[$table] = $result;
     }
-    
+
     function select(string $table, Array $columns, Map\Condition $where, int $limit = 0, int $offset = 1000) : Array
     {
         $this->columnExists($table, true, ... $columns);
