@@ -1,7 +1,9 @@
 ```
 📂Helper\Relational
 ├─📄Map\Select
-│ ╰─🔥refazer a classe para aceitar o novo modelo (driver)
+│ ╰─🔥✅2018-10-21, refazer a classe para aceitar o novo modelo (driver)
+│ ╰─⚙️callback()
+│   ╰─🔨criar uma função estilo a Map\Save::callback() (para execuções em massa e não para impressão, como é a customColumn())
 ├─📄Map\Delete
 │ ╰─🔥criar
 ├─📄Map\Save
@@ -10,7 +12,7 @@
 │   ╰─🔨permitir recebimento de objetos do tipo Map\Delete 
 ╰─📄Drive\mysql
   ╰─⚙️columnExists()
-    ╰─🔨permitir adicionar alias para colunas
+    ╰─🔨✅2018-10-21, permitir adicionar alias para colunas
 
 
 ✅pronto
