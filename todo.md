@@ -3,7 +3,7 @@
 ├─📄Map\Select
 │ ╰─🔥✅2018-10-21, refazer a classe para aceitar o novo modelo (driver)
 │ ╰─⚙️callback()
-│   ╰─🔨criar uma função estilo a Map\Save::callback() (para execuções em massa e não para impressão, como é a customColumn())
+│   ╰─🔨criar uma método estilo a Map\Save::callback() (para execuções em massa e não para impressão, como é a customColumn())
 ├─📄Map\Delete
 │ ╰─🔥criar
 ├─📄Map\Save
