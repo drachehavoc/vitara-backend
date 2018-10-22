@@ -24,9 +24,9 @@ class Condition
         return $this->set('OR ', $col, $cond, $val, ... $vals);
     }
 
-    function anchors(Array $anchors)
+    function anchors($anchors)
     {
-        $this->values->anchors($anchors);
+        $this->values->anchors((Array)$anchors);
         return $this;
     }
     

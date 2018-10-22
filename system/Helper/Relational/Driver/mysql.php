@@ -15,6 +15,13 @@ class mysql
 
     protected $databaseName = null;
     protected $tables       = null;
+
+    private function checkColumnAlias(string $column)
+    {
+        if (!preg_match("/^[a-zA-Z_][a-zA-Z0-9 _-]*$/", $column))
+            throw new \Exception("invalid column alias: '{$column}' <--- melhorar");
+        return $column;
+    }
     
     function __construct(\PDO $pdo)
     {
@@ -65,17 +72,30 @@ class mysql
         return $check;
     }
     
-    function columnExists(string $table, bool $throw = false, string $column = null, string ... $columns)
+    function columnExists(string $table, bool $throw = false, $column, ... $columns)
     {
         $this->tableExists($table, true);
         if (!$column)
             return true;
         $checkColumns = array_merge((Array)$column, $columns);
         $existentColumns = array_keys($this->describeTable($table)->columns);
-        $notFound = array_diff($checkColumns, $existentColumns);
+        $mount = [];
+        foreach($checkColumns as $column) {
+            if (is_array($column) && count($column) == 1) {
+                $key = key($column);
+                $alias = $this->checkColumnAlias($column[$key]);
+                $column = $key;
+                $mount[] = "$column as '$alias'";
+            } else {
+                $mount[] = "$column";
+            }
+            if(!in_array($column, $existentColumns)) {
+                $notFound[] = $column;
+            }
+        }
         if ($throw && !empty($notFound))
             throw new \Exception("Table `$table` does not contain the following fields `". implode('`, `', $notFound) ."` database. <--- melhorar");
-        return empty($notFound);
+        return $mount;
     }
 
     function describeTable(string $table) : Object
@@ -109,13 +129,18 @@ class mysql
 
     function select(string $table, Array $columns, Map\Condition $where, int $limit = 0, int $offset = 1000) : Array
     {
-        $this->columnExists($table, true, ... $columns);
-
+        $this->tableExists($table, true);
         $condMeta = $where->mount(); 
+        $column = "*";
         
+        if(count($columns)) {
+            $x = $this->columnExists($table, true, ... $columns);
+            $column = implode(', ', $x);
+        }
+
         $replace = [
             "{table}" => $table,
-            "{columns}" => count($columns) ? implode(', ', $columns) : "*",
+            "{columns}" => $column,
             "{where}" => $condMeta->query,
             "{limit}" => $limit,
             "{offset}" => $offset 

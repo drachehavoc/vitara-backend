@@ -30,28 +30,11 @@ class Select
         }
     }
 
-    private function prepareQuery()
-    {        
-        $conditionMeta = $this->condition->mount(); 
-
-        $query = $this->map->querySelect(
-            $this->columns,
-            $conditionMeta->query,
-            $this->offset * ($this->page - 1),
-            $this->offset
-        );
-
-        return [
-            'query'  => $query,
-            'values' => $conditionMeta->values
-        ];
-    }
-
     private function customColumnSelect(string $column, $select)
     {
         $this->customColumnsFunctions[$column] = function ($row) use ($select) 
         {
-            $select->getCondition()->anchors($row);
+            $select->condition->anchors($row);
             return $select->fetch();
         };
         return $this;
@@ -66,23 +49,8 @@ class Select
     function columns($column, ... $columns)
     {
         array_unshift($columns, $column);
-        foreach($columns as $k => &$col) 
-        {
-            if (is_array($col)) 
-            {
-                if (count($col) == 1) 
-                {
-                    $column = Check::columnName(array_keys($col)[0]);
-                    $alias = Check::columnAlias(array_values($col)[0]);
-                    $columns[$k] = "{$column} as '{$alias}'";
-                    continue;
-                }
-                throw new \Exception("para criar apelidos para colunas utilize ['column'=>'alias'] <-- melhorar");
-            }
-            $col = Check::columnName($col);
-        }
-        $this->columns = array_merge_recursive($this->columns, $columns);
-        return $this;
+        $this->columns = array_merge($this->columns, $columns);
+        return $this;   
     }
 
     function condition(Condition $condition)
@@ -104,30 +72,17 @@ class Select
         throw new \Core\Exception\FobiddenType('aim', $aim, 'callable', 'Map\Select');
     }
 
-    function getCondition()
-    {
-        return $this->condition;
-    }
-
-    function getCond()
-    {
-        return $this->getCondition();
-    }
-
-    function debug()
-    {
-        $prep = $this->prepareQuery();
-        $keys = array_keys($prep['values']);
-        $values = array_values($prep['values']);
-        return (Object)array_merge($prep, ['fullQuery' => str_replace($keys, $values, $prep['query'])]);
-    }
-
     function fetch()
     {
-        $prep = $this->prepareQuery();
-        $stmt = $this->map->raw->pdo->prepare($prep['query']);
-        $stmt->execute($prep['values']);
-        $result = $stmt->fetchAll(\PDO::FETCH_OBJ);
+        $raw = $this->map->raw;   
+        $result = $raw->driver->select(
+            $raw->table,
+            $this->columns,
+            $this->condition,
+            ($this->page-1) * $this->offset,
+            $this->offset
+        );
+
         if (!empty($this->customColumnsFunctions))
             foreach ($result as $k => &$row)
                 foreach($this->customColumnsFunctions as $columnName => $function)
