@@ -1,4 +1,8 @@
-[asdasd](javascript:document.querySelectorAll('pre').forEach(e=>e.style='line-height:1.25em'))
+### Fix line-height
+
+```
+javascript:document.querySelectorAll('pre').forEach(e=>e.style='line-height:1.25em')
+```
 
 ## CRIAÇÃO DE TOKEN DE ACESSO
 
