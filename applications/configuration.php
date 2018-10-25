@@ -1,8 +1,11 @@
-<?php 
-
-namespace APPLICATIONS;
-
-const GATES = [
-    "127.0.0.1" => 'example',
-    "localhost" => 'example',
+<?php return [
+    "gates" => [
+        "127.0.0.1" => 'example',
+        "localhost" => 'example',
+        "access.localhost" => function () {
+            $access = new Helper\Access();
+            return $access->route($this);
+        },
+        // "access.localhost" => 'access',
+    ]
 ];

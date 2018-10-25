@@ -2,22 +2,18 @@
 
 use \Helper\Relational\Map;
 
-
-return function () 
-{   
+return function () {
     $telefones = Map
         ::table('telefones')
         ->select
         ->condition($condTel = Map::cond('pessoa', '=', Map::anchor('telefones_anc')));
-        
-    $functionSelectTelefones = function ($row) use ($telefones) 
-    {
+
+    $functionSelectTelefones = function ($row) use ($telefones) {
         $telefones->condition->anchors($row);
         return $telefones->fetch();
     };
-        
-    $functionSelectTelefonesAlternative = function ($row) use ($telefones, $condTel) 
-    {
+
+    $functionSelectTelefonesAlternative = function ($row) use ($telefones, $condTel) {
         $condTel->anchors($row);
         return $telefones->fetch();
     };
@@ -25,7 +21,7 @@ return function ()
     $pessoas = Map
         ::table('pessoas')
         ->select
-        ->columns('id', 'nome' , 'nascimento', ['id' => 'telefones_anc'])
+        ->columns('id', 'nome', 'nascimento', ['id' => 'telefones_anc'])
         ->customColumn('telefones_sel', $telefones)
         ->customColumn('telefones_fun', $functionSelectTelefones)
         ->customColumn('telefones_alt', $functionSelectTelefonesAlternative)

@@ -33,6 +33,9 @@ class Map
             
             case "save":
                 return new Map\Save($this);
+
+            case "delete":
+                return new Map\Delete($this);
             
             case "raw":
                 return $this->raw;

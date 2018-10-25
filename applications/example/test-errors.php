@@ -1,6 +1,6 @@
-<?php return function () 
-{
-    class ExceptionCustom extends \Exception {
+<?php return function () {
+    class ExceptionCustom extends \Exception
+    {
         function __construct()
         {
             $this->file = null;
@@ -10,11 +10,10 @@
         }
     }
 
-    switch ($this->matches['err']) 
-    {
+    switch ($this->matches['err']) {
         // E_NOTICE
         case 1:
-            $xx+1;
+            $xx + 1;
             break;
             
         // E_WARNING
@@ -32,7 +31,9 @@
 
         // FATAL ERROR
         case 5:
-            function x(integer $z){}
+            function x(integer $z)
+            {
+            }
             x("asdas");
             break;
     }

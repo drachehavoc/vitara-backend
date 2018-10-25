@@ -2,7 +2,7 @@
 
 namespace Helper\Relational\Map;
 
-class Save 
+class Delete 
 {
     const GET_ID       = '__BVFGYHJNBVCXOR__';
     const GET_IDS      = Self::GET_ID;
@@ -12,8 +12,6 @@ class Save
     const GET_BOOLEAN  = '__IUYTYUYTRTYUYT__';
 
     protected $map;
-    protected $columns = [];
-    protected $values;
     protected $anchors = [];
     protected $callbacks = [];
     protected $condition = null;
@@ -21,7 +19,6 @@ class Save
 
     function __construct(\Helper\Relational\Map $map)
     {    
-        $this->values = new Values();
         $this->map = $map;
     }
 
@@ -39,12 +36,6 @@ class Save
         }
     }
     
-    function value(string $column, $value) : Self
-    {
-        $this->values->set($column, $value);
-        return $this;
-    }
-    
     function condition(Condition $condition) : Self
     {
         $this->condition = $condition;
@@ -57,20 +48,6 @@ class Save
         return $this;
     }
 
-    function callback($aim, ... $p) : self
-    {
-        switch (true)
-        {
-            case is_callable($aim):
-                return $this->callbackCommon($aim);
-                
-            case is_object($aim) && $aim instanceof Self:
-                return $this->callbackSave($aim, array_shift($p), $p);
-
-            default:
-                throw new \Exception("Tipo de `aim` não suportado por callback <--- melhorar");
-        }
-    }
 
     function setReturnType($type, ... $params)
     {
@@ -80,29 +57,15 @@ class Save
 
     function execute($returnType = null, ... $params)
     {
-        $this->values->anchors($this->anchors);
         $raw = $this->map->raw;
+        $this->condition->anchors($this->anchors);
 
-        if ($this->condition)
-            $this->condition->anchors($this->anchors);
-
-        if ($returnType)
-            $this->setReturnType($returnType, ... $params);
-
-        $count = $raw->driver->save(
+        $count = $raw->driver->delete(
             $raw->table,
-            $this->values,
             $this->condition
         );
 
         $results = $this->returnFormat($raw, $count);
-
-        // die('   >>> '.);
-
-
-        foreach($this->callbacks as $callback)
-            foreach((Array)$results as $result)
-                $callback($result, $results);
 
         return $results;
     }
@@ -130,38 +93,11 @@ class Save
 
     private function getAffectedRows($raw)
     {
-        if ($this->condition) 
-            return $raw->driver->select($raw->table, $this->returnType[1], $this->condition);   
-        $last = $raw->pdo->lastInsertId();
-        $pkey = $raw->driver->describeTable($raw->table)->primarys[0];
-        $cond = new Condition($pkey, '=', $last);
         return $raw->driver->select($raw->table, $this->returnType[1], $cond);
     }
 
     private function getAffectedId($raw)
     {
-        $lastId = $raw->pdo->lastInsertId();
-        $column = $raw->driver->describeTable($raw->table)->primarys[0];
-        if ($this->condition)
-            return $raw->driver->select($raw->table, [$column], $this->condition);
         return [$column => (int)$lastId];
-    }
-
-    private function callbackCommon($aim)
-    {
-        $this->callbacks[] = $aim;
-        return $this;
-    }
-
-    private function callbackSave($save, string $alias, $values)
-    {
-        $this->callbacks[] = function ($row, $rows) use ($save, $alias, $values) 
-        {
-            $imutableRow = (Array)$row;
-            $row->{$alias} = [];
-            foreach($values as $value)
-                $row->{$alias}[] = $save->anchors($imutableRow + $value)->execute();
-        };
-        return $this;
     }
 }

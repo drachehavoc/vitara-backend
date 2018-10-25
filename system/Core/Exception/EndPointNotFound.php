@@ -2,6 +2,7 @@
 
 namespace Core\Exception;
 
-class EndPointNotFound extends HttpException {
+class EndPointNotFound extends HttpException
+{
     protected $httpStatus = 404;
 }

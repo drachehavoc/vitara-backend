@@ -6,88 +6,127 @@ use Core\Util\Path;
 
 class System
 {
-    static private $instance = null;
-    
-    static function getInstance()
-    {
-        return Self::$instance ? Self::$instance : Self::$instance = new Self(); 
-    }
-
     private $response = [];
     private $errorHandler;
-    
-    private function __construct()
-    { 
-        $this->errorHandler = ErrorHandler::getInstance();
-        $this->configurePHP();
 
-        try 
-        {
-            $this->route();
-        } 
-        
-        catch (\Exception $e) 
-        {
+    static private $instance = null;
+
+    static function getInstance()
+    {
+        return Self::$instance ? Self::$instance : Self::$instance = new Self();
+    }
+
+
+    private function __construct()
+    {
+        global $root;
+
+        $root['helpers']['system'] = \SYSTEM\HOME . 'Helpers' . DS;
+        $root['system'] = [
+            'home' => \SYSTEM\HOME,
+            'production' => false,
+            'timezone' => date_default_timezone_get(),
+            'logs' => HOME . '[[logs]]' . DS
+        ];
+        $root['override'] = array_replace_recursive($root['override'], $root['system']);
+
+        // ---------------------------------------------------------------------
+
+        $this->errorHandler = ErrorHandler::getInstance();
+
+        try {
+            $this->configurePHP();
+            $this->gate();
+        } catch (\Exception $e) {
             $this->errorHandler->exception($e);
-        } 
-        
-        finally
-        {
-            $this->response();
-        }  
+        }
+
+        $this->response();
     }
 
     private function configurePHP()
     {
+        global $root;
+
         header('Content-Type: application/json');
-        date_default_timezone_set(\APPLICATION\TIMEZONE);
-        ini_set('display_errors', !\APPLICATION\PRODUCTION);
-        if (\APPLICATION\LOGS) 
-        {
-            is_dir(\APPLICATION\LOGS)
-            or mkdir(\APPLICATION\LOGS, 0755, true);
-            ini_set('log_errors', true); 
-            ini_set('error_log', \APPLICATION\LOGS.'php-errors.log'); 
-            ini_set('log_errors_max_len', 1024); 
-        }
+        date_default_timezone_set($root['override']['timezone']);
+
+        is_dir($logs = HOME . 'logs' . DS . HOST . DS)
+            or mkdir($logs, 0755, true);
+
+        ini_set('display_errors', true);
+        ini_set('log_errors', true);
+        ini_set('error_log', $logs . 'php-errors.log');
+        ini_set('log_errors_max_len', 1024);
     }
 
-    private function route()
+    private function gate()
     {
-        $endpoint = null;
+        global $root;
 
-        $ctx = (Object)[
-            "path"    => $_SERVER['REQUEST_METHOD'] . ($_SERVER['PATH_INFO'] ?? $_SERVER['PHP_SELF']),
-            "query"   => (Object)$_GET,
-            "payload" => json_decode( file_get_contents('php://input') ),
-            "matches" => null
-        ];
-        
-        foreach(\APPLICATION\ROUTES as $regex => $filename)
-        {
-            if (preg_match($regex, $ctx->path, $matches))
-            {
-                $endpoint = Path::loadFunction(\APPLICATION\HOME."{$filename}.php", $ctx);
-                $ctx->matches = $matches;
-                break;
-            }
+        $home = HOME . APPLICATIONS . DS;
+        $root['helpers']['gate'] = $home . '[[helpers]]' . DS;
+        $root['gate'] = $config = Path::loadArray($home . CONFIGURATION, ['gates' => []]);
+        $root['override'] = array_replace_recursive($root['override'], $config);
+
+        if (!array_key_exists(HOST, $config['gates']))
+            throw new \Exception('Gate não definido para o host `' . HOST . '`'); // @todo: melhorar
+
+        $target = $config['gates'][HOST];
+
+        if (is_callable($target)) {
+            return $this->response = \CLosure::bind($target, $root['context'])();
         }
 
-        if (!$endpoint) 
-            throw new \Core\Exception\EndPointNotFound();
+        if (is_string($target))
+            return $this->response = $this->route($home . $target . DS);
+
+        throw new \Exception("Valor inválido para gates `" . HOST . "` só pode conter valores do tipo string ou function.");
+    }
+
+    private function route($home)
+    {
+        global $root;
+
+        $root['helpers']['route'] = $home . '[[helpers]]' . DS;
+        $root['route'] = Path::loadArray($home . CONFIGURATION, ['routes' => []]);
+        $root['override'] = array_replace_recursive($root['override'], $config);
         
-        $this->response = $endpoint();
+        // ---------------------------------------------------------------------
+
+        $endpoint = null;
+
+        foreach ($config['routes'] as $regex => $target) {
+            if (!preg_match($regex, $root['context']->path, $matches))
+                continue;
+
+            if (is_string($target))
+                $endpoint = Path::loadFunction($home . "{$target}.php", $root['context']);
+
+            if (is_callable($target))
+                $endpoint = \Closure::bind($target, $root['context']);
+
+            $root['context']->matches = $matches;
+
+            break;
+        }
+
+        if (!$endpoint)
+            throw new \Core\Exception\EndPointNotFound();
+
+        return $endpoint();
     }
 
     private function response()
     {
-        $errors = $this->errorHandler->getTrace();
-        $response = [
-            'response' => $this->response,
-        ];
+        $response = ['response' => $this->response];
 
-        if (!empty($errors)) 
+        $errors = $this->errorHandler->getTrace();
+
+        if (!empty($errors)) {
+            http_response_code(500);
             $response = array_merge($response, $errors);
+        }
 
         echo json_encode($response);
     }

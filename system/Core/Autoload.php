@@ -10,42 +10,48 @@ class Autoload
 
     static function getInstance()
     {
-        return Self::$instance 
-            ? Self::$instance 
-            : Self::$instance = new Self(); 
+        return Self::$instance
+            ? Self::$instance
+            : Self::$instance = new Self();
     }
-    
-    private function __construct(){
+
+    private function __construct()
+    {
         spl_autoload_register([$this, 'trigger']);
     }
 
-    private function common ($namespace) 
+    private function common($namespace)
     {
         $file = \SYSTEM\HOME . DIRECTORY_SEPARATOR . "{$namespace}.php";
-        if (file_exists($file)) return require_once $file;   
+        if (file_exists($file)) return require_once $file;
         throw new \Core\Exception\ClassFileNotFound("Class file not found! Class Name: $namespace, File: $file");
     }
 
-    private function helper ($namespace) 
+    private function helper($namespace)
     {
+        global $root;
         $namespace = ltrim($namespace, "Helper\\");
-        $file = \Core\Util\Path::findIn("{$namespace}.php", \APPLICATION\HELPERS, \SYSTEM\HELPERS);
-        if ($file) return require_once $file;     
-        throw new \Core\Exception\ClassFileNotFound("Class file not found! Class Name: $namespace, File: $file [[[[ADICIONAR TODOS OS CAMINHÕES NÃO ENCONTRADOS A ESTE EXCEPTION]]]]");
+        $file = \Core\Util\Path::findIn(
+            "{$namespace}.php",
+            $root['helpers']['route'] ?? 'route-ainda-não-carregado',
+            $root['helpers']['gate'],
+            $root['helpers']['system']
+        );
+        if ($file) return require_once $file;
+        throw new \Core\Exception\ClassFileNotFound("Class file not found! Class Name: Helper\\$namespace, File: $file [[[[ADICIONAR TODOS OS CAMINHÕES NÃO ENCONTRADOS A ESTE EXCEPTION]]]]");
     }
 
-    private function trigger ($namespace)
+    private function trigger($namespace)
     {
-        if (isset($this->list[$namespace])) 
+        if (isset($this->list[$namespace]))
             return;
-        
+
         $this->list[] = $namespace;
 
-        switch (true)
-        {
-            case strpos($namespace, 'Helper') === 0: 
+        switch (true) {
+            case strpos($namespace, 'Helper') === 0:
                 return $this->helper($namespace);
-                
+
             default:
                 return $this->common($namespace);
         }

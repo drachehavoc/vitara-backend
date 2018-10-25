@@ -2,4 +2,6 @@
 
 namespace Core\Exception;
 
-class FileDoesNotReturnAFunction extends HttpException {}
+class FileDoesNotReturnAFunction extends HttpException
+{
+}

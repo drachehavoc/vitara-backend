@@ -2,8 +2,9 @@
 
 namespace Core\Exception;
 
-class InaccessibleAttribute extends HttpException {
-    
+class InaccessibleAttribute extends HttpException
+{
+
     function __construct()
     {
         $trace = $this->getTrace()[0];

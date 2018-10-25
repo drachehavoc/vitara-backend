@@ -2,4 +2,6 @@
 
 namespace Core\Exception;
 
-class FileNotFound extends HttpException {}
+class FileNotFound extends HttpException
+{
+}

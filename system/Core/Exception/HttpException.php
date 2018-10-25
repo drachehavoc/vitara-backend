@@ -2,7 +2,8 @@
 
 namespace Core\Exception;
 
-class HttpException extends \Exception {
+class HttpException extends \Exception
+{
     protected $httpStatus = 500;
 
     public function getHttpStatus()

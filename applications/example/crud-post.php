@@ -2,8 +2,7 @@
 
 use \Helper\Relational\Map;
 
-return function () 
-{  
+return function () {
     $telefone = Map
         ::table('telefones')
         ->save
@@ -22,8 +21,7 @@ return function ()
         ]
     ];
 
-    $callback = function (&$row)
-    {
+    $callback = function (&$row) {
         $row->teste[] = 'Adicionado - ' . random_int(0, 100);
     };
 
@@ -36,7 +34,7 @@ return function ()
         ->value('nome', Map::anchor('ancora1'))
         ->value('nascimento', '2019-01-01')
         ->condition($cond)
-        ->callback($telefone, 'column-alias', ... $telefoneData)
+        ->callback($telefone, 'column-alias', ...$telefoneData)
         // ->callback($callback)
         // ->callback($callback)
         ->anchors([
