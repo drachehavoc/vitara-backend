@@ -1,6 +1,7 @@
 <?php
 
 // ROOT GLOBAL OBJECT
+
 $root = [
     'step' => 'main_1',
     'context' => (Object)[
@@ -17,19 +18,25 @@ $root = [
 ];
 
 // HOST NAME
+
 define('HOST', $_SERVER['HTTP_HOST']);
 
 // FOR SHORTNER
+
 const DS = DIRECTORY_SEPARATOR;
 
 // HOME OF WHOLE SYSTEM
+
 const HOME = __DIR__ . DS;
 
 // DEFAULT APPLICATION FOLDER
+
 const APPLICATIONS = 'applications';
 
 // DEFAULT CONFIGURATIONS FILES NAMES
+
 const CONFIGURATION = 'configuration.php';
 
 // BEGIN THE JOKE
+
 require_once 'system/main.php';

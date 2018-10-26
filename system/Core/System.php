@@ -53,9 +53,12 @@ class System
         global $root;
         $root['step'] = $key;
         $root['helpers'][$key] = $home . '[[helpers]]' . DS;
-        $root[$key] = Path::loadArray($home . CONFIGURATION, ['paths' => []]);
+        $root[$key] = Path::loadArray($home . CONFIGURATION, [
+            'gates' => [],
+            'routes' => [],
+        ]);
         $root['override'] = array_replace_recursive($root['override'], $root[$key]);
-        return $root['override'];
+        return $root;
     }
 
     private function configurePHP()
@@ -76,44 +79,48 @@ class System
 
     private function gate()
     {
-        $config = $this->setRoot('gate', HOME . APPLICATIONS . DS);
+        $home = HOME . APPLICATIONS . DS;
+        $config = $this->setRoot('gate', $home);
+        $gates = $config['gate']['gates'];
+        $context = $config['context'];
 
-        if (!array_key_exists(HOST, $config['paths']))
+        if (!array_key_exists(HOST, $gates))
             throw new \Core\Exception\GateNotFound();
 
-        $target = $root['gate']['gates'][HOST];
+        $target = $gates[HOST];
 
-        if (is_callable($target)) {
-            return $this->response = \CLosure::bind($target, $root['context'])();
-        }
+        if (is_callable($target))
+            return $this->response = \CLosure::bind($target, $context)();
 
         if (is_string($target))
             return $this->response = $this->route($home . $target . DS);
 
-        throw new \Exception("Valor inválido para gates `" . HOST . "` só pode conter valores do tipo string ou function.", 500);
+        throw new \Exception("Valor inválido para gates `" . HOST . "` só pode conter valores do tipo string ou function.", 500); // @todo: melhorar
     }
 
     private function route($home)
     {
+        global $root;
         $config = $this->setRoot('route', $home);
-        
+        $routes = $config['route']['routes'];
+        $context = $config['context'];
         $endpoint = null;
 
-        foreach ($config['paths'] as $regex => $target) {
-            if (!preg_match($regex, $root['context']->path, $matches))
+        foreach ($routes as $regex => $target) {
+            if (!preg_match($regex, $context->path, $matches))
                 continue;
 
             if (is_string($target))
-                $endpoint = Path::loadFunction($home . "{$target}.php", $root['context']);
+                $endpoint = Path::loadFunction($home . "{$target}.php", $context);
 
             if (is_callable($target))
-                $endpoint = \Closure::bind($target, $root['context']);
+                $endpoint = \Closure::bind($target, $context);
 
-            $root['context']->matches = $matches;
 
             break;
         }
 
+        $root{'context'}->matches = $matches;
         if (!$endpoint)
             throw new \Core\Exception\EndPointNotFound();
 

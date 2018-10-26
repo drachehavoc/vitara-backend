@@ -42,9 +42,6 @@ class ErrorHandler
     function exception(\Exception $e)
     {
         global $root;
-
-        print_r($root); echo "\n\n\n";
-
         $this->trace['exception'][] = !$root['override']['production'] ? [
             'message' => $e->getMessage(),
             'type' => get_class($e),
@@ -64,8 +61,7 @@ class ErrorHandler
     function error($no, $message, $file, $line)
     {
         global $root;
-        $type = ErrorHandler::NAME[$no];
-
+        $type = ltrim(ErrorHandler::NAME[$no], 'E_');
         $this->trace['error'][] = !$root['override']['production'] ? [
             'message' => $message,
             'step' => $root['step'],
@@ -79,11 +75,6 @@ class ErrorHandler
             'type' => $type,
             'detail' => $no
         ];
-
-
-        $type = ltrim($type, 'E_');
-
-        // error_log("{$type} {$message} in {$file} on line {$line}");
     }
 
     function getTrace()

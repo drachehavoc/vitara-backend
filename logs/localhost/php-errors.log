@@ -45,3 +45,33 @@ Stack trace:
 #3 C:\terminal\live\server\main.php(35): require_once('C:\\terminal\\liv...')
 #4 {main}
   thrown in C:\terminal\live\server\system\Core\ErrorHandler.php on line 46
+[26-Oct-2018 00:54:04 UTC] PHP Fatal error:  Uncaught Error: Using $this when not in object context in C:\terminal\live\server\applications\example\configuration.php:20
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(126): Core\Util\Path::{closure}()
+#1 C:\terminal\live\server\system\Core\System.php(96): Core\System->route('C:\\terminal\\liv...')
+#2 C:\terminal\live\server\system\Core\System.php(39): Core\System->gate()
+#3 C:\terminal\live\server\system\Core\System.php(16): Core\System->__construct()
+#4 C:\terminal\live\server\system\main.php(14): Core\System::getInstance()
+#5 C:\terminal\live\server\main.php(42): require_once('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\applications\example\configuration.php on line 20
+[26-Oct-2018 00:54:48 UTC] PHP Fatal error:  Uncaught Error: Using $this when not in object context in C:\terminal\live\server\applications\example\configuration.php:20
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(126): Core\Util\Path::{closure}()
+#1 C:\terminal\live\server\system\Core\System.php(96): Core\System->route('C:\\terminal\\liv...')
+#2 C:\terminal\live\server\system\Core\System.php(39): Core\System->gate()
+#3 C:\terminal\live\server\system\Core\System.php(16): Core\System->__construct()
+#4 C:\terminal\live\server\system\main.php(14): Core\System::getInstance()
+#5 C:\terminal\live\server\main.php(42): require_once('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\applications\example\configuration.php on line 20
+[26-Oct-2018 00:55:04 UTC] PHP Fatal error:  Uncaught Error: Using $this when not in object context in C:\terminal\live\server\applications\example\configuration.php:20
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(126): Core\Util\Path::{closure}()
+#1 C:\terminal\live\server\system\Core\System.php(96): Core\System->route('C:\\terminal\\liv...')
+#2 C:\terminal\live\server\system\Core\System.php(39): Core\System->gate()
+#3 C:\terminal\live\server\system\Core\System.php(16): Core\System->__construct()
+#4 C:\terminal\live\server\system\main.php(14): Core\System::getInstance()
+#5 C:\terminal\live\server\main.php(42): require_once('C:\\terminal\\liv...')
+#6 {main}
+  thrown in C:\terminal\live\server\applications\example\configuration.php on line 20
