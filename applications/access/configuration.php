@@ -1,4 +1,5 @@
 <?php return [
+    // 'production' => true,
     'routes' => [
         '{^POST?/auth}' => 'access-create-token',
         // '{^POST?/auth}' => function() { return "aaaaaaaaaaaaaaaa"; },

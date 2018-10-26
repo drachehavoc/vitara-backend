@@ -43,20 +43,21 @@ class ErrorHandler
     {
         global $root;
 
-        $this->trace['exception'][] = !$root['override']['production']
-            ? [
-            "message" => $e->getMessage(),
-            "type" => get_class($e),
-            "detail" => $e->getCode(),
-            "file" => $e->getFile(),
-            "line" => $e->getLine(),
-            "trace" => $e->getTrace()
-        ]
+        print_r($root); echo "\n\n\n";
 
-            : [
-            "message" => $e->getMessage(),
-            "type" => get_class($e),
-            "detail" => $e->getCode()
+        $this->trace['exception'][] = !$root['override']['production'] ? [
+            'message' => $e->getMessage(),
+            'type' => get_class($e),
+            'step' => $root['step'],
+            'detail' => $e->getCode(),
+            'file' => $e->getFile(),
+            'line' => $e->getLine(),
+            'trace' => $e->getTrace()
+        ] : [
+            'message' => $e->getMessage(),
+            'step' => $root['step'],
+            'type' => get_class($e),
+            'detail' => $e->getCode()
         ];
     }
 
@@ -65,19 +66,18 @@ class ErrorHandler
         global $root;
         $type = ErrorHandler::NAME[$no];
 
-        $this->trace['error'][] = !$root['override']['production']
-            ? [
-            "message" => $message,
-            "type" => $type,
-            "detail" => $no,
-            "file" => $file,
-            "line" => $line
-        ]
-
-            : [
-            "message" => $message,
-            "type" => $type,
-            "detail" => $no
+        $this->trace['error'][] = !$root['override']['production'] ? [
+            'message' => $message,
+            'step' => $root['step'],
+            'type' => $type,
+            'detail' => $no,
+            'file' => $file,
+            'line' => $line
+        ] : [
+            'message' => $message,
+            'step' => $root['step'],
+            'type' => $type,
+            'detail' => $no
         ];
 
 

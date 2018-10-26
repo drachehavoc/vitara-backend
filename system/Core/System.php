@@ -20,7 +20,7 @@ class System
     private function __construct()
     {
         global $root;
-
+        $root['step'] = 'system';
         $root['helpers']['system'] = \SYSTEM\HOME . 'Helpers' . DS;
         $root['system'] = [
             'home' => \SYSTEM\HOME,
@@ -37,11 +37,25 @@ class System
         try {
             $this->configurePHP();
             $this->gate();
+        } catch (\Core\Exception\HttpException $e) {
+            http_response_code($e->getHttpStatus());
+            $this->errorHandler->exception($e);
         } catch (\Exception $e) {
+            http_response_code(500);
             $this->errorHandler->exception($e);
         }
 
         $this->response();
+    }
+
+    private function setRoot($key, $home)
+    {
+        global $root;
+        $root['step'] = $key;
+        $root['helpers'][$key] = $home . '[[helpers]]' . DS;
+        $root[$key] = Path::loadArray($home . CONFIGURATION, ['paths' => []]);
+        $root['override'] = array_replace_recursive($root['override'], $root[$key]);
+        return $root['override'];
     }
 
     private function configurePHP()
@@ -62,17 +76,12 @@ class System
 
     private function gate()
     {
-        global $root;
+        $config = $this->setRoot('gate', HOME . APPLICATIONS . DS);
 
-        $home = HOME . APPLICATIONS . DS;
-        $root['helpers']['gate'] = $home . '[[helpers]]' . DS;
-        $root['gate'] = $config = Path::loadArray($home . CONFIGURATION, ['gates' => []]);
-        $root['override'] = array_replace_recursive($root['override'], $config);
+        if (!array_key_exists(HOST, $config['paths']))
+            throw new \Core\Exception\GateNotFound();
 
-        if (!array_key_exists(HOST, $config['gates']))
-            throw new \Exception('Gate não definido para o host `' . HOST . '`'); // @todo: melhorar
-
-        $target = $config['gates'][HOST];
+        $target = $root['gate']['gates'][HOST];
 
         if (is_callable($target)) {
             return $this->response = \CLosure::bind($target, $root['context'])();
@@ -81,22 +90,16 @@ class System
         if (is_string($target))
             return $this->response = $this->route($home . $target . DS);
 
-        throw new \Exception("Valor inválido para gates `" . HOST . "` só pode conter valores do tipo string ou function.");
+        throw new \Exception("Valor inválido para gates `" . HOST . "` só pode conter valores do tipo string ou function.", 500);
     }
 
     private function route($home)
     {
-        global $root;
-
-        $root['helpers']['route'] = $home . '[[helpers]]' . DS;
-        $root['route'] = Path::loadArray($home . CONFIGURATION, ['routes' => []]);
-        $root['override'] = array_replace_recursive($root['override'], $config);
+        $config = $this->setRoot('route', $home);
         
-        // ---------------------------------------------------------------------
-
         $endpoint = null;
 
-        foreach ($config['routes'] as $regex => $target) {
+        foreach ($config['paths'] as $regex => $target) {
             if (!preg_match($regex, $root['context']->path, $matches))
                 continue;
 
@@ -124,7 +127,6 @@ class System
         $errors = $this->errorHandler->getTrace();
 
         if (!empty($errors)) {
-            http_response_code(500);
             $response = array_merge($response, $errors);
         }
 

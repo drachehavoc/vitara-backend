@@ -1,0 +1,14 @@
+[25-Oct-2018 22:58:17 UTC] PHP Fatal error:  Uncaught Error: Cannot access protected property Core\Exception\FileDoesNotReturnAArray::$httpStatus in C:\terminal\live\server\system\Core\System.php:41
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(16): Core\System->__construct()
+#1 C:\terminal\live\server\system\main.php(13): Core\System::getInstance()
+#2 C:\terminal\live\server\main.php(34): require_once('C:\\terminal\\liv...')
+#3 {main}
+  thrown in C:\terminal\live\server\system\Core\System.php on line 41
+[25-Oct-2018 22:58:40 UTC] PHP Fatal error:  Uncaught Error: Cannot access protected property Core\Exception\FileDoesNotReturnAArray::$httpStatus in C:\terminal\live\server\system\Core\System.php:44
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(16): Core\System->__construct()
+#1 C:\terminal\live\server\system\main.php(13): Core\System::getInstance()
+#2 C:\terminal\live\server\main.php(34): require_once('C:\\terminal\\liv...')
+#3 {main}
+  thrown in C:\terminal\live\server\system\Core\System.php on line 44

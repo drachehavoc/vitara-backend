@@ -1,0 +1,47 @@
+[25-Oct-2018 23:07:32 UTC] PHP Fatal error:  Uncaught Error: Cannot access protected property Exception::$code in C:\terminal\live\server\system\Core\System.php:44
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(16): Core\System->__construct()
+#1 C:\terminal\live\server\system\main.php(13): Core\System::getInstance()
+#2 C:\terminal\live\server\main.php(34): require_once('C:\\terminal\\liv...')
+#3 {main}
+  thrown in C:\terminal\live\server\system\Core\System.php on line 44
+[25-Oct-2018 23:18:52 UTC] PHP Fatal error:  Uncaught Error: Class 'Core\Exception\GateNotFound' not found in C:\terminal\live\server\system\Core\System.php:77
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(39): Core\System->gate()
+#1 C:\terminal\live\server\system\Core\System.php(16): Core\System->__construct()
+#2 C:\terminal\live\server\system\main.php(13): Core\System::getInstance()
+#3 C:\terminal\live\server\main.php(34): require_once('C:\\terminal\\liv...')
+#4 {main}
+  thrown in C:\terminal\live\server\system\Core\System.php on line 77
+[25-Oct-2018 23:28:18 UTC] PHP Notice:  Undefined index: production in C:\terminal\live\server\system\Core\ErrorHandler.php on line 70
+[25-Oct-2018 23:28:18 UTC] PHP Stack trace:
+[25-Oct-2018 23:28:18 UTC] PHP   1. {main}() C:\terminal\live\server\main.php:0
+[25-Oct-2018 23:28:18 UTC] PHP   2. require_once() C:\terminal\live\server\main.php:34
+[25-Oct-2018 23:28:18 UTC] PHP   3. Core\System::getInstance() C:\terminal\live\server\system\main.php:13
+[25-Oct-2018 23:28:18 UTC] PHP   4. Core\System->__construct() C:\terminal\live\server\system\Core\System.php:16
+[25-Oct-2018 23:28:18 UTC] PHP   5. Core\ErrorHandler->exception() C:\terminal\live\server\system\Core\System.php:42
+[25-Oct-2018 23:28:18 UTC] PHP   6. Core\ErrorHandler->error() C:\terminal\live\server\system\Core\ErrorHandler.php:48
+[25-Oct-2018 23:28:32 UTC] PHP Notice:  Undefined index: production in C:\terminal\live\server\system\Core\ErrorHandler.php on line 70
+[25-Oct-2018 23:28:32 UTC] PHP Stack trace:
+[25-Oct-2018 23:28:32 UTC] PHP   1. {main}() C:\terminal\live\server\main.php:0
+[25-Oct-2018 23:28:32 UTC] PHP   2. require_once() C:\terminal\live\server\main.php:34
+[25-Oct-2018 23:28:32 UTC] PHP   3. Core\System::getInstance() C:\terminal\live\server\system\main.php:13
+[25-Oct-2018 23:28:32 UTC] PHP   4. Core\System->__construct() C:\terminal\live\server\system\Core\System.php:16
+[25-Oct-2018 23:28:32 UTC] PHP   5. Core\ErrorHandler->exception() C:\terminal\live\server\system\Core\System.php:42
+[25-Oct-2018 23:28:32 UTC] PHP   6. Core\ErrorHandler->error() C:\terminal\live\server\system\Core\ErrorHandler.php:48
+[25-Oct-2018 23:32:19 UTC] PHP Notice:  Undefined index: production in C:\terminal\live\server\system\Core\ErrorHandler.php on line 70
+[25-Oct-2018 23:32:19 UTC] PHP Stack trace:
+[25-Oct-2018 23:32:19 UTC] PHP   1. {main}() C:\terminal\live\server\main.php:0
+[25-Oct-2018 23:32:19 UTC] PHP   2. require_once() C:\terminal\live\server\main.php:35
+[25-Oct-2018 23:32:19 UTC] PHP   3. Core\System::getInstance() C:\terminal\live\server\system\main.php:13
+[25-Oct-2018 23:32:19 UTC] PHP   4. Core\System->__construct() C:\terminal\live\server\system\Core\System.php:16
+[25-Oct-2018 23:32:19 UTC] PHP   5. Core\ErrorHandler->exception() C:\terminal\live\server\system\Core\System.php:44
+[25-Oct-2018 23:32:19 UTC] PHP   6. Core\ErrorHandler->error() C:\terminal\live\server\system\Core\ErrorHandler.php:48
+[25-Oct-2018 23:49:18 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in C:\terminal\live\server\system\Core\ErrorHandler.php:46
+Stack trace:
+#0 C:\terminal\live\server\system\Core\System.php(44): Core\ErrorHandler->exception(Object(Core\Exception\GateNotFound))
+#1 C:\terminal\live\server\system\Core\System.php(16): Core\System->__construct()
+#2 C:\terminal\live\server\system\main.php(14): Core\System::getInstance()
+#3 C:\terminal\live\server\main.php(35): require_once('C:\\terminal\\liv...')
+#4 {main}
+  thrown in C:\terminal\live\server\system\Core\ErrorHandler.php on line 46

@@ -2,6 +2,7 @@
 
 // ROOT GLOBAL OBJECT
 $root = [
+    'step' => 'main_1',
     'context' => (Object)[
         'path' => $_SERVER['REQUEST_METHOD'] . ($_SERVER['PATH_INFO'] ?? $_SERVER['PHP_SELF']),
         'query' => (Object)$_GET,
