@@ -6,10 +6,9 @@ class PrepareException extends \Core\Exception\HttpException
 {
     function __construct($exceptions)
     {
-        $this->message = [];
+        $this->code = [];
         foreach ($exceptions as $key => $exception)
-            $this->message[$key] = "{$exception}";
-        // $this->message = implode(', \n', $messages);
+            $this->code[$key][] = "{$exception}";
     }
 }
 
@@ -18,7 +17,7 @@ class Prepare
     protected $data;
     protected $ckeck = [];
     protected $ckeckFunctions = [];
-    protected $exeptions = [];
+    protected $errors = [];
     protected $result = [];
 
     private function loadType()
@@ -30,6 +29,11 @@ class Prepare
             require $this->ckeckFunctions[$type] = require __DIR__ . "/Prepare/{$type}.php";
     }
 
+    static function verify($data)
+    {
+        return new self($data);
+    }
+
     function __construct($data)
     {
         $this->data = $data;
@@ -38,22 +42,22 @@ class Prepare
     function check(string $target, string $key, $alias, string $type, ...$p)
     {
         $that = $this;
-        $value = $this->data->{$target}->{$key} ?? $this->data->{$target}[$key] ?? null;
+        $targetArr = (Array)$this->data->{$target};
+        $value = $targetArr[$key] ?? null;
         $alias = $alias ?? $key;
         $classNameSpace = "\\" . __NAMESPACE__ . "\\Prepare\\Type" . ucfirst($type);
+        $typeObj = new $classNameSpace($key, $alias, $value, ...$p);
+
+        if (!($typeObj instanceof \Helper\Prepare\Type))
+            $this->errors[$key] = "Prepare types needs to be extends Helper\Prepare\Type, type `{$type}` does not extends Helper\Prepare\Type.";
 
         try {
-            $typeObj = new $classNameSpace($value, ...$p);
-            if (!($typeObj instanceof \Helper\Prepare\Type))
-                throw new \Exception("Prepare types needs to be extends Helper\Prepare\Type, type `{$type}` does not extends Helper\Prepare\Type.");
             $this->result[$alias] = $typeObj->getValue();
         } catch (\Exception $e) {
-            $this->exeptions[$key] = $e->getMessage();
+            $this->errors[$key] = $e->getMessage();
         }
 
-        return function (string $key, $alias, string $type, ...$p) use ($that, $target) {
-            return $that->check($target, $key, $alias, $type, ...$p);
-        };
+        return $this;
     }
 
     function payload(string $key, $alias, string $type, ...$p)
@@ -73,8 +77,8 @@ class Prepare
 
     function getData()
     {
-        if (!empty($this->exeptions))
-            throw new PrepareException($this->exeptions);
+        if (!empty($this->errors))
+            throw new PrepareException($this->errors);
         return (Object)$this->result;
     }
 

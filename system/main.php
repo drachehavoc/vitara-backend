@@ -2,8 +2,9 @@
 
 namespace SYSTEM;
 
-$root['step'] = 'main_2';
 const HOME = __DIR__ . DS;
+
+$root['step'] = 'main_2';
 
 namespace Core;
 

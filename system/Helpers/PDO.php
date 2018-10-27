@@ -1,16 +1,16 @@
 <?php
 
-namespace Helper\Relational;
+namespace Helper;
 
 class PDO extends \PDO
 {
     function __construct(Array $config)
     {
-        $driver   = $config['driver']    ?? Config::driver; 
-        $host     = $config['host']      ?? Config::host;
-        $database = $config['database']  ?? Config::database;
-        $user     = $config['user']      ?? Config::user;
-        $password = $config['password']  ?? Config::password;
+        $host     = $config['host']      ?? PDO\Config::host;
+        $driver   = $config['driver']    ?? PDO\Config::driver; 
+        $database = $config['database']  ?? PDO\Config::database;
+        $user     = $config['user']      ?? PDO\Config::user;
+        $password = $config['password']  ?? PDO\Config::password;
         parent::__construct(
             "{$driver}:host={$host};dbname={$database}",
             $user,

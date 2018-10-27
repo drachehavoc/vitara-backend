@@ -1,6 +1,6 @@
 <?php
 
-namespace Helper\Relational;
+namespace Helper\PDO;
 
 class Config
 {

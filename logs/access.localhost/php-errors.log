@@ -1,0 +1,46 @@
+[26-Oct-2018 19:13:23 UTC] PHP Fatal error:  Uncaught Error: Call to a member function lastInsertId() on null in C:\terminal\live\server\applications\[[helpers]]\Access.php:112
+Stack trace:
+#0 C:\terminal\live\server\applications\[[helpers]]\Access.php(153): Helper\Access->createOrUpdateToken(Object(stdClass), '123', 'ttt')
+#1 C:\terminal\live\server\applications\configuration.php(8): Helper\Access::route(Object(stdClass))
+#2 C:\terminal\live\server\system\Core\System.php(93): Core\Util\Path->{closure}()
+#3 C:\terminal\live\server\system\Core\System.php(39): Core\System->gate()
+#4 C:\terminal\live\server\system\Core\System.php(16): Core\System->__construct()
+#5 C:\terminal\live\server\system\main.php(15): Core\System::getInstance()
+#6 C:\terminal\live\server\main.php(42): require_once('C:\\terminal\\liv...')
+#7 {main}
+  thrown in C:\terminal\live\server\applications\[[helpers]]\Access.php on line 112
+[26-Oct-2018 22:17:13 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Helper\getUserLastApplicationToken() in C:\terminal\live\server\applications\[[helpers]]\Access.php:117
+Stack trace:
+#0 C:\terminal\live\server\applications\[[helpers]]\Access.php(171): Helper\Access->createOrUpdateToken(Object(stdClass), '123', 'ttt')
+#1 C:\terminal\live\server\applications\configuration.php(8): Helper\Access::route(Object(stdClass))
+#2 C:\terminal\live\server\system\Core\System.php(93): Core\Util\Path->{closure}()
+#3 C:\terminal\live\server\system\Core\System.php(39): Core\System->gate()
+#4 C:\terminal\live\server\system\Core\System.php(16): Core\System->__construct()
+#5 C:\terminal\live\server\system\main.php(15): Core\System::getInstance()
+#6 C:\terminal\live\server\main.php(42): require_once('C:\\terminal\\liv...')
+#7 {main}
+  thrown in C:\terminal\live\server\applications\[[helpers]]\Access.php on line 117
+[27-Oct-2018 00:22:27 UTC] PHP Fatal error:  Uncaught Error: Call to a member function rowsCount() on null in C:\terminal\live\server\applications\[[helpers]]\Access.php:155
+Stack trace:
+#0 C:\terminal\live\server\applications\[[helpers]]\Access.php(122): Helper\Access->updateToken('85950049f055b5d...')
+#1 C:\terminal\live\server\applications\[[helpers]]\Access.php(187): Helper\Access->createOrUpdateToken(Object(stdClass), '123', 'ttt')
+#2 C:\terminal\live\server\applications\configuration.php(8): Helper\Access::route(Object(stdClass))
+#3 C:\terminal\live\server\system\Core\System.php(93): Core\Util\Path->{closure}()
+#4 C:\terminal\live\server\system\Core\System.php(39): Core\System->gate()
+#5 C:\terminal\live\server\system\Core\System.php(16): Core\System->__construct()
+#6 C:\terminal\live\server\system\main.php(15): Core\System::getInstance()
+#7 C:\terminal\live\server\main.php(42): require_once('C:\\terminal\\liv...')
+#8 {main}
+  thrown in C:\terminal\live\server\applications\[[helpers]]\Access.php on line 155
+[27-Oct-2018 00:23:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method PDOStatement::rowsCount() in C:\terminal\live\server\applications\[[helpers]]\Access.php:155
+Stack trace:
+#0 C:\terminal\live\server\applications\[[helpers]]\Access.php(122): Helper\Access->updateToken('85950049f055b5d...')
+#1 C:\terminal\live\server\applications\[[helpers]]\Access.php(187): Helper\Access->createOrUpdateToken(Object(stdClass), '123', 'ttt')
+#2 C:\terminal\live\server\applications\configuration.php(8): Helper\Access::route(Object(stdClass))
+#3 C:\terminal\live\server\system\Core\System.php(93): Core\Util\Path->{closure}()
+#4 C:\terminal\live\server\system\Core\System.php(39): Core\System->gate()
+#5 C:\terminal\live\server\system\Core\System.php(16): Core\System->__construct()
+#6 C:\terminal\live\server\system\main.php(15): Core\System::getInstance()
+#7 C:\terminal\live\server\main.php(42): require_once('C:\\terminal\\liv...')
+#8 {main}
+  thrown in C:\terminal\live\server\applications\[[helpers]]\Access.php on line 155

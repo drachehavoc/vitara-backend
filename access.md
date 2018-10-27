@@ -6,7 +6,7 @@ javascript:document.querySelectorAll('pre').forEach(e=>e.style='line-height:1.25
 
 ## CRIAÇÃO DE TOKEN DE ACESSO
 
-```sh
+```
 ╔═════════════════════════════════╦═════════════════════════════════╗
 ║ USUÁRIO                         ║ SERVIDOR DE ACESSO              ║
 ╟─────────────────────────────────╫─────────────────────────────────╢

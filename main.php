@@ -6,7 +6,7 @@ $root = [
     'step' => 'main_1',
     'context' => (Object)[
         'path' => $_SERVER['REQUEST_METHOD'] . ($_SERVER['PATH_INFO'] ?? $_SERVER['PHP_SELF']),
-        'query' => (Object)$_GET,
+        'query' => $_GET,
         'payload' => json_decode(file_get_contents('php://input')),
         'matches' => null // populate on execute Core\System::route
     ],
