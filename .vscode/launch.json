@@ -4,6 +4,7 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
         {
             "name": "Listen for XDebug",
             "type": "php",
@@ -15,6 +16,14 @@
             "type": "php",
             "request": "launch",
             "program": "${file}",
+            "cwd": "${fileDirname}",
+            "port": 9000
+        },
+        {
+            "name": "main.php",
+            "type": "php",
+            "request": "launch",
+            "program": "${cwd}\\spark\\main.php",
             "cwd": "${fileDirname}",
             "port": 9000
         }

@@ -2,7 +2,8 @@
 
 const DS = DIRECTORY_SEPARATOR;
 
-const ROOT = __DIR__ . DS;
+const ROOT = __DIR__
+    . DS;
 
 const HOME = __DIR__
     . DS
@@ -26,7 +27,6 @@ Config
     ->set([
         'production' => false,
         'gates' => ROOT . 'applications' . DS . 'gates.php',
-        'helpers' => HOME . 'Helpers' . DS,
         'applications' => ROOT . 'applications' . DS
     ])
     ->load(ROOT . 'config.php')

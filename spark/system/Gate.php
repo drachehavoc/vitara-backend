@@ -11,7 +11,6 @@ class Gate
         return self::$instance ?? self::$instance = new self();
     }
 
-
     protected function __construct()
     {
         $this->loadConfig();
@@ -30,11 +29,11 @@ class Gate
         }
     }
 
-    protected function startWalk($target)
+    protected function route($target)
     {
         if (is_array($target)) {
-            foreach($target as $currTarget)
-                $this->startWalk($currTarget);
+            foreach ($target as $currTarget)
+                $this->route($currTarget);
         }
 
         if ($target instanceof \Closure) {
@@ -76,6 +75,6 @@ class Gate
             && !($target instanceof \Closure))
             throw new \Exception("A chave [paths][{$host}], definida em `" . $this->config->get(null, 'gates') . "`, precisa ser do tipo string, array ou function, porem foi informado um valor do tipo `" . gettype($target) . "`");
 
-        $this->startWalk($target);
+        $this->route($target);
     }
 }
