@@ -8,10 +8,14 @@
 
         // 'cli-test' => 'cli-test/config.php',
 
-        'cli-test' => [
+        'access.localhost' => [
             'cli-test/config.php',
             'cli-test/x/config2.php',
             function () {
+                // Helper\Route::createInstance()
+                //     ->add('{GET/.*}', 'caraiiiiii')
+                //     ->add('{GET/bbb}', 'bbb')
+                //     ->go();
                 return 'eu sou o retorno de uma função';
             }
         ],

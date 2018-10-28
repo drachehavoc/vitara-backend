@@ -45,6 +45,11 @@ class ErrorHandler
 
     protected function exception($e)
     {
+        if (method_exists($this, 'getHttpCode'))
+            http_response_code($e->getHttpCode());
+        else
+            http_response_code(500);
+
         ResponseHandler
             ::getInstance()
             ->addError(
@@ -62,7 +67,7 @@ class ErrorHandler
         string $message,
         string $file,
         int $line
-    ) {        
+    ) {
         ResponseHandler
             ::getInstance()
             ->addError(

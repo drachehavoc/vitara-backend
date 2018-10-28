@@ -10,9 +10,11 @@ class ResponseHandler
         return self::$instance ?? self::$instance = new self();
     }
 
-    function addResponse($data)
+    function addResponse($data, ...$datas)
     {
         $this->responses[] = $data;
+        foreach ($datas as $data)
+            $this->responses[] = $data;
         return $this;
     }
 

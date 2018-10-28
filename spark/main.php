@@ -31,7 +31,7 @@ Config
     ])
     ->load(ROOT . 'config.php')
     ->set([
-        'host' => $_SERVER['HTTP_HOST'] ?? 'cli-test',
+        'host' => $_SERVER['HTTP_HOST'],
     ]);
 
 Gate
