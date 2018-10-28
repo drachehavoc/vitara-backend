@@ -1,4 +1,7 @@
 <?php return function () {
+
+    Helper\Input::getInstance();
+
     // 
     Helper\Route::createInstance()
         ->add('{GET/.*}', 'caraiiiiii')
@@ -9,9 +12,16 @@
 
     return '************* criar uma espécie de prevent default';
 
+    //
+
     Autoload
         ::getInstance()
         ->addPath(__DIR__);
+
     $x = new Helper\Vai();
-    return 'esse é o retorno de uma função de rota ' . $x->val();
+
+    return $x->val();
+
+    //
+    return 'esse é o retorno de uma função de rota ';
 };

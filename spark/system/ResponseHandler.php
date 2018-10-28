@@ -49,7 +49,8 @@ class ResponseHandler
 
     function response()
     {
-        print_r([
+        header('Content-Type: application/json');
+        echo json_encode([
             'response' => $this->responses,
             'errors' => empty($this->errors) ? null : $this->errors
         ]);
