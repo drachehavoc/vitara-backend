@@ -1,5 +1,7 @@
 <?php
 
+namespace Core;
+
 class Gate
 {
     protected static $instance = null;

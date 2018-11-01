@@ -1,8 +1,14 @@
 <?php return function () {
 
-    Helper\Input::getInstance();
+    $inp = Helper\Input::getInstance();
 
-    // 
+    return $inp->filter([
+        "apelido" => Helper\Input\Filter::any(false),
+        "nome" => Helper\Input\Filter::any()
+    ]);
+
+    // ------------------------------------------------------------------------- 
+
     Helper\Route::createInstance()
         ->add('{GET/.*}', 'caraiiiiii')
         ->add('{GET/bbb}', function () {
@@ -12,7 +18,7 @@
 
     return '************* criar uma espécie de prevent default';
 
-    //
+    // -------------------------------------------------------------------------
 
     Autoload
         ::getInstance()
@@ -22,6 +28,7 @@
 
     return $x->val();
 
-    //
+    // -------------------------------------------------------------------------
+
     return 'esse é o retorno de uma função de rota ';
 };

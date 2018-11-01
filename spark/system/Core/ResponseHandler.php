@@ -1,10 +1,13 @@
 <?php
 
+namespace Core;
+
 class ResponseHandler
 {
     protected static $instance = null;
     protected $responses = [];
     protected $errors = [];
+    
     static function getInstance()
     {
         return self::$instance ?? self::$instance = new self();
@@ -28,7 +31,7 @@ class ResponseHandler
     ) {
         try {
             $production = Config::getInstance()->get(null, 'production');
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             $production = false;
         }
 

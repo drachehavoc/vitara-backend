@@ -1,5 +1,7 @@
 <?php
 
+namespace Core;
+
 class Config
 {
     protected static $instance = null;

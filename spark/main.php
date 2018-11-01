@@ -1,28 +1,19 @@
 <?php
 
 const DS = DIRECTORY_SEPARATOR;
+const ROOT = __DIR__ . DS;
+const HOME = ROOT . 'system' . DS;
 
-const ROOT = __DIR__
-    . DS;
+require_once HOME . 'Core' . DS . 'ErrorHandler.php';
+require_once HOME . 'Core' . DS . 'Autoload.php';
 
-const HOME = __DIR__
-    . DS
-    . 'system'
-    . DS;
-
-require_once HOME
-    . 'ErrorHandler.php';
-
-require_once HOME
-    . 'Autoload.php';
-
-ErrorHandler
+\Core\ErrorHandler
     ::getInstance();
 
-Autoload
+\Core\Autoload
     ::getInstance();
 
-Config
+\Core\Config
     ::getInstance()
     ->set([
         'production' => false,
@@ -34,9 +25,9 @@ Config
         'host' => $_SERVER['HTTP_HOST'],
     ]);
 
-Gate
+\Core\Gate
     ::getInstance();
 
-ResponseHandler
+\Core\ResponseHandler
     ::getInstance()
     ->response();

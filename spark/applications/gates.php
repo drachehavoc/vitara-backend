@@ -9,7 +9,7 @@
         // 'cli-test' => 'cli-test/config.php',
 
         'access.localhost' => [
-            'cli-test/config.php',
+            'cli-test/endpoint.php',
             'cli-test/x/config2.php',
             function () {
                 // Helper\Route::createInstance()

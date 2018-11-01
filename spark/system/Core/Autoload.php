@@ -1,5 +1,7 @@
 <?php
 
+namespace Core;
+
 class Autoload
 {
     static private $instance = null;
