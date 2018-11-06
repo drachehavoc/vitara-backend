@@ -1,4 +1,3 @@
 <?php return [
-    'production' => !true,
-    'host' => 'oooops'
+    'production' => !true
 ];

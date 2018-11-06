@@ -18,12 +18,11 @@ class Autoload
         spl_autoload_register([$this, 'trigger']);
     }
 
-
     protected function trigger($namespace)
     {
         foreach ($this->paths as $path) {
             if (file_exists($file = $path . DS . $namespace . '.php')) {
-                return require $file;
+                return require_once $file;
             }
         }
     }

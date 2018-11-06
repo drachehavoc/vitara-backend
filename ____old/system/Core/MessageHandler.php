@@ -36,7 +36,7 @@ class ErrorHandler
 
     private function __construct()
     {
-        set_error_handler([$this, 'error']);
+        // set_error_handler([$this, 'error']);
     }
 
     function exception(\Exception $e)

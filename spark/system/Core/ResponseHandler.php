@@ -7,7 +7,7 @@ class ResponseHandler
     protected static $instance = null;
     protected $responses = [];
     protected $errors = [];
-    
+
     static function getInstance()
     {
         return self::$instance ?? self::$instance = new self();
@@ -37,10 +37,10 @@ class ResponseHandler
 
         $this->errors[] = $production ? [
             $type,
-            $message,
+            utf8_encode($message),
         ] : [
             $type,
-            $message,
+            utf8_encode($message),
             $file,
             $line,
             $trace
@@ -48,14 +48,21 @@ class ResponseHandler
 
         if ($recoverable === false)
             $this->response();
+
     }
 
     function response()
     {
         header('Content-Type: application/json');
+        
         echo json_encode([
             'response' => $this->responses,
             'errors' => empty($this->errors) ? null : $this->errors
         ]);
+
+        if (json_last_error()) {
+            http_response_code(500);
+            print_r(["erro ao montar retorno", json_last_error(), json_last_error_msg()]);
+        }
     }
 }
