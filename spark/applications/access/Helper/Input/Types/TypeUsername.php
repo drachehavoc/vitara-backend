@@ -2,7 +2,7 @@
 
 namespace Helper\Input\Types;
 
-class TypeAny extends Type
+class TypeUsername extends Type
 {
     // ...
 }

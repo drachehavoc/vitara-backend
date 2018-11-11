@@ -15,7 +15,7 @@ class Route
 
     function __construct()
     {
-        $this->response = \ResponseHandler::getInstance();
+        $this->response = \Core\ResponseHandler::getInstance();
     }
 
     function add(string $regex, $target)
@@ -30,8 +30,12 @@ class Route
         foreach ($this->routes as $regex => $target) {
             if (preg_match($regex, $map, $matches)) {
                 if ($target instanceof \Closure)
-                    $target = $target();
+                    $target = \Closure::bind($target, (Object)[
+                        'matches' => $matches
+                    ])();
+
                 $this->response->addResponse($target);
+
                 if (!$findAll)
                     break;
             }

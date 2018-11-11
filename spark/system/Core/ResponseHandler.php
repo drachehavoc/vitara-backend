@@ -15,9 +15,11 @@ class ResponseHandler
 
     function addResponse($data, ...$datas)
     {
-        $this->responses[] = $data;
-        foreach ($datas as $data)
-            $this->responses[] = $data;
+        array_unshift($datas, $data);
+        foreach ($datas as $curr) {
+            if ($curr !== null)
+                $this->responses[] = $curr;
+        }
         return $this;
     }
 
@@ -54,7 +56,7 @@ class ResponseHandler
     function response()
     {
         header('Content-Type: application/json');
-        
+
         echo json_encode([
             'response' => $this->responses,
             'errors' => empty($this->errors) ? null : $this->errors

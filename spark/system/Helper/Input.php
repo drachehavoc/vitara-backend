@@ -4,14 +4,8 @@ namespace Helper;
 
 class Input
 {
-    protected static $instance = null;
     protected $receivedData = [];
     protected $contentType;
-
-    static function getInstance()
-    {
-        return self::$instance ?? self::$instance = new self();
-    }
 
     function __construct()
     {
