@@ -8,7 +8,7 @@ class Blog
     {
         return $this->route;
     }
-    
+
     function criarArtigo()
     {
     }
@@ -51,18 +51,20 @@ class Blog
 
 
 return function () {
+    // Criar objeto blog
     $blog = new Blog();
-    $route = \Helper\Route::createInstance();
-
-    $route->add('|^GET/artigo(/(?<artigo>[0-9])*){0,1}$|i', $blog->execute('buscarArtigo'));
-    $route->add('|^POST/artigo/(?<artigo>[0-9]+)$|', $blog->execute('criarArtigo'));
-    $route->add('|^PUT/artigo/(?<artigo>[0-9]+)$|', $blog->execute('alterarArtigo'));
-    $route->add('|^DELETE/artigo/(?<artigo>[0-9]+)$|', $blog->execute('deletarArtigo'));
-
-    $route->add('|^GET/comentario(/(?<comentario>[0-9])*){0,1}$|i', $blog->execute('buscarComentario'));
-    $route->add('|^POST/comentario/(?<comentario>[0-9]+)$|', $blog->execute('criarComentario'));
-    $route->add('|^PUT/comentario/(?<comentario>[0-9]+)$|', $blog->execute('alterarComentario'));
-    $route->add('|^DELETE/comentario/(?<comentario>[0-9]+)$|', $blog->execute('deletarComentario'));
-
-    $route->go(false);
+    // Criar rotas
+    \Helper\Route::createInstance()
+        // Artigos
+        ->add('|^GET/artigo(/(?<artigo>[0-9])*){0,1}$|i', $blog->execute('buscarArtigo'))
+        ->add('|^POST/artigo/(?<artigo>[0-9]+)$|', $blog->execute('criarArtigo'))
+        ->add('|^PUT/artigo/(?<artigo>[0-9]+)$|', $blog->execute('alterarArtigo'))
+        ->add('|^DELETE/artigo/(?<artigo>[0-9]+)$|', $blog->execute('deletarArtigo'))
+        // Comentários
+        ->add('|^GET/comentario(/(?<comentario>[0-9])*){0,1}$|i', $blog->execute('buscarComentario'))
+        ->add('|^POST/comentario/(?<comentario>[0-9]+)$|', $blog->execute('criarComentario'))
+        ->add('|^PUT/comentario/(?<comentario>[0-9]+)$|', $blog->execute('alterarComentario'))
+        ->add('|^DELETE/comentario/(?<comentario>[0-9]+)$|', $blog->execute('deletarComentario'))
+        // Iniciar rota
+        ->go(false);
 };
