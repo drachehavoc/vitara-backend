@@ -3,9 +3,13 @@
 class Access
 {
     private $pdo;
+    private $token;
+
 
     function __construct()
     {
+        $this->token = $_GET['token'] ?? null;
+
         Core\Autoload
             ::getInstance()
             ->addPath(__DIR__);
@@ -30,31 +34,36 @@ class Access
         };
     }
 
+    function __get($name)
+    {
+        return $this->$name ?? $this->bind($name);
+    }
+
     function route()
     {
         $self = $this;
         \Helper\Route::createInstance()
-    
-            // CRIAR TOKEN
-            ->add('{POST/}', $this->bind('routeCreateOrUpdateTokenForApplication'))
 
-            // ATUALIZAR TOKEN
-            ->add('{PUT/}', $this->bind('routeUpdateToken'))
-            
-            // REVOGAR TOKEN
-            ->add('{DELETE/}', $this->bind('routeRevokeToken'))
+            ->add(
+                '{POST/}',
+                $this->routeCreateOrUpdateTokenForApplication
+            )
 
-            // BUSCAR DADOS DO USUÁRIO POR TOKEN
-            ->add('{GET/(?<token>.+)}', function () {
-                return 'BUSCAR DADOS DO USUÁRIO POR TOKEN';
-            })
+            ->add(
+                '{PUT/}',
+                $this->updateToken
+            )
 
-            // VERIFICAR PERMISSÃO
-            ->add('{GET/permission/(?<permission>.+)/(?<token>.+)}', function () {
-                return 'VERIFICAR PERMISSÃO';
-            })
+            ->add(
+                '{DELETE/}',
+                $this->revokeToken
+            )
 
-            // CASOS OMISSOS
+            ->add(
+                '{GET/}',
+                $this->getBasicUserInfo
+            )
+
             ->add('{.*}', function () {
                 return 'SITUAÇÃO NÃO TRATADA';
             })
@@ -76,7 +85,7 @@ class Access
     function findUserByCredentials($user, $password)
     {
         return $this->select(
-            'SELECT id, username FROM user WHERE username=? AND password=? LIMIT 1',
+            'SELECT id, username FROM `user` WHERE username=? AND password=? LIMIT 1',
             $user,
             $password
         );
@@ -112,26 +121,44 @@ class Access
         $hash = $this->getHash();
         $stmt = $this->pdo->prepare('UPDATE token SET hash=?, updated=NOW() WHERE user_id=? AND application_id=? LIMIT 1');
         $stmt->execute([$hash, $user_id, $application_id]);
-        return $hash;
+        return $this->token = $hash;
     }
 
-    function updateToken($oldHash)
+    function updateToken()
     {
         $newHash = $this->getHash();
         $stmt = $this->pdo->prepare('UPDATE token SET hash=?, updated=NOW() WHERE hash=? LIMIT 1');
-        $stmt->execute([$newHash, $oldHash]);
+        $stmt->execute([$newHash, $this->token]);
         if ($stmt->rowCount())
-            return $newHash;
+            return $this->token = $newHash;
         throw new \Exception("Token não encontrado");
     }
 
-    function revokeToken($hash)
+    function revokeToken()
     {
         $stmt = $this->pdo->prepare('DELETE FROM token WHERE hash=? LIMIT 1');
-        $stmt->execute([$hash]);
+        $stmt->execute([$this->token]);
         if ($stmt->rowCount())
             return true;
         throw new \Exception("Token não encontrado");
+    }
+
+    function getBasicUserInfo()
+    {
+        return $this->select(
+            '
+                SELECT 
+                    user.id,
+                    username
+                FROM 
+                    token 
+                    INNER JOIN `user` ON token.user_id = user.id
+                WHERE 
+                    token.hash=? 
+                LIMIT 1
+            ',
+            $this->token
+        );
     }
 
     function routeCreateOrUpdateTokenForApplication()
@@ -150,34 +177,61 @@ class Access
         if (is_null($application = $this->findApplicationByHash($data->application)))
             throw new \Exception('Aplicação não encontrada');
 
-        if (!is_null($token = $this->findTokenByUserIdAndApplicationId($user->id, $application->id))) {
-            $this->updateTokenByUserCredentials($user->id, $application->id);
-            return $token->hash;
-        }
+        if (!is_null($this->token = $this->findTokenByUserIdAndApplicationId($user->id, $application->id)))
+            return $this->updateTokenByUserCredentials($user->id, $application->id);
 
         return $this->createToken($user->id, $application->id);
     }
 
-    function routeUpdateToken()
+    function checkPermission($permissionSlug)
     {
-        $inp = new \Helper\Input();
-        $data = (Object)$inp->filter([
-            "token" => Helper\Input\Filter::any(false),
-        ]);
-        return $this->updateToken($data->token);
-    }
+        $user_has_permission = $this->select(
+            '
+                SELECT 
+                    slug
+                FROM 
+                    token 
+                    LEFT JOIN user_x_permission ON token.user_id = user_x_permission.user_id
+                    LEFT JOIN permission ON permission_id = permission.id
+                WHERE 
+                    token.hash=?
+                    AND slug=?
+                LIMIT 1
+            ',
+            $this->token,
+            $permissionSlug
+        );
 
-    function routeRevokeToken()
-    {
-        $inp = new \Helper\Input();
-        $data = (Object)$inp->filter([
-            "token" => Helper\Input\Filter::any(false),
-        ]);
-        return $this->revokeToken($data->token);
+        if (!empty($user_has_permission))
+            return;
+
+        $group_has_permission = $this->select(
+            '
+                SELECT 
+                    slug
+                FROM 
+                    token 
+                    LEFT JOIN user_x_group ON user_x_group.user_id = token.user_id
+                    LEFT JOIN group_x_permission ON group_x_permission.group_id = user_x_group.group_id
+                    LEFT JOIN permission ON group_x_permission.permission_id = permission.id
+                WHERE 
+                    token.hash=?
+                    AND slug=?
+                LIMIT 1
+            ',
+            $_GET['token'] ?? null,
+            $permissionSlug
+        );
+
+        if (!empty($group_has_permission))
+            return;
+
+        throw new \Exception("Usuário não tem permissão para a ação `${permissionSlug}`");
     }
 }
 
 return function () {
     $access = new Access();
+    // $access->checkPermission("__nadar__");
     return $access->route();
 };
