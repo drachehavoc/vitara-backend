@@ -39,10 +39,10 @@ class ResponseHandler
 
         $this->errors[] = $production ? [
             $type,
-            utf8_encode($message),
+            mb_convert_encoding($message, "UTF-8"),
         ] : [
             $type,
-            utf8_encode($message),
+            mb_convert_encoding($message, "UTF-8"),
             $file,
             $line,
             $trace
