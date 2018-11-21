@@ -7,14 +7,12 @@ const HOME = ROOT . 'system' . DS;
 require_once HOME . 'Core' . DS . 'ErrorHandler.php';
 require_once HOME . 'Core' . DS . 'Autoload.php';
 
-\Core\ErrorHandler
-    ::getInstance();
+$scope = (Object)[];
+$scope->error = \Core\ErrorHandler::getInstance();
+$scope->autoload = \Core\Autoload::getInstance();
+$scope->response = \Core\ResponseHandler::getInstance();
 
-\Core\Autoload
-    ::getInstance();
-
-\Core\Config
-    ::getInstance()
+$scope->config = \Core\Config::getInstance()
     ->set([
         'production' => false,
         'gates' => ROOT . 'applications' . DS . 'gates.php',
@@ -25,9 +23,5 @@ require_once HOME . 'Core' . DS . 'Autoload.php';
         'host' => $_SERVER['HTTP_HOST'],
     ]);
 
-\Core\Gate
-    ::getInstance();
-
-\Core\ResponseHandler
-    ::getInstance()
-    ->response();
+$scope->gate = \Core\Gate::getInstance();
+$scope->response->response();
